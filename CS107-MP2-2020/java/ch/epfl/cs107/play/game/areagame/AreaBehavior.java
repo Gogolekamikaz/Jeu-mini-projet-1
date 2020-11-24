@@ -16,8 +16,7 @@ import ch.epfl.cs107.play.window.Window;
 /**
  * AreaBehavior is a basically a map made of Cells. Those cells are used for the game behavior
  */
-public abstract class AreaBehavior 
-{
+public abstract class AreaBehavior {
     /// The behavior is an Image of size height x width
     private final Image behaviorMap;
     private final int width, height;
@@ -26,10 +25,11 @@ public abstract class AreaBehavior
 
     /**
      * Default AreaBehavior Constructor
+     *
      * @param window (Window): graphic context, not null
-     * @param name (String): name of the behavior image, not null
+     * @param name   (String): name of the behavior image, not null
      */
-    public AreaBehavior(Window window, String name){
+    public AreaBehavior(Window window, String name) {
         // Load the image
         behaviorMap = window.getImage(ResourcePath.getBehaviors(name), null, false);
         // Get the corresponding dimension and init the array
@@ -38,42 +38,41 @@ public abstract class AreaBehavior
         cells = new Cell[width][height];
     }
 
-  
-    protected void cellInteractionOf(Interactor interactor){
-        for(DiscreteCoordinates dc : interactor.getCurrentCells()){
-            if(dc.x < 0 || dc.y < 0 || dc.x >= width || dc.y >= height)
+
+    protected void cellInteractionOf(Interactor interactor) {
+        for (DiscreteCoordinates dc : interactor.getCurrentCells()) {
+            if (dc.x < 0 || dc.y < 0 || dc.x >= width || dc.y >= height)
                 continue;
             cells[dc.x][dc.y].cellInteractionOf(interactor);
         }
     }
 
-   
-    protected void viewInteractionOf(Interactor interactor){
-        for(DiscreteCoordinates dc : interactor.getFieldOfViewCells()){
-            if(dc.x < 0 || dc.y < 0 || dc.x >= width || dc.y >= height)
+
+    protected void viewInteractionOf(Interactor interactor) {
+        for (DiscreteCoordinates dc : interactor.getFieldOfViewCells()) {
+            if (dc.x < 0 || dc.y < 0 || dc.x >= width || dc.y >= height)
                 continue;
             cells[dc.x][dc.y].viewInteractionOf(interactor);
         }
     }
 
 
-  
     protected boolean canLeave(Interactable entity, List<DiscreteCoordinates> coordinates) {
 
-        for(DiscreteCoordinates c : coordinates){
-            if(c.x < 0 || c.y < 0 || c.x >= width || c.y >= height)
+        for (DiscreteCoordinates c : coordinates) {
+            if (c.x < 0 || c.y < 0 || c.x >= width || c.y >= height)
                 return false;
-            if(!cells[c.x][c.y].canLeave(entity))
+            if (!cells[c.x][c.y].canLeave(entity))
                 return false;
         }
         return true;
     }
 
     public boolean canEnter(Interactable entity, List<DiscreteCoordinates> coordinates) {
-        for(DiscreteCoordinates c : coordinates){
-            if(c.x < 0 || c.y < 0 || c.x >= width || c.y >= height)
+        for (DiscreteCoordinates c : coordinates) {
+            if (c.x < 0 || c.y < 0 || c.x >= width || c.y >= height)
                 return false;
-            if(!cells[c.x][c.y].canEnter(entity))
+            if (!cells[c.x][c.y].canEnter(entity))
                 return false;
         }
         return true;
@@ -81,134 +80,136 @@ public abstract class AreaBehavior
 
     protected void leave(Interactable entity, List<DiscreteCoordinates> coordinates) {
 
-        for(DiscreteCoordinates c : coordinates){
+        for (DiscreteCoordinates c : coordinates) {
             cells[c.x][c.y].leave(entity);
         }
 
     }
 
     protected void enter(Interactable entity, List<DiscreteCoordinates> coordinates) {
-        for(DiscreteCoordinates c : coordinates){
+        for (DiscreteCoordinates c : coordinates) {
             cells[c.x][c.y].enter(entity);
         }
     }
 
     protected int getRGB(int r, int c) {
-    	return behaviorMap.getRGB(r, c);
+        return behaviorMap.getRGB(r, c);
     }
-    
+
     protected int getHeight() {
-    	return height;
+        return height;
     }
-    
+
     protected int getWidth() {
-    	return width;
+        return width;
     }
-    
-    protected void setCell(int x,int y, Cell cell) {
-    	cells[x][y] = cell;
+
+    protected void setCell(int x, int y, Cell cell) {
+        cells[x][y] = cell;
     }
-    
+
     protected Cell getCell(int x, int y) {
-    	return cells[x][y];
+        return cells[x][y];
     }
-    
- 
+
+    // Cell as inner class
+    public abstract class Cell implements Interactable {
+
+        /// Content of the cell as a set of Interactable
+        private Set<Interactable> entities;
+        private DiscreteCoordinates coordinates;
+
+
+        /**
+         * Default Cell constructor
+         *
+         * @param x (int): x-coordinate of this cell
+         * @param y (int): y-coordinate of this cell
+         */
+        protected Cell(int x, int y) {
+            entities = new HashSet<>();
+            coordinates = new DiscreteCoordinates(x, y);
+        }
+
+        protected boolean hasNonTraversableContent() {
+            for (Interactable entity : entities) {
+                if (entity.takeCellSpace())
+                    return true;
+            }
+            return false;
+        }
+
+        /**
+         * Do the given interactor interacts with all Interactable sharing the same cell
+         *
+         * @param interactor (Interactor), not null
+         */
+        private void cellInteractionOf(Interactor interactor) { // REFACTOR: must become private with inner class
+            interactor.interactWith(this);
+            for (Interactable interactable : entities) {
+                if (interactable.isCellInteractable())
+                    interactor.interactWith(interactable);
+            }
+        }
+
+        /**
+         * Do the given interactor interacts with all Interactable sharing the same cell
+         *
+         * @param interactor (Interactor), not null
+         */
+        private void viewInteractionOf(Interactor interactor) {
+            interactor.interactWith(this);
+            for (Interactable interactable : entities) {
+                if (interactable.isViewInteractable())
+                    interactor.interactWith(interactable);
+            }
+        }
+
+        /**
+         * Do the given interactable enter into this Cell
+         *
+         * @param entity (Interactable), not null
+         */
+        protected void enter(Interactable entity) {
+            entities.add(entity);
+        }
+
+        /**
+         * Do the given Interactable leave this Cell
+         *
+         * @param entity (Interactable), not null
+         */
+        protected void leave(Interactable entity) {
+            entities.remove(entity);
+        }
+
+        /**
+         * Indicate if the given Interactable can leave this Cell
+         *
+         * @param entity (Interactable), not null
+         * @return (boolean): true if entity can leave
+         */
+        protected abstract boolean canLeave(Interactable entity);
+
+        /**
+         * Indicate if the given Interactable can enter this Cell
+         *
+         * @param entity (Interactable), not null
+         * @return (boolean): true if entity can enter
+         */
+        protected abstract boolean canEnter(Interactable entity);
+
+        /// Cell implements Interactable
+
+        @Override
+        public boolean takeCellSpace() {
+            return false;
+        }
+
+        @Override
+        public List<DiscreteCoordinates> getCurrentCells() {
+            return Collections.singletonList(coordinates);
+        }
+
+    }
 }
-
-/* A cell of the grid
- * 
- */
-	abstract class Cell implements Interactable {
-
-    /// Content of the cell as a set of Interactable
-    private Set<Interactable> entities;
-    private DiscreteCoordinates coordinates;
-
-
-    /**
-     * Default Cell constructor
-     * @param x (int): x-coordinate of this cell
-     * @param y (int): y-coordinate of this cell
-     */
-    protected Cell(int x, int y){
-        entities = new HashSet<>();
-        coordinates = new DiscreteCoordinates(x, y);
-    }
-    
-    protected boolean hasNonTraversableContent() {
-		for (Interactable entity : entities) {
-            if (entity.takeCellSpace())
-                return true;
-        }
-		return false;
-	}
-  
-    /**
-     * Do the given interactor interacts with all Interactable sharing the same cell
-     * @param interactor (Interactor), not null
-     */
-   public void cellInteractionOf(Interactor interactor){ // REFACTOR: must become private with inner class
-        interactor.interactWith(this);
-        for(Interactable interactable : entities){
-            if(interactable.isCellInteractable())
-                interactor.interactWith(interactable);
-        }
-    }
-
-    /**
-     * Do the given interactor interacts with all Interactable sharing the same cell
-     * @param interactor (Interactor), not null
-     */
-    public  void viewInteractionOf(Interactor interactor){ 
-        interactor.interactWith(this);
-        for(Interactable interactable : entities){
-            if(interactable.isViewInteractable())
-                interactor.interactWith(interactable);
-        }
-    }
-
-    /**
-     * Do the given interactable enter into this Cell
-     * @param entity (Interactable), not null
-     */
-    protected void enter(Interactable entity) {
-        entities.add(entity);
-    }
-
-    /**
-     * Do the given Interactable leave this Cell
-     * @param entity (Interactable), not null
-     */
-    protected void leave(Interactable entity) {
-        entities.remove(entity);
-    }
-
-    /**
-     * Indicate if the given Interactable can leave this Cell
-     * @param entity (Interactable), not null
-     * @return (boolean): true if entity can leave
-     */
-    protected abstract boolean canLeave(Interactable entity);
-
-    /**
-     * Indicate if the given Interactable can enter this Cell
-     * @param entity (Interactable), not null
-     * @return (boolean): true if entity can enter
-     */
-    protected abstract boolean canEnter(Interactable entity);
-
-    /// Cell implements Interactable
-
-    @Override
-    public boolean takeCellSpace(){
-        return false;
-    }
-
-    @Override
-    public List<DiscreteCoordinates> getCurrentCells() {
-        return Collections.singletonList(coordinates);
-    }
-
-}
-

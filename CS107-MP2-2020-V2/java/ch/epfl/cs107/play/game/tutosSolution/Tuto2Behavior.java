@@ -52,14 +52,14 @@ public class Tuto2Behavior extends AreaBehavior {
 			}
 		}
 	}
-	
+
 	/**
 	 * Cell adapted to the Tuto2 game
 	 */
 	public class Tuto2Cell extends AreaBehavior.Cell {
 		/// Type of the cell following the enum
 		private final Tuto2CellType type;
-		
+
 		/**
 		 * Default Tuto2Cell Constructor
 		 * @param x (int): x coordinate of the cell
@@ -70,7 +70,7 @@ public class Tuto2Behavior extends AreaBehavior {
 			super(x, y);
 			this.type = type;
 		}
-	
+
 		@Override
 		protected boolean canLeave(Interactable entity) {
 			return true;
@@ -79,9 +79,9 @@ public class Tuto2Behavior extends AreaBehavior {
 		@Override
 		protected boolean canEnter(Interactable entity) {
 			return type.isWalkable;
-	    }
+		}
 
-	    
+
 		@Override
 		public boolean isCellInteractable() {
 			return true;

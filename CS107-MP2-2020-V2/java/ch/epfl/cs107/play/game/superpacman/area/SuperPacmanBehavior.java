@@ -56,10 +56,28 @@ public class SuperPacmanBehavior extends AreaBehavior {
                 SuperPacmanCellType color = SuperPacmanCellType.toType(getRGB(height-1-y, x));
                 if(color == SuperPacmanCellType.WALL){
                     coordinates = new DiscreteCoordinates(x,y);
-                    //wallActor = new Wall(area,coordinates,);
+                    wallActor = new Wall(area,coordinates,getWallNeighborhood(x,y));
+                    area.registerActor(wallActor);
                 }
             }
         }
+    }
+
+    private boolean[][] getWallNeighborhood(int x, int y){
+        boolean[][] neigborhood = new boolean[3][3];
+        for(int xcord = x-1, i = 0; xcord <= x+1; ++xcord , ++i)
+        {
+            for(int ycord = y-1, j = 0; ycord <= y+1; ++ycord, ++j){
+                SuperPacmanCellType color = SuperPacmanCellType.toType(getRGB(getHeight()-1-ycord, xcord));
+                if(color == SuperPacmanCellType.WALL){
+                    neigborhood[i][j] = true;
+                }
+                else{
+                    neigborhood[i][j] = false;
+                }
+            }
+        }
+        return neigborhood;
     }
 
     /**

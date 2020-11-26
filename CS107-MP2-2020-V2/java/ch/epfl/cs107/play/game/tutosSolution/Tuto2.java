@@ -79,3 +79,5 @@ public class Tuto2 extends AreaGame {
 	}
 
 }
+
+//Test Git Eclipse

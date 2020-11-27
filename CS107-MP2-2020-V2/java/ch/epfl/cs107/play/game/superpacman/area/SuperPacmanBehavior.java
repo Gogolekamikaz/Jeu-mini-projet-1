@@ -141,7 +141,7 @@ public class SuperPacmanBehavior extends AreaBehavior {
         private boolean[][] getWallNeighborhood(int x, int y){
             boolean[][] neigborhood = new boolean[3][3];
             for(int xcord = x-1, i = 0; xcord <= x+1; ++xcord , ++i){
-                for(int ycord = y-1, j = 0; ycord <= y+1; ++ycord, ++j){
+                for(int ycord = y+1, j = 0; ycord >= y-1; --ycord, ++j){
                     if(cellExists(xcord, ycord) &&  SuperPacmanCellType.toType(getRGB(getHeight()-1-ycord, xcord)) == SuperPacmanCellType.WALL){
                         neigborhood[i][j] = true;
                     }

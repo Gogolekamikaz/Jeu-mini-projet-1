@@ -51,7 +51,7 @@ public class SuperPacmanPlayer extends Player {
 
     public SuperPacmanPlayer(Area area, Orientation orientation, DiscreteCoordinates coordinates) {
         super(area, orientation, coordinates);
-        sprite = new Sprite("yellowDot", 1.f, 1.f,this);
+        sprite = new Sprite("pacman", 1.f, 1.f,this);
     }
 
     @Override

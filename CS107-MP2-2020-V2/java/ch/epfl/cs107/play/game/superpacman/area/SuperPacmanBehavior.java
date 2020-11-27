@@ -13,23 +13,21 @@ public class SuperPacmanBehavior extends AreaBehavior {
     public enum SuperPacmanCellType {
 
         //https://stackoverflow.com/questions/25761438/understanding-bufferedimage-getrgb-output-values
-        NONE(0, true), // never used as real content
-        WALL ( -16777216,true),       //black
-        FREE_WITH_DIAMOND(-1,true),         //white
-        FREE_WITH_BLINKY (-65536,true),     //red
-        FREE_WITH_PINKY ( -157237,true),    //pink
-        FREE_WITH_INKY ( -16724737,true),   //cyan
-        FREE_WITH_CHERRY (-36752,true),      //light red
-        FREE_WITH_BONUS ( -16478723,true), //light blue
-        FREE_EMPTY ( -6118750,true);         // sort of gray
+        NONE(0), // never used as real content
+        WALL ( -16777216),       //black
+        FREE_WITH_DIAMOND(-1),         //white
+        FREE_WITH_BLINKY (-65536),     //red
+        FREE_WITH_PINKY ( -157237),    //pink
+        FREE_WITH_INKY ( -16724737),   //cyan
+        FREE_WITH_CHERRY (-36752),      //light red
+        FREE_WITH_BONUS ( -16478723), //light blue
+        FREE_EMPTY ( -6118750);         // sort of gray
         ;
 
         final int type;
-        final boolean isWalkable;
 
-        SuperPacmanCellType(int type, boolean isWalkable) {
+        SuperPacmanCellType(int type) {
             this.type = type;
-            this.isWalkable = isWalkable;
         }
 
         public static SuperPacmanCellType toType(int type) {

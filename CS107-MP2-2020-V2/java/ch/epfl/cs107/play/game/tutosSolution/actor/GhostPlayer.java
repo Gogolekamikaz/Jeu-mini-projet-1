@@ -34,7 +34,6 @@ public class GhostPlayer extends MovableAreaEntity {
 		message.setParent(this);
 		message.setAnchor(new Vector(-0.3f, 0.1f));
 		sprite = new Sprite(spriteName, 1.f, 1.f,this);
-
 		resetMotion();
 	}
 	 
@@ -117,6 +116,8 @@ public class GhostPlayer extends MovableAreaEntity {
 	public boolean isViewInteractable() {
 		return true;
 	}
+
+
 	@Override
 	public List<DiscreteCoordinates> getCurrentCells() {
 		return Collections.singletonList(getCurrentMainCellCoordinates());

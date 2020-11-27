@@ -113,11 +113,12 @@ public class SuperPacmanPlayer extends Player {
         (( SuperPacmanInteractionVisitor )v). interactWith (this );
     }
 
-    class SuperPacmanPlayerHandler implements SuperPacmanInteractionVisitor {
+    private class SuperPacmanPlayerHandler implements SuperPacmanInteractionVisitor {
 
         @Override
         public void interactWith(Door door) {
             setIsPassingADoor(door);
+            System.out.println("on interagit");
         }
     }
 }

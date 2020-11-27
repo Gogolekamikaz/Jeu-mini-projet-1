@@ -5,7 +5,9 @@ import ch.epfl.cs107.play.game.areagame.actor.Interactable;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.areagame.actor.Sprite;
 import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
+import ch.epfl.cs107.play.game.rpg.actor.Door;
 import ch.epfl.cs107.play.game.rpg.actor.Player;
+import ch.epfl.cs107.play.game.superpacman.handler.SuperPacmanInteractionVisitor;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.window.Button;
 import ch.epfl.cs107.play.window.Canvas;
@@ -63,7 +65,7 @@ public class SuperPacmanPlayer extends Player {
 
     public SuperPacmanPlayer(Area area, Orientation orientation, DiscreteCoordinates coordinates) {
         super(area, orientation, coordinates);
-        sprite = new Sprite("pacman", 1.f, 1.f,this);
+        sprite = new Sprite("superpacman/bonus", 1.f, 1.f,this);
     }
 
     @Override
@@ -107,7 +109,15 @@ public class SuperPacmanPlayer extends Player {
     }
 
     @Override
-    public void acceptInteraction(AreaInteractionVisitor v) {
+    public void acceptInteraction ( AreaInteractionVisitor v) {
+        (( SuperPacmanInteractionVisitor )v). interactWith (this );
+    }
 
+    class SuperPacmanPlayerHandler implements SuperPacmanInteractionVisitor {
+
+        @Override
+        public void interactWith(Door door) {
+            setIsPassingADoor(door);
+        }
     }
 }

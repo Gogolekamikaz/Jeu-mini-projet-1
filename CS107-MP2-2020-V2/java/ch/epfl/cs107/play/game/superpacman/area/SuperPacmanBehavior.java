@@ -44,7 +44,7 @@ public class SuperPacmanBehavior extends AreaBehavior {
         }
     }
 
-    void registerActors(Area area){
+    protected void registerActors(Area area){
         Wall wallActor;
         DiscreteCoordinates coordinates;
         boolean[][] neighborhood;

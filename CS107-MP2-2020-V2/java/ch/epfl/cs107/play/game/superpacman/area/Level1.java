@@ -1,17 +1,25 @@
 package ch.epfl.cs107.play.game.superpacman.area;
 
-public class Level1 extends SuperPacmanArea{
+import ch.epfl.cs107.play.math.DiscreteCoordinates;
+
+public class Level1 extends SuperPacmanArea {
+
+    private final static DiscreteCoordinates PLAYER_SPAWN_POSITION = new DiscreteCoordinates(15, 6);
+
+
     @Override
-    public float getCameraScaleFactor() {
-        return cameraScaleFactor;
+    protected void createArea() {
+
+    }
+
+    @Override
+    public DiscreteCoordinates getSpawnPoint() {
+        return PLAYER_SPAWN_POSITION;
     }
 
     @Override
     public String getTitle() {
-        return "superpacman/Level11";
+        return "superpacman/Level1";
     }
 
-    protected void createArea() {
-
-    }
 }

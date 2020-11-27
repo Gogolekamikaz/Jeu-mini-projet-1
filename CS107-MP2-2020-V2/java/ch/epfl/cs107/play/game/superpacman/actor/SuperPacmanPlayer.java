@@ -56,7 +56,7 @@ public class SuperPacmanPlayer extends Player {
 
     @Override
     public List<DiscreteCoordinates> getCurrentCells() {
-        return null;
+        return Collections.singletonList(getCurrentMainCellCoordinates());
     }
 
     @Override
@@ -66,7 +66,7 @@ public class SuperPacmanPlayer extends Player {
 
     @Override
     public boolean wantsCellInteraction() {
-        return false;
+        return true;
     }
 
     @Override
@@ -91,7 +91,7 @@ public class SuperPacmanPlayer extends Player {
 
     @Override
     public boolean isViewInteractable() {
-        return false;
+        return true;
     }
 
     @Override

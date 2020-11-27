@@ -102,7 +102,7 @@ public class SuperPacmanBehavior extends AreaBehavior {
 
         @Override
         protected boolean canLeave(Interactable entity) {
-            return false;
+            return true;
         }
 
         @Override

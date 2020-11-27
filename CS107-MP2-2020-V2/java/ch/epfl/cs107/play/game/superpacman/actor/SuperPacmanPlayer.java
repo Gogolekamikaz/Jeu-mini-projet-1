@@ -16,6 +16,8 @@ import java.util.List;
 
 public class SuperPacmanPlayer extends Player {
 
+
+
     private Sprite sprite;
     private final static int SPEED = 6;
 
@@ -27,26 +29,36 @@ public class SuperPacmanPlayer extends Player {
     @Override
     public void update(float deltaTime) {
         Keyboard keyboard= getOwnerArea().getKeyboard();
-        moveOrientate(Orientation.LEFT, keyboard.get(Keyboard.LEFT));
-        moveOrientate(Orientation.UP, keyboard.get(Keyboard.UP));
-        moveOrientate(Orientation.RIGHT, keyboard.get(Keyboard.RIGHT));
-        moveOrientate(Orientation.DOWN, keyboard.get(Keyboard.DOWN));
         super.update(deltaTime);
-    }
 
-    /**
-     * Orientate or Move this player in the given orientation if the given button is down
-     * @param orientation (Orientation): given orientation, not null
-     * @param b (Button): button corresponding to the given orientation, not null
-     */
-    private void moveOrientate(Orientation orientation, Button b){
 
-        if(b.isDown()) {
-            if (isDisplacementOccurs() && getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(orientation.toVector())))){
-                orientate(orientation);
-                move(SPEED);
+
+        Orientation desiredOrientation = this.getDesiredOrientation(keyboard);
+        if(desiredOrientation != null) {
+            System.out.println("Displacement occur ? : " + this.isDisplacementOccurs());
+            System.out.println("Can enter : " + this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector()))));
+            if (this.isDisplacementOccurs() == false && this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector()))) == true) {
+                this.orientate(desiredOrientation);
+                this.move(SPEED);
+
             }
         }
+    }
+
+    private Orientation getDesiredOrientation(Keyboard keyboard){
+        if(keyboard.get(Keyboard.LEFT).isDown()){
+            return Orientation.LEFT;
+        }
+        else if(keyboard.get(Keyboard.RIGHT).isDown()){
+            return Orientation.RIGHT;
+        }
+        else if(keyboard.get(Keyboard.UP).isDown()){
+            return Orientation.UP;
+        }
+        else if(keyboard.get(Keyboard.DOWN).isDown()){
+            return Orientation.DOWN;
+        }
+        return null;
     }
 
     public SuperPacmanPlayer(Area area, Orientation orientation, DiscreteCoordinates coordinates) {

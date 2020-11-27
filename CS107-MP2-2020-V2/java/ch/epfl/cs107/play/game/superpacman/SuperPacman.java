@@ -47,10 +47,9 @@ public class SuperPacman extends RPG {
     public boolean begin(Window window, FileSystem fileSystem) {
         if (super.begin(window, fileSystem)) {
             createAreas();
-            SuperPacmanArea area = (SuperPacmanArea)setCurrentArea("superpacman/Level0", true);
-            player = new SuperPacmanPlayer(area, Orientation.DOWN, area.getSpawnPoint());
-            area.registerActor(player);
-            area.setViewCandidate(player);
+            SuperPacmanArea area = (SuperPacmanArea)setCurrentArea("superpacman/Level2", true);
+            player = new SuperPacmanPlayer(area, Orientation.UP, area.getSpawnPoint());
+            initPlayer(player);
             return true;
         }
         return false;

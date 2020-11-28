@@ -3,6 +3,7 @@ package ch.epfl.cs107.play.game.rpg.actor;
 import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.actor.AreaEntity;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
+import ch.epfl.cs107.play.game.areagame.actor.Sprite;
 import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
 import ch.epfl.cs107.play.game.rpg.handler.RPGInteractionVisitor;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
@@ -21,7 +22,7 @@ import java.util.List;
 public class Door extends AreaEntity{
 
 	/// Door Debug flag. Door is an invisible Entity. When debug, we draw something visible
-	private static final boolean DEBUG_DOOR = false;
+	private static final boolean DEBUG_DOOR = true;
 
 	/// Debug variable : useful only for drawing door debug shape
 	private Polyline debugSquare;
@@ -33,6 +34,7 @@ public class Door extends AreaEntity{
 	private final DiscreteCoordinates otherSideCoordinates;
 	/// Signal conditioning the door
 	private Logic signal;
+
 
 	/**
 	 * Default Door constructor

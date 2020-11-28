@@ -4,6 +4,9 @@ import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.AreaBehavior;
 import ch.epfl.cs107.play.game.areagame.actor.Interactable;
 import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
+import ch.epfl.cs107.play.game.superpacman.actor.Bonus;
+import ch.epfl.cs107.play.game.superpacman.actor.Cherry;
+import ch.epfl.cs107.play.game.superpacman.actor.Diamond;
 import ch.epfl.cs107.play.game.superpacman.actor.Wall;
 import ch.epfl.cs107.play.game.tutosSolution.Tuto2Behavior;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
@@ -43,20 +46,32 @@ public class SuperPacmanBehavior extends AreaBehavior {
     }
 
     protected void registerActors(Area area){
-        Wall wallActor;
         DiscreteCoordinates coordinates;
         boolean[][] neighborhood;
         int height = getHeight();
         int width = getWidth();
-        for(int x = 0; x < width; ++x )
-        {
+        for(int x = 0; x < width; ++x ) {
             for(int y = 0; y < height; ++y){
                 SuperPacmanCellType color = SuperPacmanCellType.toType(getRGB(height-1-y, x));
                 SuperPacmanCell cell = (SuperPacmanCell)getCell(x,y);
-                if(color == SuperPacmanCellType.WALL){
-                    coordinates = new DiscreteCoordinates(x,y);
-                    wallActor = new Wall(area,coordinates,cell.getWallNeighborhood(x,y));
-                    area.registerActor(wallActor);
+                coordinates = new DiscreteCoordinates(x,y);
+                switch(color){
+                    case WALL:
+                        Wall wallActor = new Wall(area,coordinates,cell.getWallNeighborhood(x,y));
+                        area.registerActor(wallActor);
+                        break;
+                    case FREE_WITH_BONUS:
+                        Bonus bonus = new Bonus();
+                        area.registerActor(bonus);
+                        break;
+                    case FREE_WITH_CHERRY:
+                        Cherry cherry = new Cherry();
+                        area.registerActor(cherry);
+                        break;
+                    case FREE_WITH_DIAMOND:
+                        Diamond diamond = new Diamond();
+                        area.registerActor(diamond);
+                        break;
                 }
             }
         }

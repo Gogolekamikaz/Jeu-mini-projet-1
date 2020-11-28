@@ -8,8 +8,6 @@ import ch.epfl.cs107.play.window.Window;
 
 public abstract class SuperPacmanArea extends Area  {
 
-    private SuperPacmanBehavior behavior;
-
     protected abstract void createArea();
 
     protected final static float cameraScaleFactor = 15.f;
@@ -17,7 +15,7 @@ public abstract class SuperPacmanArea extends Area  {
     public boolean begin(Window window, FileSystem fileSystem) {
         if (super.begin(window, fileSystem)) {
             // Set the behavior map
-            behavior = new SuperPacmanBehavior(window, getTitle());
+            SuperPacmanBehavior behavior = new SuperPacmanBehavior(window, getTitle());
             setBehavior(behavior);
             behavior.registerActors(this);
             createArea();

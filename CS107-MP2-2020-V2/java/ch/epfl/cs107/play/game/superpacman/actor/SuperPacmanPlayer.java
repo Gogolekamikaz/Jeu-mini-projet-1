@@ -26,11 +26,16 @@ public class SuperPacmanPlayer extends Player {
 
     private final static int SPEED = 6;
 
+    private int hp;
+    private int score;
+
     private final SuperPacmanPlayerHandler handler = new SuperPacmanPlayerHandler();
 
     public SuperPacmanPlayer(Area area, Orientation orientation, DiscreteCoordinates coordinates) {
         super(area, orientation, coordinates);
         currentAnimation = animations[Orientation.UP.ordinal()];
+        hp = 3;
+        score = 0;
     }
 
     @Override
@@ -128,7 +133,6 @@ public class SuperPacmanPlayer extends Player {
 
         @Override
         public void interactWith(Door door) {
-
             setIsPassingADoor(door);
         }
     }

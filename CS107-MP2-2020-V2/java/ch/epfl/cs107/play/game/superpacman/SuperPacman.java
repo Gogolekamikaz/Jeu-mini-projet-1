@@ -14,8 +14,6 @@ import ch.epfl.cs107.play.window.Window;
 
 public class SuperPacman extends RPG {
 
-    public final static float STEP = 0.05f;
-
     private SuperPacmanPlayer player;
 
     /**
@@ -41,11 +39,6 @@ public class SuperPacman extends RPG {
     @Override
     public void update(float deltaTime) {
         super.update(deltaTime);
-        if(player.isPassingADoor()){
-            player.leaveArea();
-            Area newArea = setCurrentArea(player.passedDoor().getDestination(),true);
-            player.enterArea(newArea, player.passedDoor().getOtherSideCoordinates());
-        }
     }
 
     @Override

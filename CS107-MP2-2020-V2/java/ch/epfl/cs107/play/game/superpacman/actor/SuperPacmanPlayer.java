@@ -1,15 +1,16 @@
 package ch.epfl.cs107.play.game.superpacman.actor;
 
 import ch.epfl.cs107.play.game.areagame.Area;
+import ch.epfl.cs107.play.game.areagame.actor.Animation;
 import ch.epfl.cs107.play.game.areagame.actor.Interactable;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.areagame.actor.Sprite;
 import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
 import ch.epfl.cs107.play.game.rpg.actor.Door;
 import ch.epfl.cs107.play.game.rpg.actor.Player;
+import ch.epfl.cs107.play.game.rpg.actor.RPGSprite;
 import ch.epfl.cs107.play.game.superpacman.handler.SuperPacmanInteractionVisitor;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
-import ch.epfl.cs107.play.window.Button;
 import ch.epfl.cs107.play.window.Canvas;
 import ch.epfl.cs107.play.window.Keyboard;
 
@@ -18,14 +19,24 @@ import java.util.List;
 
 public class SuperPacmanPlayer extends Player {
 
+    Sprite [][] sprites = RPGSprite.extractSprites ("superpacman/pacman",4, 1, 1, this , 64, 64, new Orientation [] { Orientation .DOWN , Orientation.LEFT , Orientation .UP , Orientation.RIGHT });
+    // crée un tableau de 4 animation
+    Animation[] animations = Animation.createAnimations(SPEED/2, sprites );
+    Animation currentAnimation;
 
-
-    private Sprite sprite;
     private final static int SPEED = 6;
+
+    private final SuperPacmanPlayerHandler handler = new SuperPacmanPlayerHandler();
+
+    public SuperPacmanPlayer(Area area, Orientation orientation, DiscreteCoordinates coordinates) {
+        super(area, orientation, coordinates);
+        currentAnimation = animations[Orientation.UP.ordinal()];
+    }
 
     @Override
     public void draw(Canvas canvas) {
-        sprite.draw(canvas);
+        //sprite.draw(canvas);
+        currentAnimation.draw(canvas);
     }
 
     @Override
@@ -33,17 +44,22 @@ public class SuperPacmanPlayer extends Player {
         Keyboard keyboard= getOwnerArea().getKeyboard();
         super.update(deltaTime);
 
-
-
         Orientation desiredOrientation = this.getDesiredOrientation(keyboard);
         if(desiredOrientation != null) {
             System.out.println("Displacement occur ? : " + this.isDisplacementOccurs());
             System.out.println("Can enter : " + this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector()))));
-            if (this.isDisplacementOccurs() == false && this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector()))) == true) {
+            if (!this.isDisplacementOccurs() && this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector())))) {
                 this.orientate(desiredOrientation);
+                currentAnimation = animations[desiredOrientation.ordinal()];
                 this.move(SPEED);
 
             }
+        }
+
+        if(isDisplacementOccurs()){
+            currentAnimation.update(deltaTime);
+        } else {
+            currentAnimation.reset();
         }
     }
 
@@ -61,11 +77,6 @@ public class SuperPacmanPlayer extends Player {
             return Orientation.DOWN;
         }
         return null;
-    }
-
-    public SuperPacmanPlayer(Area area, Orientation orientation, DiscreteCoordinates coordinates) {
-        super(area, orientation, coordinates);
-        sprite = new Sprite("superpacman/bonus", 1.f, 1.f,this);
     }
 
     @Override
@@ -90,7 +101,7 @@ public class SuperPacmanPlayer extends Player {
 
     @Override
     public void interactWith(Interactable other) {
-
+        other.acceptInteraction(handler);
     }
 
     @Override
@@ -109,8 +120,8 @@ public class SuperPacmanPlayer extends Player {
     }
 
     @Override
-    public void acceptInteraction ( AreaInteractionVisitor v) {
-        (( SuperPacmanInteractionVisitor )v). interactWith (this );
+    public void acceptInteraction (AreaInteractionVisitor v) {
+        ((SuperPacmanInteractionVisitor)v).interactWith(this );
     }
 
     private class SuperPacmanPlayerHandler implements SuperPacmanInteractionVisitor {

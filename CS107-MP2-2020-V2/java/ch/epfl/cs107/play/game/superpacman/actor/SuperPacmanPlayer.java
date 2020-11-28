@@ -1,5 +1,7 @@
 package ch.epfl.cs107.play.game.superpacman.actor;
 
+import ch.epfl.cs107.play.game.actor.ImageGraphics;
+import ch.epfl.cs107.play.game.actor.TextGraphics;
 import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.actor.Animation;
 import ch.epfl.cs107.play.game.areagame.actor.Interactable;
@@ -11,9 +13,11 @@ import ch.epfl.cs107.play.game.rpg.actor.Player;
 import ch.epfl.cs107.play.game.rpg.actor.RPGSprite;
 import ch.epfl.cs107.play.game.superpacman.handler.SuperPacmanInteractionVisitor;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
+import ch.epfl.cs107.play.math.Vector;
 import ch.epfl.cs107.play.window.Canvas;
 import ch.epfl.cs107.play.window.Keyboard;
 
+import java.awt.*;
 import java.util.Collections;
 import java.util.List;
 
@@ -24,24 +28,23 @@ public class SuperPacmanPlayer extends Player {
     Animation[] animations = Animation.createAnimations(SPEED/2, sprites );
     Animation currentAnimation;
 
+    SuperPacmanPlayerStatusGUI status;
+
     private final static int SPEED = 6;
 
-    private int hp;
-    private int score;
 
     private final SuperPacmanPlayerHandler handler = new SuperPacmanPlayerHandler();
 
     public SuperPacmanPlayer(Area area, Orientation orientation, DiscreteCoordinates coordinates) {
         super(area, orientation, coordinates);
         currentAnimation = animations[Orientation.UP.ordinal()];
-        hp = 3;
-        score = 0;
+        status = new SuperPacmanPlayerStatusGUI(area, this);
     }
 
     @Override
     public void draw(Canvas canvas) {
-        //sprite.draw(canvas);
         currentAnimation.draw(canvas);
+        status.draw(canvas);
     }
 
     @Override
@@ -67,6 +70,7 @@ public class SuperPacmanPlayer extends Player {
             currentAnimation.reset();
         }
     }
+
 
     private Orientation getDesiredOrientation(Keyboard keyboard){
         if(keyboard.get(Keyboard.LEFT).isDown()){

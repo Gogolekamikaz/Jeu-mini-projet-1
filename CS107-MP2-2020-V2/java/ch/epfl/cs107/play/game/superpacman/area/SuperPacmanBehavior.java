@@ -4,11 +4,10 @@ import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.AreaBehavior;
 import ch.epfl.cs107.play.game.areagame.actor.Interactable;
 import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
-import ch.epfl.cs107.play.game.superpacman.actor.Bonus;
+/*import ch.epfl.cs107.play.game.superpacman.actor.Bonus;
 import ch.epfl.cs107.play.game.superpacman.actor.Cherry;
-import ch.epfl.cs107.play.game.superpacman.actor.Diamond;
+import ch.epfl.cs107.play.game.superpacman.actor.Diamond;*/
 import ch.epfl.cs107.play.game.superpacman.actor.Wall;
-import ch.epfl.cs107.play.game.tutosSolution.Tuto2Behavior;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.window.Window;
 
@@ -61,16 +60,16 @@ public class SuperPacmanBehavior extends AreaBehavior {
                         area.registerActor(wallActor);
                         break;
                     case FREE_WITH_BONUS:
-                        Bonus bonus = new Bonus();
-                        area.registerActor(bonus);
+                        //Bonus bonus = new Bonus();
+                        //area.registerActor(bonus);
                         break;
                     case FREE_WITH_CHERRY:
-                        Cherry cherry = new Cherry();
-                        area.registerActor(cherry);
+                        //Cherry cherry = new Cherry();
+                        //area.registerActor(cherry);
                         break;
                     case FREE_WITH_DIAMOND:
-                        Diamond diamond = new Diamond();
-                        area.registerActor(diamond);
+                        //Diamond diamond = new Diamond();
+                        //area.registerActor(diamond);
                         break;
                 }
             }

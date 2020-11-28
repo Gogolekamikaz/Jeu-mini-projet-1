@@ -169,7 +169,7 @@ public class Wall extends AreaEntity{
 
 	@Override
 	public boolean isCellInteractable() {
-		return false;
+		return true;
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 package ch.epfl.cs107.play.game.superpacman;
 
+import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.rpg.RPG;
 import ch.epfl.cs107.play.game.rpg.actor.Player;
@@ -40,13 +41,18 @@ public class SuperPacman extends RPG {
     @Override
     public void update(float deltaTime) {
         super.update(deltaTime);
+        if(player.isPassingADoor()){
+            player.leaveArea();
+            Area newArea = setCurrentArea(player.passedDoor().getDestination(),true);
+            player.enterArea(newArea, player.passedDoor().getOtherSideCoordinates());
+        }
     }
 
     @Override
     public boolean begin(Window window, FileSystem fileSystem) {
         if (super.begin(window, fileSystem)) {
             createAreas();
-            SuperPacmanArea area = (SuperPacmanArea)setCurrentArea("superpacman/Level0", true);
+            SuperPacmanArea area = (SuperPacmanArea)setCurrentArea("superpacman/Level1", true);
             player = new SuperPacmanPlayer(area, Orientation.UP, area.getSpawnPoint());
             initPlayer(player);
             return true;

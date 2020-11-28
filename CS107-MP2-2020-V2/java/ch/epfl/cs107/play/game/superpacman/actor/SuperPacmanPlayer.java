@@ -128,8 +128,9 @@ public class SuperPacmanPlayer extends Player {
 
         @Override
         public void interactWith(Door door) {
+
             setIsPassingADoor(door);
-            System.out.println("on interagit");
+            System.out.println("On intéragit");
         }
     }
 }

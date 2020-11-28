@@ -130,7 +130,6 @@ public class SuperPacmanPlayer extends Player {
         public void interactWith(Door door) {
 
             setIsPassingADoor(door);
-            System.out.println("On intéragit");
         }
     }
 }

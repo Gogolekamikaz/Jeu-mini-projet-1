@@ -4,15 +4,20 @@ import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.AreaBehavior;
 import ch.epfl.cs107.play.game.areagame.actor.Interactable;
 import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
-/*import ch.epfl.cs107.play.game.superpacman.actor.Bonus;
+import ch.epfl.cs107.play.game.superpacman.actor.Bonus;
 import ch.epfl.cs107.play.game.superpacman.actor.Cherry;
-import ch.epfl.cs107.play.game.superpacman.actor.Diamond;*/
+import ch.epfl.cs107.play.game.superpacman.actor.Diamond;
 import ch.epfl.cs107.play.game.superpacman.actor.Wall;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.window.Window;
 
+import java.util.ArrayList;
+
 public class SuperPacmanBehavior extends AreaBehavior {
+
     public enum SuperPacmanCellType {
+
+
 
         //https://stackoverflow.com/questions/25761438/understanding-bufferedimage-getrgb-output-values
         NONE(0), // never used as real content
@@ -46,7 +51,6 @@ public class SuperPacmanBehavior extends AreaBehavior {
 
     protected void registerActors(Area area){
         DiscreteCoordinates coordinates;
-        boolean[][] neighborhood;
         int height = getHeight();
         int width = getWidth();
         for(int x = 0; x < width; ++x ) {
@@ -60,16 +64,18 @@ public class SuperPacmanBehavior extends AreaBehavior {
                         area.registerActor(wallActor);
                         break;
                     case FREE_WITH_BONUS:
-                        //Bonus bonus = new Bonus();
-                        //area.registerActor(bonus);
+                        Bonus bonus = new Bonus(area, coordinates);
+                        area.registerActor(bonus);
                         break;
                     case FREE_WITH_CHERRY:
-                        //Cherry cherry = new Cherry();
-                        //area.registerActor(cherry);
+                        Cherry cherry = new Cherry(area, coordinates);
+                        area.registerActor(cherry);
                         break;
                     case FREE_WITH_DIAMOND:
-                        //Diamond diamond = new Diamond();
-                        //area.registerActor(diamond);
+                        Diamond diamond = new Diamond(area, coordinates);
+                        area.registerActor(diamond);
+                        SuperPacmanArea areaOfDiamonds = (SuperPacmanArea)area;
+                        areaOfDiamonds.addDiamond(diamond);
                         break;
                 }
             }
@@ -86,8 +92,6 @@ public class SuperPacmanBehavior extends AreaBehavior {
     public SuperPacmanBehavior(Window window, String name) {
         super(window, name);
 
-
-        // - Code ci-dessous probablement inutile, à vérifier.
         int height = getHeight();
         int width = getWidth();
         for(int y = 0; y < height; y++) {
@@ -98,6 +102,7 @@ public class SuperPacmanBehavior extends AreaBehavior {
         }
 
     }
+
 
     public class SuperPacmanCell extends AreaBehavior.Cell{
 

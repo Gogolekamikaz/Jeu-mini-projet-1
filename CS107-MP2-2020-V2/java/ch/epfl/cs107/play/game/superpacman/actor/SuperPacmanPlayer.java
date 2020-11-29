@@ -1,10 +1,7 @@
 package ch.epfl.cs107.play.game.superpacman.actor;
 
 import ch.epfl.cs107.play.game.areagame.Area;
-import ch.epfl.cs107.play.game.areagame.actor.Animation;
-import ch.epfl.cs107.play.game.areagame.actor.Interactable;
-import ch.epfl.cs107.play.game.areagame.actor.Orientation;
-import ch.epfl.cs107.play.game.areagame.actor.Sprite;
+import ch.epfl.cs107.play.game.areagame.actor.*;
 import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
 import ch.epfl.cs107.play.game.rpg.actor.Door;
 import ch.epfl.cs107.play.game.rpg.actor.Player;
@@ -18,12 +15,12 @@ import java.util.List;
 
 public class SuperPacmanPlayer extends Player {
 
-    Sprite [][] sprites = RPGSprite.extractSprites ("superpacman/pacman",4, 1, 1, this , 64, 64, new Orientation [] { Orientation .DOWN , Orientation.LEFT , Orientation .UP , Orientation.RIGHT });
+    private Sprite [][] sprites = RPGSprite.extractSprites ("superpacman/pacman",4, 1, 1, this , 64, 64, new Orientation [] { Orientation .DOWN , Orientation.LEFT , Orientation .UP , Orientation.RIGHT });
     // crée un tableau de 4 animation
-    Animation[] animations = Animation.createAnimations(SPEED/2, sprites );
-    Animation currentAnimation;
+    private Animation[] animations = Animation.createAnimations(SPEED/2, sprites );
+    private Animation currentAnimation;
 
-    SuperPacmanPlayerStatusGUI status;
+    private SuperPacmanPlayerStatusGUI status;
 
     private final static int SPEED = 6;
 
@@ -33,7 +30,7 @@ public class SuperPacmanPlayer extends Player {
     public SuperPacmanPlayer(Area area, Orientation orientation, DiscreteCoordinates coordinates) {
         super(area, orientation, coordinates);
         currentAnimation = animations[Orientation.UP.ordinal()];
-        status = new SuperPacmanPlayerStatusGUI(area, this);
+        status = new SuperPacmanPlayerStatusGUI(this);
     }
 
     @Override
@@ -49,8 +46,8 @@ public class SuperPacmanPlayer extends Player {
 
         Orientation desiredOrientation = this.getDesiredOrientation(keyboard);
         if(desiredOrientation != null) {
-            System.out.println("Displacement occur ? : " + this.isDisplacementOccurs());
-            System.out.println("Can enter : " + this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector()))));
+            //System.out.println("Displacement occur ? : " + this.isDisplacementOccurs());
+            //System.out.println("Can enter : " + this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector()))));
             if (!this.isDisplacementOccurs() && this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector())))) {
                 this.orientate(desiredOrientation);
                 currentAnimation = animations[desiredOrientation.ordinal()];
@@ -133,6 +130,17 @@ public class SuperPacmanPlayer extends Player {
         @Override
         public void interactWith(Door door) {
             setIsPassingADoor(door);
+        }
+
+        @Override
+        public void interactWith(CollectableAreaEntity entity){
+            entity.pickActor();
+            status.increaseScore(entity.getPOINTS_GIVEN());
+        }
+
+        @Override
+        public void interactWith(Key key){
+
         }
     }
 }

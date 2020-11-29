@@ -12,8 +12,6 @@ import java.util.ArrayList;
 
 public abstract class SuperPacmanArea extends Area implements Logic {
 
-    private ArrayList<Diamond> diamonds = new ArrayList<>();
-
     protected abstract void createArea();
 
     protected final static float cameraScaleFactor = 15.f;
@@ -34,29 +32,19 @@ public abstract class SuperPacmanArea extends Area implements Logic {
 
     public abstract DiscreteCoordinates getSpawnPoint();
 
-    protected void addDiamond(Diamond diamond){ diamonds.add(diamond); }
-
-
-    //TODO : is not working
     @Override
     public boolean isOn() {
-        for (Diamond diamond : diamonds) {
-            if(!exists(diamond)){
-                return false;
-            }
+        if(contains(new Diamond(this, new DiscreteCoordinates(0,0)))){
+            return false;
         }
-
         return true;
     }
 
     @Override
     public boolean isOff() {
-        for (Diamond diamond : diamonds) {
-            if(!exists(diamond)){
-                return true;
-            }
+        if(contains(new Diamond(this, new DiscreteCoordinates(0,0)))){
+            return true;
         }
-
         return false;
     }
 

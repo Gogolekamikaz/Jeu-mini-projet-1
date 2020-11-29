@@ -11,7 +11,6 @@ import ch.epfl.cs107.play.game.superpacman.actor.Wall;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.window.Window;
 
-import java.util.ArrayList;
 
 public class SuperPacmanBehavior extends AreaBehavior {
 
@@ -49,7 +48,7 @@ public class SuperPacmanBehavior extends AreaBehavior {
         }
     }
 
-    protected void registerActors(Area area){
+    protected void registerActors(SuperPacmanArea area){
         DiscreteCoordinates coordinates;
         int height = getHeight();
         int width = getWidth();
@@ -74,8 +73,6 @@ public class SuperPacmanBehavior extends AreaBehavior {
                     case FREE_WITH_DIAMOND:
                         Diamond diamond = new Diamond(area, coordinates);
                         area.registerActor(diamond);
-                        SuperPacmanArea areaOfDiamonds = (SuperPacmanArea)area;
-                        areaOfDiamonds.addDiamond(diamond);
                         break;
                 }
             }

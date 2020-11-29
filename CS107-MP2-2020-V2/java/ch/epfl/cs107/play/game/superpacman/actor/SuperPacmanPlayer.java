@@ -61,6 +61,7 @@ public class SuperPacmanPlayer extends Player {
         } else {
             currentAnimation.reset();
         }
+
     }
 
 

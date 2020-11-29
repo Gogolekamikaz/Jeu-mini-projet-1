@@ -15,7 +15,10 @@ import java.util.List;
 
 public class Gate extends AreaEntity {
 
-    private Logic logic;
+    private Logic logic1;
+    private Logic logic2;
+
+    private boolean isOpen;
 
     /**
      * Default AreaEntity constructor
@@ -26,13 +29,22 @@ public class Gate extends AreaEntity {
      */
     public Gate(Area area, Orientation orientation, DiscreteCoordinates position, Logic logic) {
         super(area, orientation, position);
-        this.logic = logic;
+        this.logic1 = logic;
+        this.logic2 = Logic.TRUE;
+        isOpen = false;
+    }
+
+    public Gate(Area area, Orientation orientation, DiscreteCoordinates position, Logic logic1, Logic logic2) {
+        super(area, orientation, position);
+        this.logic1 = logic1;
+        this.logic2 = logic2;
+        isOpen = false;
     }
 
     @Override
     public void draw(Canvas canvas) {
 
-        if(logic.isOff()){
+        if(!isOpen){
             Sprite sprite;
 
             if(getOrientation() == Orientation.DOWN || getOrientation() == Orientation.UP){
@@ -53,7 +65,7 @@ public class Gate extends AreaEntity {
 
     @Override
     public boolean takeCellSpace() {
-        return logic.isOff();
+        return !isOpen;
     }
 
     @Override
@@ -73,7 +85,10 @@ public class Gate extends AreaEntity {
 
     @Override
     public void update(float deltaTime) {
-
+        if(logic1.isOff() || logic2.isOff()){
+            isOpen = false;
+        } else {
+            isOpen = true;
+        }
     }
-
 }

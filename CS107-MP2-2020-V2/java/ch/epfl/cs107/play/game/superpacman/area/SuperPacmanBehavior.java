@@ -1,6 +1,5 @@
 package ch.epfl.cs107.play.game.superpacman.area;
 
-import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.AreaBehavior;
 import ch.epfl.cs107.play.game.areagame.actor.Interactable;
 import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
@@ -15,8 +14,6 @@ import ch.epfl.cs107.play.window.Window;
 public class SuperPacmanBehavior extends AreaBehavior {
 
     public enum SuperPacmanCellType {
-
-
 
         //https://stackoverflow.com/questions/25761438/understanding-bufferedimage-getrgb-output-values
         NONE(0), // never used as real content

@@ -21,8 +21,11 @@ public class SuperPacmanPlayer extends Player {
     private Animation currentAnimation;
 
     private SuperPacmanPlayerStatusGUI status;
+    private int hp;
+    private int score;
 
     private final static int SPEED = 6;
+    private Orientation desiredOrientation;
 
 
     private final SuperPacmanPlayerHandler handler = new SuperPacmanPlayerHandler();
@@ -31,6 +34,8 @@ public class SuperPacmanPlayer extends Player {
         super(area, orientation, coordinates);
         currentAnimation = animations[Orientation.UP.ordinal()];
         status = new SuperPacmanPlayerStatusGUI(this);
+        hp = 3;
+        score = 0;
     }
 
     @Override
@@ -46,14 +51,14 @@ public class SuperPacmanPlayer extends Player {
 
         Orientation desiredOrientation = this.getDesiredOrientation(keyboard);
         if(desiredOrientation != null) {
-            //System.out.println("Displacement occur ? : " + this.isDisplacementOccurs());
-            //System.out.println("Can enter : " + this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector()))));
             if (!this.isDisplacementOccurs() && this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector())))) {
                 this.orientate(desiredOrientation);
                 currentAnimation = animations[desiredOrientation.ordinal()];
                 this.move(SPEED);
 
             }
+        } else {
+            this.move(SPEED);
         }
 
         if(isDisplacementOccurs()){
@@ -80,6 +85,15 @@ public class SuperPacmanPlayer extends Player {
         }
         return null;
     }
+
+    public int getScore(){ return score;}
+
+    public void increaseScore(int scorePoint){
+        score += scorePoint;
+    }
+
+    public int getHealth(){ return hp;}
+
 
     @Override
     public List<DiscreteCoordinates> getCurrentCells() {
@@ -136,7 +150,7 @@ public class SuperPacmanPlayer extends Player {
         @Override
         public void interactWith(CollectableAreaEntity entity){
             entity.pickActor();
-            status.increaseScore(entity.getPOINTS_GIVEN());
+            increaseScore(entity.getPOINTS_GIVEN());
         }
 
         @Override

@@ -1,5 +1,6 @@
 package ch.epfl.cs107.play.game.superpacman.area;
 
+import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.rpg.actor.Door;
 import ch.epfl.cs107.play.game.superpacman.actor.Gate;
@@ -28,11 +29,11 @@ public class Level0 extends SuperPacmanArea {
         }
 
     }
-
     @Override
     public DiscreteCoordinates getSpawnPoint() {
         return PLAYER_SPAWN_POSITION;
     }
+
 
     @Override
     public String getTitle() {

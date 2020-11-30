@@ -6,8 +6,11 @@ import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
 import ch.epfl.cs107.play.game.rpg.actor.Door;
 import ch.epfl.cs107.play.game.rpg.actor.Player;
 import ch.epfl.cs107.play.game.rpg.actor.RPGSprite;
+import ch.epfl.cs107.play.game.rpg.actor.Sign;
+import ch.epfl.cs107.play.game.superpacman.area.Level0;
 import ch.epfl.cs107.play.game.superpacman.handler.SuperPacmanInteractionVisitor;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
+import ch.epfl.cs107.play.math.Vector;
 import ch.epfl.cs107.play.window.Canvas;
 import ch.epfl.cs107.play.window.Keyboard;
 import java.util.Collections;
@@ -28,6 +31,7 @@ public class SuperPacmanPlayer extends Player {
     private int timer = 6;
     private final static int SPEED = 6;
     private Orientation desiredOrientation;
+    private boolean isEaten = false;
 
 
     private final SuperPacmanPlayerHandler handler = new SuperPacmanPlayerHandler();
@@ -103,6 +107,24 @@ public class SuperPacmanPlayer extends Player {
 
     public int getHealth(){ return hp;}
 
+    public boolean isEaten(){
+        return isEaten;
+    }
+
+    public void setBeginningPosition(Area area){
+        if(area.getTitle() == "superpacman/Level0"){
+            Vector spawnPosition = new Vector(10,1);
+            setCurrentPosition(spawnPosition);
+        }
+        else if(area.getTitle() == "superpacman/Level1"){
+            Vector spawnPosition = new Vector(15,6);
+            setCurrentPosition(spawnPosition);
+        }
+        else if(area.getTitle() == "superpacman/Level2") {
+            Vector spawnPosition = new Vector(15, 29);
+            setCurrentPosition(spawnPosition);
+        }
+    }
 
     @Override
     public List<DiscreteCoordinates> getCurrentCells() {
@@ -173,6 +195,17 @@ public class SuperPacmanPlayer extends Player {
                 isInvincible = true;
             }
 
+        }
+        
+        public void interactWith(Ghost ghost) {
+            if(isInvincible()){
+                ghost.setPositionRefuge();
+                increaseScore(ghost.getGHOST_SCORE()); //Si invicible, on mange le fantôme il nous rapporte donc des points
+            }
+            else{
+                hp -= 1;
+                isEaten = true;
+            }
         }
 
         @Override

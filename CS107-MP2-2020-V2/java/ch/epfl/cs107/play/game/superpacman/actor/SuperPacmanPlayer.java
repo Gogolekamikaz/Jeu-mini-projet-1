@@ -20,10 +20,12 @@ public class SuperPacmanPlayer extends Player {
     private Animation[] animations = Animation.createAnimations(SPEED/2, sprites );
     private Animation currentAnimation;
 
+    private boolean isInvincible = false;
+
     private SuperPacmanPlayerStatusGUI status;
     private int hp;
     private int score;
-
+    private int timer = 6;
     private final static int SPEED = 6;
     private Orientation desiredOrientation;
 
@@ -60,11 +62,18 @@ public class SuperPacmanPlayer extends Player {
         } else {
             this.move(SPEED);
         }
-
         if(isDisplacementOccurs()){
             currentAnimation.update(deltaTime);
         } else {
             currentAnimation.reset();
+        }
+
+        if(isInvincible == true){
+            timer -= deltaTime;
+            if(timer == 0){
+                isInvincible = false;
+                timer = 10;
+            }
         }
 
     }
@@ -140,6 +149,15 @@ public class SuperPacmanPlayer extends Player {
         ((SuperPacmanInteractionVisitor)v).interactWith(this );
     }
 
+    public boolean isInvincible(){
+        if(isInvincible == true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     private class SuperPacmanPlayerHandler implements SuperPacmanInteractionVisitor {
 
         @Override
@@ -151,6 +169,10 @@ public class SuperPacmanPlayer extends Player {
         public void interactWith(CollectableAreaEntity entity){
             entity.pickActor();
             increaseScore(entity.getPOINTS_GIVEN());
+            if(entity instanceof Bonus){
+                isInvincible = true;
+            }
+
         }
 
         @Override

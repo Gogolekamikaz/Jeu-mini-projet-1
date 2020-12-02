@@ -31,7 +31,6 @@ public class SuperPacmanPlayer extends Player {
     private int timer = 6;
     private final static int SPEED = 6;
     private Orientation desiredOrientation;
-    private boolean isEaten = false;
 
 
     private final SuperPacmanPlayerHandler handler = new SuperPacmanPlayerHandler();
@@ -72,15 +71,32 @@ public class SuperPacmanPlayer extends Player {
             currentAnimation.reset();
         }
 
-        if(isInvincible == true){
+        if(isInvincible){
             timer -= deltaTime;
             if(timer == 0){
                 isInvincible = false;
                 timer = 10;
             }
         }
-
     }
+
+    private void respawnPlayer(){
+
+        if(getOwnerArea().getTitle() == "superpacman/Level0"){
+            Vector spawnPosition = new Vector(10,1);
+            setCurrentPosition(spawnPosition);
+        }
+        else if(getOwnerArea().getTitle() == "superpacman/Level1"){
+            Vector spawnPosition = new Vector(15,6);
+            setCurrentPosition(spawnPosition);
+        }
+        else if(getOwnerArea().getTitle() == "superpacman/Level2") {
+            Vector spawnPosition = new Vector(15, 29);
+            setCurrentPosition(spawnPosition);
+        }
+    }
+
+
 
 
     private Orientation getDesiredOrientation(Keyboard keyboard){
@@ -107,24 +123,6 @@ public class SuperPacmanPlayer extends Player {
 
     public int getHealth(){ return hp;}
 
-    public boolean isEaten(){
-        return isEaten;
-    }
-
-    public void setBeginningPosition(Area area){
-        if(area.getTitle() == "superpacman/Level0"){
-            Vector spawnPosition = new Vector(10,1);
-            setCurrentPosition(spawnPosition);
-        }
-        else if(area.getTitle() == "superpacman/Level1"){
-            Vector spawnPosition = new Vector(15,6);
-            setCurrentPosition(spawnPosition);
-        }
-        else if(area.getTitle() == "superpacman/Level2") {
-            Vector spawnPosition = new Vector(15, 29);
-            setCurrentPosition(spawnPosition);
-        }
-    }
 
     @Override
     public List<DiscreteCoordinates> getCurrentCells() {
@@ -196,7 +194,7 @@ public class SuperPacmanPlayer extends Player {
             }
 
         }
-        
+
         public void interactWith(Ghost ghost) {
             if(isInvincible()){
                 ghost.forgetPacman();
@@ -205,7 +203,7 @@ public class SuperPacmanPlayer extends Player {
             }
             else{
                 hp -= 1;
-                isEaten = true;
+                respawnPlayer();
             }
         }
 

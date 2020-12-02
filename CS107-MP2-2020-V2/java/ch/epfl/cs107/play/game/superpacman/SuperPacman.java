@@ -7,10 +7,7 @@ import ch.epfl.cs107.play.game.rpg.actor.Player;
 import ch.epfl.cs107.play.game.superpacman.actor.Blinky;
 import ch.epfl.cs107.play.game.superpacman.actor.Ghost;
 import ch.epfl.cs107.play.game.superpacman.actor.SuperPacmanPlayer;
-import ch.epfl.cs107.play.game.superpacman.area.Level0;
-import ch.epfl.cs107.play.game.superpacman.area.Level1;
-import ch.epfl.cs107.play.game.superpacman.area.Level2;
-import ch.epfl.cs107.play.game.superpacman.area.SuperPacmanArea;
+import ch.epfl.cs107.play.game.superpacman.area.*;
 import ch.epfl.cs107.play.io.FileSystem;
 import ch.epfl.cs107.play.window.Window;
 
@@ -21,7 +18,7 @@ public class SuperPacman extends RPG {
     private SuperPacmanPlayer player;
     private SuperPacmanArea area;
 
-    private ArrayList<Ghost> ghostActors = area.getAreaGhostActors();
+    private ArrayList<Ghost> ghostActors;
 
     /**
      * Add all the areas
@@ -46,10 +43,10 @@ public class SuperPacman extends RPG {
     @Override
     public void update(float deltaTime) {
         super.update(deltaTime);
-        if(player.isEaten()) {
-            player.setBeginningPosition(getCurrentArea());
-        }
-        if(player.isInvincible()){
+
+        ghostActors = area.getAreaGhostActors();
+
+        if(player.isInvincible() && SuperPacmanBehavior.ghostActorsExist(ghostActors)){
             for(Ghost ghost : ghostActors){
                 ghost.setAfraid();
             }
@@ -61,7 +58,7 @@ public class SuperPacman extends RPG {
     public boolean begin(Window window, FileSystem fileSystem) {
         if (super.begin(window, fileSystem)) {
             createAreas();
-            area = (SuperPacmanArea)setCurrentArea("superpacman/Level0", true);
+            area = (SuperPacmanArea)setCurrentArea("superpacman/Level1", true);
             player = new SuperPacmanPlayer(area, Orientation.UP, area.getSpawnPoint());
             initPlayer(player);
             return true;

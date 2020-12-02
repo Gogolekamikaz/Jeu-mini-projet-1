@@ -78,7 +78,7 @@ public class SuperPacmanBehavior extends AreaBehavior {
                         area.registerActor(diamond);
                         break;
                     case FREE_WITH_BLINKY:
-                        Blinky blinky = new Blinky(area, Orientation.DOWN, coordinates);
+                        Blinky blinky = new Blinky(area, Orientation.UP, coordinates);
                         area.registerActor(blinky);
                         ghostActors.add(blinky);
 
@@ -89,7 +89,14 @@ public class SuperPacmanBehavior extends AreaBehavior {
     public ArrayList<Ghost> getGhostActors(){
         return ghostActors;
     }
-
+    public static boolean ghostActorsExist(ArrayList<Ghost> arraylist){
+        if(arraylist.size() > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 
     /**
      * Default AreaBehavior Constructor

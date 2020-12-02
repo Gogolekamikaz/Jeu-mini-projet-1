@@ -41,6 +41,9 @@ public interface SuperPacmanInteractionVisitor extends RPGInteractionVisitor {
     default void interactWith(CollectableAreaEntity entity){
     }
 
+    default void interactWith(Ghost ghost){
+    }
+
     /**
      * Simulate and interaction between RPG Interactor and a Key
      * @param key (Key), not null

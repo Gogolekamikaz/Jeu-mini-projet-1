@@ -199,6 +199,7 @@ public class SuperPacmanPlayer extends Player {
         
         public void interactWith(Ghost ghost) {
             if(isInvincible()){
+                ghost.forgetPacman();
                 ghost.setPositionRefuge();
                 increaseScore(ghost.getGHOST_SCORE()); //Si invicible, on mange le fantôme il nous rapporte donc des points
             }

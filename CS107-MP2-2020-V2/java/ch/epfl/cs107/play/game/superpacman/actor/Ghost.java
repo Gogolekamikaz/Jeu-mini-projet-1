@@ -11,24 +11,25 @@ import ch.epfl.cs107.play.window.Canvas;
 import java.util.List;
 
 public class Ghost extends MovableAreaEntity implements Interactor {
-    private final int GHOST_SCORE = 500;
-    private Sprite sprite;
+    protected final int GHOST_SCORE = 500;
+    protected Sprite sprite;
 
     SuperPacmanPlayer viewedPlayer;
-    private Vector positionRefuge;
+    protected Vector positionRefuge;
     Orientation orientation;
+    boolean isAfraid = true;
 
     public void update(float deltaTime) {
         super.update(deltaTime);
 
         if(isDisplacementOccurs()){
-
+            
         }
         else{
             orientation = getNextOrientation();
         }
     }
-    
+
     public Ghost(Area area, Orientation orientation, DiscreteCoordinates position) {
         super(area, orientation, position);
 
@@ -43,13 +44,14 @@ public class Ghost extends MovableAreaEntity implements Interactor {
         return orientation;
     }
 
-    public boolean isAfraid(SuperPacmanPlayer player) {
-        if (player.isInvincible()) {
-            return true;
-        } else {
-            return false;
-        }
+    public void setAfraid(){
+        isAfraid = true;
     }
+
+    public void forgetPacman(){
+        this.viewedPlayer = null;
+    }
+
     public int getGHOST_SCORE(){
         return GHOST_SCORE;
     }

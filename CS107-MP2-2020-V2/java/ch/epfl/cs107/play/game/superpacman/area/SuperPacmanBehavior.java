@@ -1,14 +1,16 @@
 package ch.epfl.cs107.play.game.superpacman.area;
 
+import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.AreaBehavior;
 import ch.epfl.cs107.play.game.areagame.actor.Interactable;
+import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
-import ch.epfl.cs107.play.game.superpacman.actor.Bonus;
-import ch.epfl.cs107.play.game.superpacman.actor.Cherry;
-import ch.epfl.cs107.play.game.superpacman.actor.Diamond;
-import ch.epfl.cs107.play.game.superpacman.actor.Wall;
+import ch.epfl.cs107.play.game.superpacman.actor.*;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.window.Window;
+
+import javax.swing.plaf.basic.BasicListUI;
+import java.util.ArrayList;
 
 
 public class SuperPacmanBehavior extends AreaBehavior {
@@ -29,6 +31,8 @@ public class SuperPacmanBehavior extends AreaBehavior {
 
         final int type;
 
+
+
         SuperPacmanCellType(int type) {
             this.type = type;
         }
@@ -44,6 +48,8 @@ public class SuperPacmanBehavior extends AreaBehavior {
 
         }
     }
+
+    ArrayList<Ghost> ghostActors = new ArrayList<Ghost>();
 
     protected void registerActors(SuperPacmanArea area){
         DiscreteCoordinates coordinates;
@@ -71,9 +77,17 @@ public class SuperPacmanBehavior extends AreaBehavior {
                         Diamond diamond = new Diamond(area, coordinates);
                         area.registerActor(diamond);
                         break;
+                    case FREE_WITH_BLINKY:
+                        Blinky blinky = new Blinky(area, Orientation.DOWN, coordinates);
+                        area.registerActor(blinky);
+                        ghostActors.add(blinky);
+
                 }
             }
         }
+    }
+    public ArrayList<Ghost> getGhostActors(){
+        return ghostActors;
     }
 
 

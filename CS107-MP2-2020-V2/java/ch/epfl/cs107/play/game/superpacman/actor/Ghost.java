@@ -108,13 +108,7 @@ public class Ghost extends MovableAreaEntity implements Interactor {
 
     @Override
     public void draw(Canvas canvas) {
-        try{
-            currentAnimation.draw(canvas);
-        }
-        catch(Exception e){
-
-        }
-
+        currentAnimation.draw(canvas);
     }
 
     @Override

@@ -22,6 +22,9 @@ public class SuperPacmanPlayer extends Player {
     // crée un tableau de 4 animation
     private Animation[] animations = Animation.createAnimations(SPEED/2, sprites );
     private Animation currentAnimation;
+    boolean blockPlayer = false;
+    float blockTimer = 0.5f;
+
 
     private boolean isInvincible = false;
 
@@ -31,6 +34,7 @@ public class SuperPacmanPlayer extends Player {
     public static float timer = 20;
     private final static int SPEED = 6;
     private Orientation desiredOrientation;
+    private DiscreteCoordinates spawnPosition;
 
 
     private final SuperPacmanPlayerHandler handler = new SuperPacmanPlayerHandler();
@@ -82,18 +86,15 @@ public class SuperPacmanPlayer extends Player {
 
     private void respawnPlayer(){
 
-        if(getOwnerArea().getTitle() == "superpacman/Level0"){
-            Vector spawnPosition = new Vector(10,1);
-            setCurrentPosition(spawnPosition);
-        }
-        else if(getOwnerArea().getTitle() == "superpacman/Level1"){
-            Vector spawnPosition = new Vector(15,6);
-            setCurrentPosition(spawnPosition);
+        this.leaveArea();
+        if (getOwnerArea().getTitle() == "superpacman/Level1"){
+            spawnPosition = new DiscreteCoordinates(15,6);
         }
         else if(getOwnerArea().getTitle() == "superpacman/Level2") {
-            Vector spawnPosition = new Vector(15, 29);
-            setCurrentPosition(spawnPosition);
+            spawnPosition = new DiscreteCoordinates(15,29);
         }
+        this.enterArea(getOwnerArea(), spawnPosition);
+
     }
 
 
@@ -203,7 +204,10 @@ public class SuperPacmanPlayer extends Player {
             }
             else{
                 hp -= 1;
+                ghost.setPositionRefuge();
+                ghost.forgetPacman();
                 respawnPlayer();
+
             }
         }
 

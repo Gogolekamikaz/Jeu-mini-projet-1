@@ -17,6 +17,10 @@ public class Ghost extends MovableAreaEntity implements Interactor {
     protected final int GHOST_SCORE = 500;
     protected Sprite sprite;
     private final int viewRadius = 5;
+    float keepOriented = 2;
+
+    public Animation currentAnimation = null;
+    public Animation[] animations = null;
 
     SuperPacmanPlayer viewedPlayer;
     protected Vector positionRefuge;
@@ -26,19 +30,29 @@ public class Ghost extends MovableAreaEntity implements Interactor {
     public void update(float deltaTime) {
         super.update(deltaTime);
 
+        if (isAfraid) {
+            sprite = new Sprite("superpacman/ghost.afraid", 1.f, 1.f, this);
 
         if (isDisplacementOccurs()) {
-            if (isAfraid) {
-                sprite = new Sprite("superpacman/ghost.afraid", 1.f, 1.f, this);
+            currentAnimation.update(deltaTime);
             }
-        } else {
-            orientation = getNextOrientation();
-            move(18);
+
+        } else{
+            currentAnimation.reset();
+            keepOriented -= deltaTime;
+            if (keepOriented < 0){
+                orientation = getNextOrientation();
+                currentAnimation = animations[orientation.ordinal()];
+                this.orientate(orientation);
+                keepOriented = 2;
+                move(18);
+            }
         }
     }
 
-    public Ghost(Area area, Orientation orientation, DiscreteCoordinates position) {
+    public Ghost(Area area, Orientation orientation, DiscreteCoordinates position, Vector positionRefuge) {
         super(area, orientation, position);
+        this.positionRefuge = positionRefuge;
     }
 
     public void setPositionRefuge() {
@@ -64,7 +78,13 @@ public class Ghost extends MovableAreaEntity implements Interactor {
 
     @Override
     public void draw(Canvas canvas) {
-        sprite.draw(canvas);
+        try{
+            currentAnimation.draw(canvas);
+        }
+        catch(Exception e){
+
+        }
+
     }
 
     @Override

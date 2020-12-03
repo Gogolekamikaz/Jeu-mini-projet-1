@@ -28,7 +28,7 @@ public class SuperPacmanPlayer extends Player {
     private SuperPacmanPlayerStatusGUI status;
     private int hp;
     private int score;
-    private int timer = 6;
+    private float timer = 50;
     private final static int SPEED = 6;
     private Orientation desiredOrientation;
 
@@ -71,9 +71,9 @@ public class SuperPacmanPlayer extends Player {
             currentAnimation.reset();
         }
 
-        if(isInvincible){
+        if(isInvincible == true){
             timer -= deltaTime;
-            if(timer == 0){
+            if(timer < 0){
                 isInvincible = false;
                 timer = 10;
             }

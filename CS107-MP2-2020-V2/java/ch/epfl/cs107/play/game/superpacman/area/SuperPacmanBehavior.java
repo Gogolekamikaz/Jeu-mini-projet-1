@@ -7,6 +7,7 @@ import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
 import ch.epfl.cs107.play.game.superpacman.actor.*;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
+import ch.epfl.cs107.play.math.Vector;
 import ch.epfl.cs107.play.window.Window;
 
 import javax.swing.plaf.basic.BasicListUI;
@@ -78,7 +79,8 @@ public class SuperPacmanBehavior extends AreaBehavior {
                         area.registerActor(diamond);
                         break;
                     case FREE_WITH_BLINKY:
-                        Blinky blinky = new Blinky(area, Orientation.UP, coordinates);
+                        Vector positionRefuge = new Vector((float)(x),(float)(y));
+                        Blinky blinky = new Blinky(area, Orientation.UP, coordinates, positionRefuge);
                         area.registerActor(blinky);
                         ghostActors.add(blinky);
 

@@ -28,7 +28,7 @@ public class SuperPacmanPlayer extends Player {
     private SuperPacmanPlayerStatusGUI status;
     private int hp;
     private int score;
-    private float timer = 50;
+    public static float timer = 20;
     private final static int SPEED = 6;
     private Orientation desiredOrientation;
 

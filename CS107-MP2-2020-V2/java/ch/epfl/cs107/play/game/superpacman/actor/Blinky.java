@@ -15,8 +15,9 @@ public class Blinky extends Ghost {
 
     public Blinky(Area area, Orientation orientation, DiscreteCoordinates position, Vector positionRefuge) {
         super(area, orientation, position, positionRefuge);
-        animations = Animation.createAnimations(4,sprites);
-        currentAnimation = animations[Orientation.DOWN.ordinal()];
+        animationsNotScared = Animation.createAnimations(4,sprites);
+        animationNotScared = animationsNotScared[Orientation.DOWN.ordinal()];
+        currentAnimation = animationNotScared;
     }
     @Override
     public void update(float deltaTime) {

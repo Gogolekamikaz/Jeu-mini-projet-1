@@ -48,7 +48,7 @@ public class SuperPacman extends RPG {
 
         if(player.isInvincible() && SuperPacmanBehavior.ghostActorsExist(ghostActors)){
             for(Ghost ghost : ghostActors){
-                ghost.setAfraid();
+                ghost.setAfraid(player);
             }
         }
 

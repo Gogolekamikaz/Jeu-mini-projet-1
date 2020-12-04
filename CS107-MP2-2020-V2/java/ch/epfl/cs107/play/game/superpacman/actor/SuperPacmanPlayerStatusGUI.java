@@ -11,13 +11,13 @@ import ch.epfl.cs107.play.window.Canvas;
 import java.awt.Color;
 
 
-public class SuperPacmanPlayerStatusGUI implements Graphics {
+class SuperPacmanPlayerStatusGUI implements Graphics {
 
     private final int MAX_HEALTH = 5;
 
     private final SuperPacmanPlayer player;
 
-    public SuperPacmanPlayerStatusGUI(SuperPacmanPlayer player){
+    SuperPacmanPlayerStatusGUI(SuperPacmanPlayer player){
         this.player = player;
     }
 

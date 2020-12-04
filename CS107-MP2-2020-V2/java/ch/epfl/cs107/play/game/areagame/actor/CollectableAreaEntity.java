@@ -39,30 +39,6 @@ public abstract class CollectableAreaEntity extends AreaEntity {
         return Collections.singletonList(getCurrentMainCellCoordinates());
     }
 
-    /// CollectableAreaEntity Implements Interactable
-
-    @Override
-    public boolean takeCellSpace() {
-        return false;
-    }
-
-    @Override
-    public boolean isCellInteractable() {
-        return true;
-    }
-
-    @Override
-    public boolean isViewInteractable() {
-        return false;
-    }
-
-    @Override
-    public void acceptInteraction (AreaInteractionVisitor v) {
-        ((SuperPacmanInteractionVisitor)v).interactWith(this );
-    }
-
-    public abstract int getPOINTS_GIVEN();
-
     public boolean isPicked(){ return isPicked; }
 
 }

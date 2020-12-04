@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b8d6f72c-b834-412f-8842-21d938aea8a0" name="Default Changelist" comment="Encapsulation de batard">
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayerStatusGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayerStatusGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/Level0.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/Level0.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.2\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1kl95yYJSeSNFtHwrXcLsZkDeq9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ch.epfl.cs107.play.game.superpacman.userInterface" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Play" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ch.epfl.cs107.play.Play" />
+      <module name="CS107-MP2-2020-V2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ch.epfl.cs107.play.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Play" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8d6f72c-b834-412f-8842-21d938aea8a0" name="Default Changelist" comment="" />
+      <created>1606264133916</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606264133916</updated>
+      <workItem from="1606264134970" duration="453000" />
+      <workItem from="1606264984400" duration="4169000" />
+      <workItem from="1606296187926" duration="12661000" />
+      <workItem from="1606388707672" duration="31359000" />
+      <workItem from="1606558325870" duration="518000" />
+      <workItem from="1606564741178" duration="29526000" />
+      <workItem from="1606643900046" duration="11368000" />
+      <workItem from="1606665063877" duration="6825000" />
+      <workItem from="1606749819657" duration="14411000" />
+      <workItem from="1606838373947" duration="1018000" />
+      <workItem from="1606859360780" duration="11100000" />
+      <workItem from="1607096445878" duration="1039000" />
+    </task>
+    <task id="LOCAL-00001" summary="Enoncé projet pret">
+      <created>1606264291168</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606264291168</updated>
+    </task>
+    <task id="LOCAL-00002" summary="partie 1">
+      <created>1606482151503</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606482151503</updated>
+    </task>
+    <task id="LOCAL-00003" summary="partie 1 player">
+      <created>1606483178773</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606483178773</updated>
+    </task>
+    <task id="LOCAL-00004" summary="partie 1 player enfin">
+      <created>1606483968545</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606483968545</updated>
+    </task>
+    <task id="LOCAL-00005" summary="player suite">
+      <created>1606486736011</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1606486736011</updated>
+    </task>
+    <task id="LOCAL-00006" summary="player suite 2">
+      <created>1606487891574</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606487891574</updated>
+    </task>
+    <task id="LOCAL-00007" summary="player suite 3">
+      <created>1606497137091</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1606497137091</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Vas y Thomas">
+      <created>1606506235773</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1606506235773</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Animations pacman avec porte affichée en rouge mais toujours impossible de la franchir">
+      <created>1606530506971</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1606530506971</updated>
+    </task>
+    <task id="LOCAL-00010" summary="et voila pour les portes qui s'affichent">
+      <created>1606558397468</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1606558397468</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Correction door et creation &#10;*$objets CollectableAreaEntity vides">
+      <created>1606576676983</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1606576676983</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Ebauche de score et pv">
+      <created>1606582992123</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1606582992123</updated>
+    </task>
+    <task id="LOCAL-00013" summary="WTF StatusGUI veut pas s'afficher">
+      <created>1606585798008</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1606585798008</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Level 1 fini, Level 2 et 3 a compléter et faire marcher (dans le 2, la gate ne s'enleve pas et mettre clés dans le 3) + SCORE ET VIE S'AFFICHENT PAS PUTAIN">
+      <created>1606619928679</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1606619928679</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Partie 2 sans score et pv (juste j'ai modifié la maquette par contre)">
+      <created>1606651914083</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1606651914083</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Partie 2 finie et tout marche">
+      <created>1606670186522</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1606670186522</updated>
+    </task>
+    <task id="LOCAL-00017" summary="changement class GUI">
+      <created>1607094946664</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1607094946664</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Encapsulation de batard">
+      <created>1607099595053</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1607099595053</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Enoncé projet pret" />
+    <MESSAGE value="partie 1" />
+    <MESSAGE value="partie 1 player" />
+    <MESSAGE value="partie 1 player enfin" />
+    <MESSAGE value="player suite" />
+    <MESSAGE value="player suite 2" />
+    <MESSAGE value="player suite 3" />
+    <MESSAGE value="Vas y Thomas" />
+    <MESSAGE value="Animations pacman avec porte affichée en rouge mais toujours impossible de la franchir" />
+    <MESSAGE value="et voila pour les portes qui s'affichent" />
+    <MESSAGE value="Correction door et creation &#10;*$objets CollectableAreaEntity vides" />
+    <MESSAGE value="Ebauche de score et pv" />
+    <MESSAGE value="WTF StatusGUI veut pas s'afficher" />
+    <MESSAGE value="Level 1 fini, Level 2 et 3 a compléter et faire marcher (dans le 2, la gate ne s'enleve pas et mettre clés dans le 3) + SCORE ET VIE S'AFFICHENT PAS PUTAIN" />
+    <MESSAGE value="Partie 2 sans score et pv (juste j'ai modifié la maquette par contre)" />
+    <MESSAGE value="Partie 2 finie et tout marche" />
+    <MESSAGE value="changement class GUI" />
+    <MESSAGE value="Encapsulation de batard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Encapsulation de batard" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="415" y="191" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1606310458628">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="415" y="191" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1368.872@0.0.1368.872" timestamp="1606310458628" />
+    <state x="140" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606758005106">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="140" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1368.872@0.0.1368.872" timestamp="1606758005106" />
+    <state x="490" y="143" key="#com.intellij.ide.util.MemberChooser" timestamp="1606784358702">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="490" y="143" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1606784358702" />
+    <state x="389" y="213" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1606609664625">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="389" y="213" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog/0.0.1368.872@0.0.1368.872" timestamp="1606609664625" />
+    <state x="197" y="361" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1606268506238">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="197" y="361" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1368.872@0.0.1368.872" timestamp="1606268506238" />
+    <state x="468" y="305" width="834" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1606783207579">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="468" y="305" width="834" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1368.872@0.0.1368.872" timestamp="1606783207579" />
+    <state x="432" y="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1606610628592">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="432" y="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1368.872@0.0.1368.872" timestamp="1606610628592" />
+    <state x="93" y="93" width="1181" height="685" key="DiffContextDialog" timestamp="1607099694844">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="93" y="93" width="1181" height="685" key="DiffContextDialog/0.0.1368.872@0.0.1368.872" timestamp="1607099694844" />
+    <state width="1326" height="226" key="GridCell.Tab.0.bottom" timestamp="1607099709685">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="226" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1607099709685" />
+    <state width="1326" height="226" key="GridCell.Tab.0.center" timestamp="1607099709685">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="226" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1607099709685" />
+    <state width="1326" height="226" key="GridCell.Tab.0.left" timestamp="1607099709685">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="226" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1607099709685" />
+    <state width="1326" height="226" key="GridCell.Tab.0.right" timestamp="1607099709685">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="226" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1607099709685" />
+    <state width="1326" height="281" key="GridCell.Tab.1.bottom" timestamp="1606619971403">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="281" key="GridCell.Tab.1.bottom/0.0.1368.872@0.0.1368.872" timestamp="1606619971403" />
+    <state width="1326" height="281" key="GridCell.Tab.1.center" timestamp="1606619971403">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="281" key="GridCell.Tab.1.center/0.0.1368.872@0.0.1368.872" timestamp="1606619971403" />
+    <state width="1326" height="281" key="GridCell.Tab.1.left" timestamp="1606619971403">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="281" key="GridCell.Tab.1.left/0.0.1368.872@0.0.1368.872" timestamp="1606619971403" />
+    <state width="1326" height="281" key="GridCell.Tab.1.right" timestamp="1606619971403">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="281" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1606619971403" />
+    <state x="265" y="179" key="IDE.errors.dialog" timestamp="1606483294536">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="265" y="179" key="IDE.errors.dialog/0.0.1368.872@0.0.1368.872" timestamp="1606483294536" />
+    <state x="130" y="70" key="MergeDialog" timestamp="1607003659194">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="130" y="70" key="MergeDialog/0.0.1368.872@0.0.1368.872" timestamp="1607003659194" />
+    <state x="277" y="169" key="Vcs.Push.Dialog.v2" timestamp="1607099624971">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="277" y="169" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1607099624971" />
+    <state x="502" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607090342992">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="502" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1368.872@0.0.1368.872" timestamp="1607090342992" />
+    <state x="231" y="172" width="904" height="627" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1606526941762">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="231" y="172" width="904" height="627" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1368.872@0.0.1368.872" timestamp="1606526941762" />
+    <state x="394" y="139" width="579" height="592" key="find.popup" timestamp="1606755664677">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="394" y="139" width="579" height="592" key="find.popup/0.0.1368.872@0.0.1368.872" timestamp="1606755664677" />
+    <state x="351" y="188" width="672" height="678" key="search.everywhere.popup" timestamp="1606756187920">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="351" y="188" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1606756187920" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

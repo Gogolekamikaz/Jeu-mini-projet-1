@@ -189,7 +189,7 @@ public class SuperPacmanPlayer extends Player {
         }
 
         @Override
-        public void interactWith(CollectableAreaEntity entity){
+        public void interactWith(SuperPacmanCollectableAreaEntity entity){
             entity.pickActor();
             increaseScore(entity.getPOINTS_GIVEN());
             if(entity instanceof Bonus){

@@ -6,7 +6,7 @@ import ch.epfl.cs107.play.game.areagame.actor.Sprite;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.window.Canvas;
 
-public class Cherry extends CollectableAreaEntity {
+public class Cherry extends SuperPacmanCollectableAreaEntity {
 
     private final int POINTS_GIVEN = 200;
 

@@ -1,0 +1,207 @@
+Index: java/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ch.epfl.cs107.play.game.superpacman.actor;\r\n\r\nimport ch.epfl.cs107.play.game.areagame.Area;\r\nimport ch.epfl.cs107.play.game.areagame.actor.*;\r\nimport ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;\r\nimport ch.epfl.cs107.play.game.rpg.actor.Door;\r\nimport ch.epfl.cs107.play.game.rpg.actor.Player;\r\nimport ch.epfl.cs107.play.game.rpg.actor.RPGSprite;\r\nimport ch.epfl.cs107.play.game.superpacman.handler.SuperPacmanInteractionVisitor;\r\nimport ch.epfl.cs107.play.math.DiscreteCoordinates;\r\nimport ch.epfl.cs107.play.window.Canvas;\r\nimport ch.epfl.cs107.play.window.Keyboard;\r\nimport java.util.Collections;\r\nimport java.util.List;\r\n\r\npublic class SuperPacmanPlayer extends Player {\r\n\r\n    private Sprite [][] sprites = RPGSprite.extractSprites (\"superpacman/pacman\",4, 1, 1, this , 64, 64, new Orientation [] { Orientation .DOWN , Orientation.LEFT , Orientation .UP , Orientation.RIGHT });\r\n    // crée un tableau de 4 animation\r\n    private Animation[] animations = Animation.createAnimations(SPEED/2, sprites );\r\n    private Animation currentAnimation;\r\n\r\n    private SuperPacmanPlayerStatusGUI status;\r\n    private int hp;\r\n    private int score;\r\n\r\n    private final static int SPEED = 6;\r\n    private Orientation desiredOrientation;\r\n\r\n\r\n    private final SuperPacmanPlayerHandler handler = new SuperPacmanPlayerHandler();\r\n\r\n    public SuperPacmanPlayer(Area area, Orientation orientation, DiscreteCoordinates coordinates) {\r\n        super(area, orientation, coordinates);\r\n        currentAnimation = animations[Orientation.UP.ordinal()];\r\n        status = new SuperPacmanPlayerStatusGUI(this);\r\n        hp = 3;\r\n        score = 0;\r\n    }\r\n\r\n    @Override\r\n    public void draw(Canvas canvas) {\r\n        status.draw(canvas);\r\n        currentAnimation.draw(canvas);\r\n    }\r\n\r\n    @Override\r\n    public void update(float deltaTime) {\r\n        Keyboard keyboard= getOwnerArea().getKeyboard();\r\n        super.update(deltaTime);\r\n\r\n        Orientation desiredOrientation = this.getDesiredOrientation(keyboard);\r\n        if(desiredOrientation != null) {\r\n            if (!this.isDisplacementOccurs() && this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector())))) {\r\n                this.orientate(desiredOrientation);\r\n                currentAnimation = animations[desiredOrientation.ordinal()];\r\n                this.move(SPEED);\r\n\r\n            }\r\n        } else {\r\n            this.move(SPEED);\r\n        }\r\n\r\n        if(isDisplacementOccurs()){\r\n            currentAnimation.update(deltaTime);\r\n        } else {\r\n            currentAnimation.reset();\r\n        }\r\n\r\n    }\r\n\r\n\r\n    private Orientation getDesiredOrientation(Keyboard keyboard){\r\n        if(keyboard.get(Keyboard.LEFT).isDown()){\r\n            return Orientation.LEFT;\r\n        }\r\n        else if(keyboard.get(Keyboard.RIGHT).isDown()){\r\n            return Orientation.RIGHT;\r\n        }\r\n        else if(keyboard.get(Keyboard.UP).isDown()){\r\n            return Orientation.UP;\r\n        }\r\n        else if(keyboard.get(Keyboard.DOWN).isDown()){\r\n            return Orientation.DOWN;\r\n        }\r\n        return null;\r\n    }\r\n\r\n    public int getScore(){ return score;}\r\n\r\n    public void increaseScore(int scorePoint){\r\n        score += scorePoint;\r\n    }\r\n\r\n    public int getHealth(){ return hp;}\r\n\r\n\r\n    @Override\r\n    public List<DiscreteCoordinates> getCurrentCells() {\r\n        return Collections.singletonList(getCurrentMainCellCoordinates());\r\n    }\r\n\r\n    @Override\r\n    public List<DiscreteCoordinates> getFieldOfViewCells() {\r\n        return null;\r\n    }\r\n\r\n    @Override\r\n    public boolean wantsCellInteraction() {\r\n        return true;\r\n    }\r\n\r\n    @Override\r\n    public boolean wantsViewInteraction() {\r\n        return false;\r\n    }\r\n\r\n    @Override\r\n    public void interactWith(Interactable other) {\r\n        other.acceptInteraction(handler);\r\n    }\r\n\r\n    @Override\r\n    public boolean takeCellSpace() {\r\n        return false;\r\n    }\r\n\r\n    @Override\r\n    public boolean isCellInteractable() {\r\n        return false;\r\n    }\r\n\r\n    @Override\r\n    public boolean isViewInteractable() {\r\n        return true;\r\n    }\r\n\r\n    @Override\r\n    public void acceptInteraction (AreaInteractionVisitor v) {\r\n        ((SuperPacmanInteractionVisitor)v).interactWith(this );\r\n    }\r\n\r\n    private class SuperPacmanPlayerHandler implements SuperPacmanInteractionVisitor {\r\n\r\n        @Override\r\n        public void interactWith(Door door) {\r\n            setIsPassingADoor(door);\r\n        }\r\n\r\n        @Override\r\n        public void interactWith(CollectableAreaEntity entity){\r\n            entity.pickActor();\r\n            increaseScore(entity.getPOINTS_GIVEN());\r\n        }\r\n\r\n        @Override\r\n        public void interactWith(Key key){\r\n\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- java/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.java	(revision 6f7c49dd5d4392f7ee2113acf255a0232d0f13c7)
++++ java/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.java	(date 1606786921721)
+@@ -15,7 +15,7 @@
+ 
+ public class SuperPacmanPlayer extends Player {
+ 
+-    private Sprite [][] sprites = RPGSprite.extractSprites ("superpacman/pacman",4, 1, 1, this , 64, 64, new Orientation [] { Orientation .DOWN , Orientation.LEFT , Orientation .UP , Orientation.RIGHT });
++    private Sprite [][] sprites = RPGSprite.extractSprites ("superpacman/pacman",4, 1, 1, this , 64, 64, new Orientation [] { Orientation.DOWN , Orientation.LEFT , Orientation.UP , Orientation.RIGHT });
+     // crée un tableau de 4 animation
+     private Animation[] animations = Animation.createAnimations(SPEED/2, sprites );
+     private Animation currentAnimation;
+@@ -33,6 +33,7 @@
+     public SuperPacmanPlayer(Area area, Orientation orientation, DiscreteCoordinates coordinates) {
+         super(area, orientation, coordinates);
+         currentAnimation = animations[Orientation.UP.ordinal()];
++        desiredOrientation = Orientation.UP;
+         status = new SuperPacmanPlayerStatusGUI(this);
+         hp = 3;
+         score = 0;
+@@ -49,15 +50,16 @@
+         Keyboard keyboard= getOwnerArea().getKeyboard();
+         super.update(deltaTime);
+ 
+-        Orientation desiredOrientation = this.getDesiredOrientation(keyboard);
+-        if(desiredOrientation != null) {
+-            if (!this.isDisplacementOccurs() && this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector())))) {
++        if(this.getDesiredOrientation(keyboard) != null){
++            desiredOrientation = this.getDesiredOrientation(keyboard);
++        }
++
++        if(!this.isDisplacementOccurs()) {
++            if (desiredOrientation!= getOrientation() && this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector())))) {
++                System.out.println(this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector()))));
+                 this.orientate(desiredOrientation);
+                 currentAnimation = animations[desiredOrientation.ordinal()];
+-                this.move(SPEED);
+-
+             }
+-        } else {
+             this.move(SPEED);
+         }
+ 
+Index: .idea/uiDesigner.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/uiDesigner.xml	(date 1606756321445)
++++ .idea/uiDesigner.xml	(date 1606756321445)
+@@ -0,0 +1,124 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Palette2">
++    <group name="Swing">
++      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
++      </item>
++      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
++        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
++        <initial-values>
++          <property name="text" value="Button" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="RadioButton" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="CheckBox" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="Label" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
++          <preferred-size width="-1" height="20" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
++      </item>
++    </group>
++  </component>
++</project>
+\ No newline at end of file
+Index: java/ch/epfl/cs107/play/game/superpacman/SuperPacman.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ch.epfl.cs107.play.game.superpacman;\r\n\r\nimport ch.epfl.cs107.play.game.areagame.Area;\r\nimport ch.epfl.cs107.play.game.areagame.actor.Orientation;\r\nimport ch.epfl.cs107.play.game.rpg.RPG;\r\nimport ch.epfl.cs107.play.game.rpg.actor.Player;\r\nimport ch.epfl.cs107.play.game.superpacman.actor.SuperPacmanPlayer;\r\nimport ch.epfl.cs107.play.game.superpacman.area.Level0;\r\nimport ch.epfl.cs107.play.game.superpacman.area.Level1;\r\nimport ch.epfl.cs107.play.game.superpacman.area.Level2;\r\nimport ch.epfl.cs107.play.game.superpacman.area.SuperPacmanArea;\r\nimport ch.epfl.cs107.play.io.FileSystem;\r\nimport ch.epfl.cs107.play.window.Window;\r\n\r\npublic class SuperPacman extends RPG {\r\n\r\n    private SuperPacmanPlayer player;\r\n\r\n    /**\r\n     * Add all the areas\r\n     */\r\n    private void createAreas(){\r\n\r\n        addArea(new Level0());\r\n        addArea(new Level1());\r\n        addArea(new Level2());\r\n\r\n    }\r\n\r\n    @Override\r\n    public String getTitle() {\r\n        return \"Super Pac-Man\";\r\n    }\r\n    @Override\r\n    protected void initPlayer(Player player) {\r\n        super.initPlayer(player);\r\n    }\r\n\r\n    @Override\r\n    public void update(float deltaTime) {\r\n        super.update(deltaTime);\r\n    }\r\n\r\n    @Override\r\n    public boolean begin(Window window, FileSystem fileSystem) {\r\n        if (super.begin(window, fileSystem)) {\r\n            createAreas();\r\n            SuperPacmanArea area = (SuperPacmanArea)setCurrentArea(\"superpacman/Level0\", true);\r\n            player = new SuperPacmanPlayer(area, Orientation.UP, area.getSpawnPoint());\r\n            initPlayer(player);\r\n            return true;\r\n        }\r\n        return false;\r\n    }\r\n\r\n    @Override\r\n    public void end() {\r\n        super.end();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- java/ch/epfl/cs107/play/game/superpacman/SuperPacman.java	(revision 6f7c49dd5d4392f7ee2113acf255a0232d0f13c7)
++++ java/ch/epfl/cs107/play/game/superpacman/SuperPacman.java	(date 1606785975338)
+@@ -9,6 +9,7 @@
+ import ch.epfl.cs107.play.game.superpacman.area.Level1;
+ import ch.epfl.cs107.play.game.superpacman.area.Level2;
+ import ch.epfl.cs107.play.game.superpacman.area.SuperPacmanArea;
++import ch.epfl.cs107.play.game.superpacman.userInterface.Home;
+ import ch.epfl.cs107.play.io.FileSystem;
+ import ch.epfl.cs107.play.window.Window;
+ 
+@@ -21,6 +22,7 @@
+      */
+     private void createAreas(){
+ 
++        addArea(new Home());
+         addArea(new Level0());
+         addArea(new Level1());
+         addArea(new Level2());

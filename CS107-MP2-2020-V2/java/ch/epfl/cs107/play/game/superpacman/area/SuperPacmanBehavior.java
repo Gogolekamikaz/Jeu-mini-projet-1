@@ -108,6 +108,7 @@ public class SuperPacmanBehavior extends AreaBehavior {
      */
     public SuperPacmanBehavior(Window window, String name) {
         super(window, name);
+        AreaGraph areaGraph = new AreaGraph();
 
         int height = getHeight();
         int width = getWidth();
@@ -115,6 +116,11 @@ public class SuperPacmanBehavior extends AreaBehavior {
             for (int x = 0; x < width ; x++) {
                 SuperPacmanCellType color = SuperPacmanCellType.toType(getRGB(height-1-y, x));
                 setCell(x,y, new SuperPacmanCell(x,y,color));
+                
+                SuperPacmanCell cell = (SuperPacmanCell)getCell(x,y);
+                DiscreteCoordinates coordinates = new DiscreteCoordinates(x,y);
+                if(color != SuperPacmanCellType.WALL){
+                    areaGraph.addNode(coordinates , cell.hasSideEdge("LEFT",coordinates,height), cell.hasSideEdge("UP",coordinates,height), cell.hasSideEdge("RIGHT", coordinates,height),cell.hasSideEdge("DOWN", coordinates,height));
             }
         }
 
@@ -187,6 +193,47 @@ public class SuperPacmanBehavior extends AreaBehavior {
                 }
             }
             return neigborhood;
+        }
+        
+        protected boolean hasSideEdge(String Side, DiscreteCoordinates coordinates, int height){
+           
+            SuperPacmanCellType color = null;
+            if(Side == "LEFT") {
+                int x = coordinates.x - 1;
+                int y = coordinates.y;
+                if(cellExists(x,y)){
+                    color = SuperPacmanCellType.toType(getRGB(height - 1 - y, x));
+                }
+            }
+            else if(Side == "RIGHT") {
+                int x = coordinates.x + 1;
+                int y = coordinates.y;
+                if(cellExists(x,y)){
+                    color = SuperPacmanCellType.toType(getRGB(height - 1 - y, x));
+                }
+
+            }
+            else if(Side == "DOWN") {
+                int x = coordinates.x;
+                int y = coordinates.y - 1;
+                if(cellExists(x,y)){
+                    color = SuperPacmanCellType.toType(getRGB(height - 1 - y, x));
+                }
+            }
+            else if(Side == "UP") {
+                int x = coordinates.x;
+                int y = coordinates.y + 1;
+                if(cellExists(x,y)){
+                    color = SuperPacmanCellType.toType(getRGB(height - 1 - y, x));
+                }
+
+            }
+            
+            if (color == SuperPacmanCellType.WALL) {
+                return true;
+            } else {
+                return false; 
+            }
         }
     }
 

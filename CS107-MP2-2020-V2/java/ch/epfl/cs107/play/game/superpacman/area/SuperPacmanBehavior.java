@@ -83,6 +83,16 @@ public class SuperPacmanBehavior extends AreaBehavior {
                         Blinky blinky = new Blinky(area, Orientation.UP, coordinates, positionRefuge);
                         area.registerActor(blinky);
                         ghostActors.add(blinky);
+                    case FREE_WITH_INKY:
+                        Vector positionRefuge2 = new Vector((float)(x),(float)(y));
+                        Inky inky = new Inky(area, Orientation.UP, coordinates, positionRefuge2);
+                        area.registerActor(inky);
+                        ghostActors.add(inky);
+                    case FREE_WITH_PINKY:
+                        Vector positionRefuge3 = new Vector((float)(x),(float)(y));
+                        Pinky pinky = new Pinky(area, Orientation.UP, coordinates, positionRefuge3);
+                        area.registerActor(pinky);
+                        ghostActors.add(pinky);
 
                 }
             }

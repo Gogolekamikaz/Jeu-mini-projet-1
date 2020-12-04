@@ -35,6 +35,7 @@ public class SuperPacman extends RPG {
     public String getTitle() {
         return "Super Pac-Man";
     }
+
     @Override
     protected void initPlayer(Player player) {
         super.initPlayer(player);

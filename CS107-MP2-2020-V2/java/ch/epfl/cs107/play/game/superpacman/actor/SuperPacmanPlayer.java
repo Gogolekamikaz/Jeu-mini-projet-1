@@ -18,7 +18,7 @@ import java.util.List;
 
 public class SuperPacmanPlayer extends Player {
 
-    private Sprite [][] sprites = RPGSprite.extractSprites ("superpacman/pacman",4, 1, 1, this , 64, 64, new Orientation [] { Orientation .DOWN , Orientation.LEFT , Orientation .UP , Orientation.RIGHT });
+    private Sprite [][] sprites = RPGSprite.extractSprites ("superpacman/pacman",4, 1, 1, this , 64, 64, new Orientation [] { Orientation.DOWN , Orientation.LEFT , Orientation.UP , Orientation.RIGHT });
     // crée un tableau de 4 animation
     private Animation[] animations = Animation.createAnimations(SPEED/2, sprites );
     private Animation currentAnimation;
@@ -42,6 +42,7 @@ public class SuperPacmanPlayer extends Player {
     public SuperPacmanPlayer(Area area, Orientation orientation, DiscreteCoordinates coordinates) {
         super(area, orientation, coordinates);
         currentAnimation = animations[Orientation.UP.ordinal()];
+        desiredOrientation = Orientation.UP;
         status = new SuperPacmanPlayerStatusGUI(this);
         hp = 3;
         score = 0;
@@ -58,15 +59,16 @@ public class SuperPacmanPlayer extends Player {
         Keyboard keyboard= getOwnerArea().getKeyboard();
         super.update(deltaTime);
 
-        Orientation desiredOrientation = this.getDesiredOrientation(keyboard);
-        if(desiredOrientation != null) {
-            if (!this.isDisplacementOccurs() && this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector())))) {
+        if(this.getDesiredOrientation(keyboard) != null){
+            desiredOrientation = this.getDesiredOrientation(keyboard);
+        }
+
+        if(!this.isDisplacementOccurs()) {
+            if (desiredOrientation!= getOrientation() && this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector())))) {
+                System.out.println(this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector()))));
                 this.orientate(desiredOrientation);
                 currentAnimation = animations[desiredOrientation.ordinal()];
-                this.move(SPEED);
-
             }
-        } else {
             this.move(SPEED);
         }
         if(isDisplacementOccurs()){

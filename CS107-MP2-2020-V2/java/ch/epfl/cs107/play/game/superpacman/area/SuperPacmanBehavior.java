@@ -132,9 +132,10 @@ public class SuperPacmanBehavior extends AreaBehavior {
                 DiscreteCoordinates coordinates = new DiscreteCoordinates(x,y);
                 if(color != SuperPacmanCellType.WALL){
                     areaGraph.addNode(coordinates , cell.hasSideEdge("LEFT",coordinates,height), cell.hasSideEdge("UP",coordinates,height), cell.hasSideEdge("RIGHT", coordinates,height),cell.hasSideEdge("DOWN", coordinates,height));
+                }
             }
-        }
 
+        }
     }
 
 

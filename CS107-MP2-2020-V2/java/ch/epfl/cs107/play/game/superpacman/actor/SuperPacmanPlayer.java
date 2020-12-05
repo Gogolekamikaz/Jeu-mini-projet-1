@@ -54,6 +54,7 @@ public class SuperPacmanPlayer extends Player {
 
     public SuperPacmanPlayer(Area area, Orientation orientation, DiscreteCoordinates coordinates) {
         super(area, orientation, coordinates);
+
         currentAnimation = animations[Orientation.UP.ordinal()];
         desiredOrientation = Orientation.UP;
         status = new SuperPacmanPlayerStatusGUI(this);
@@ -72,6 +73,8 @@ public class SuperPacmanPlayer extends Player {
     public void update(float deltaTime) {
         Keyboard keyboard= getOwnerArea().getKeyboard();
         super.update(deltaTime);
+
+        System.out.println(this.getOwnerArea().getTitle());
         startOfSound+=deltaTime;
 
         if(this.getDesiredOrientation(keyboard) != null){
@@ -115,15 +118,8 @@ public class SuperPacmanPlayer extends Player {
             spawnPosition = new DiscreteCoordinates(15,29);
         }
         this.enterArea(getOwnerArea(), spawnPosition);
-
     }
-
     protected DiscreteCoordinates getCurrentPosition(){ return this.getCurrentMainCellCoordinates(); }
-
-
-
-
-
 
     private Orientation getDesiredOrientation(Keyboard keyboard){
         if(keyboard.get(Keyboard.LEFT).isDown()){
@@ -218,7 +214,8 @@ public class SuperPacmanPlayer extends Player {
             if(entity instanceof Bonus){
                 isInvincible = true;
                 pacEatCoin.shouldBeStarted();
-            } else if (entity instanceof Cherry){
+            }
+            else if (entity instanceof Cherry){
                 pacEatFruit.shouldBeStarted();
             } else if (entity instanceof Key){
                 pacEatKey.shouldBeStarted();
@@ -239,10 +236,8 @@ public class SuperPacmanPlayer extends Player {
                 ghost.setPositionRefuge();
                 ghost.forgetPacman();
                 respawnPlayer();
-
             }
         }
-
         @Override
         public void interactWith(Key key){
 

@@ -138,7 +138,6 @@ public class SuperPacmanBehavior extends AreaBehavior {
         }
     }
 
-        // COmmit test
     public class SuperPacmanCell extends AreaBehavior.Cell{
 
         private final SuperPacmanCellType type;

@@ -8,6 +8,7 @@ import ch.epfl.cs107.play.game.rpg.actor.Player;
 import ch.epfl.cs107.play.game.rpg.actor.RPGSprite;
 import ch.epfl.cs107.play.game.rpg.actor.Sign;
 import ch.epfl.cs107.play.game.superpacman.area.Level0;
+import ch.epfl.cs107.play.game.superpacman.handler.GhostInteractionVisitor;
 import ch.epfl.cs107.play.game.superpacman.handler.SuperPacmanInteractionVisitor;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.math.Vector;
@@ -169,7 +170,7 @@ public class SuperPacmanPlayer extends Player {
 
     @Override
     public void acceptInteraction (AreaInteractionVisitor v) {
-        ((SuperPacmanInteractionVisitor)v).interactWith(this );
+        ((GhostInteractionVisitor)v).interactWith(this );
     }
 
     public boolean isInvincible(){

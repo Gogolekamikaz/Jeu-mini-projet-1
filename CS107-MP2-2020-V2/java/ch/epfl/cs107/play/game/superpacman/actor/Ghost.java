@@ -5,6 +5,7 @@ import ch.epfl.cs107.play.game.areagame.actor.*;
 import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
 import ch.epfl.cs107.play.game.rpg.actor.Player;
 import ch.epfl.cs107.play.game.rpg.actor.RPGSprite;
+import ch.epfl.cs107.play.game.superpacman.handler.GhostInteractionVisitor;
 import ch.epfl.cs107.play.game.superpacman.handler.SuperPacmanInteractionVisitor;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.math.Vector;
@@ -19,6 +20,9 @@ public class Ghost extends MovableAreaEntity implements Interactor {
     protected Sprite sprite;
     private final int viewRadius = 5;
     float keepOriented = 2;
+
+
+    private final GhostHandler handler = new GhostHandler();
 
     protected Sprite [][] spritesScared = RPGSprite.extractSprites ("superpacman/ghost.afraid",2, 1, 1, this , 16, 16, new Orientation [] { Orientation.UP , Orientation.DOWN, Orientation.LEFT, Orientation.RIGHT});
     Animation[] animationsScared = Animation.createAnimations(4,spritesScared);
@@ -91,12 +95,6 @@ public class Ghost extends MovableAreaEntity implements Interactor {
         }
 
     }
-
-    public void setUnAfraid(){
-        isAfraid = false;
-    }
-
-
     public void forgetPacman() {
         this.viewedPlayer = null;
     }
@@ -140,7 +138,7 @@ public class Ghost extends MovableAreaEntity implements Interactor {
 
     @Override
     public void interactWith(Interactable other) {
-
+        other.acceptInteraction(handler);
     }
 
     @Override
@@ -163,8 +161,14 @@ public class Ghost extends MovableAreaEntity implements Interactor {
         ((SuperPacmanInteractionVisitor)v).interactWith(this );
     }
 
-    public void interactWith(SuperPacmanPlayer player){
-        this.viewedPlayer = player;
-        
+    private class GhostHandler implements GhostInteractionVisitor {
+
+
+        public void interactWith(SuperPacmanPlayer player){
+            viewedPlayer = player;
+
+        }
     }
+
+
 }

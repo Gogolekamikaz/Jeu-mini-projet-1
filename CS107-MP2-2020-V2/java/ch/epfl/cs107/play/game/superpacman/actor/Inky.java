@@ -14,6 +14,11 @@ import java.util.Queue;
 public class Inky extends Ghost{
     private final int MAX_DISTANCE_WHEN_NOT_SCARED = 10;
     private final int MAX_DISTANCE_WHEN_SCARED = 5;
+    protected DiscreteCoordinates targetPosition;
+    protected boolean targetStateChange = false;
+    protected boolean positionStateChange = false;
+    protected boolean scareStateChange = false;
+
     protected Sprite[][] sprites = RPGSprite.extractSprites ("superpacman/ghost.inky",4, 1, 1, this , 16, 16, new Orientation [] { Orientation.UP , Orientation.RIGHT , Orientation.DOWN , Orientation.LEFT });
 
 
@@ -26,16 +31,16 @@ public class Inky extends Ghost{
 
     @Override
     public void update(float deltaTime) {
+        if(targetPosition != null && getCurrentMainCellCoordinates() == targetPosition){
+            positionStateChange = true;
+        }
+
+        if(stateChanges()){
+            targetPosition = evaluateTargetPosition();
+        }
+
+
         super.update(deltaTime);
-        if(viewedPlayer == null){             //Si personnage repéré
-            Queue<Orientation> orientationSequence = ghostCurrentArea.getAreaGraph().shortestPath(this.getCurrentMainCellCoordinates(), generateReachableCell(positionRefugeCoord,MAX_DISTANCE_WHEN_NOT_SCARED));
-        }
-        else if (!isAfraid && viewedPlayer != null){
-            Queue<Orientation> orientationSequence = ghostCurrentArea.getAreaGraph().shortestPath(this.getCurrentMainCellCoordinates(), viewedPlayer.getCurrentPosition());
-        }
-        else if(isAfraid){
-            Queue<Orientation> orientationSequence = ghostCurrentArea.getAreaGraph().shortestPath(this.getCurrentMainCellCoordinates(), generateReachableCell(positionRefugeCoord, MAX_DISTANCE_WHEN_SCARED));
-        }
     }
     private DiscreteCoordinates generateReachableCell(DiscreteCoordinates origine, int radius){
         float distance = 0;
@@ -51,12 +56,37 @@ public class Inky extends Ghost{
     }
 
     protected Orientation getNextOrientation() {
-        int randomInt = RandomGenerator.getInstance().nextInt(4);
-        for(int i =0; i <=4; ++i){
-            if(randomInt == i){
-                orientation = Orientation.fromInt(i);
-            }
-        }
+        Queue<Orientation> orientationSequence = null;
+        orientationSequence = ghostCurrentArea.getAreaGraph().shortestPath(this.getCurrentMainCellCoordinates(), targetPosition);
+
+
+        orientation = orientationSequence.poll();
         return orientation;
+    }
+
+    private DiscreteCoordinates evaluateTargetPosition() {
+        DiscreteCoordinates targetPosition = null;
+        if (viewedPlayer == null) {
+            targetPosition = generateReachableCell(positionRefugeCoord, MAX_DISTANCE_WHEN_NOT_SCARED);
+        }
+        else if (!isAfraid && viewedPlayer != null){
+            targetPosition = viewedPlayer.getCurrentPosition();
+        }
+        else if(isAfraid){
+            targetPosition = generateReachableCell(positionRefugeCoord, MAX_DISTANCE_WHEN_SCARED);
+        }
+        return targetPosition;
+    }
+
+    private boolean stateChanges(){
+        if(targetStateChange || positionStateChange || scareStateChange){
+            targetStateChange = false;
+            positionStateChange = false;
+            scareStateChange = false;
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

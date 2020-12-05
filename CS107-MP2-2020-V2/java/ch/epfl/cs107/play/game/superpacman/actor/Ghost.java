@@ -23,7 +23,6 @@ public class Ghost extends MovableAreaEntity implements Interactor {
     float keepOriented = 2;
     protected SuperPacmanArea ghostCurrentArea = (SuperPacmanArea)(getOwnerArea());
 
-
     private final GhostHandler handler = new GhostHandler();
 
     protected Sprite [][] spritesScared = RPGSprite.extractSprites ("superpacman/ghost.afraid",2, 1, 1, this , 16, 16, new Orientation [] { Orientation.UP , Orientation.DOWN, Orientation.LEFT, Orientation.RIGHT});

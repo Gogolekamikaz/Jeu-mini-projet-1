@@ -99,9 +99,11 @@ public class SuperPacmanBehavior extends AreaBehavior {
             }
         }
     }
+    AreaGraph areaGraph;
     public ArrayList<Ghost> getGhostActors(){
         return ghostActors;
     }
+
     public static boolean ghostActorsExist(ArrayList<Ghost> arraylist){
         if(arraylist.size() > 0){
             return true;
@@ -119,7 +121,7 @@ public class SuperPacmanBehavior extends AreaBehavior {
      */
     public SuperPacmanBehavior(Window window, String name) {
         super(window, name);
-        AreaGraph areaGraph = new AreaGraph();
+        areaGraph = new AreaGraph();
 
         int height = getHeight();
         int width = getWidth();
@@ -137,6 +139,7 @@ public class SuperPacmanBehavior extends AreaBehavior {
 
         }
     }
+    public AreaGraph getAreaGraph(){return areaGraph;}
 
     public class SuperPacmanCell extends AreaBehavior.Cell{
 

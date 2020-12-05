@@ -1,6 +1,7 @@
 package ch.epfl.cs107.play.game.superpacman.area;
 
 import ch.epfl.cs107.play.game.areagame.Area;
+import ch.epfl.cs107.play.game.areagame.AreaGraph;
 import ch.epfl.cs107.play.game.superpacman.actor.Blinky;
 import ch.epfl.cs107.play.game.superpacman.actor.Diamond;
 import ch.epfl.cs107.play.game.superpacman.actor.Ghost;
@@ -17,6 +18,7 @@ public abstract class SuperPacmanArea extends Area implements Logic {
     protected abstract void createArea();
     private SuperPacmanBehavior behavior;
     private ArrayList<Ghost> areaGhostActors;
+    private AreaGraph areaGraph;
     protected final static float cameraScaleFactor = 15.f;
 
     public boolean begin(Window window, FileSystem fileSystem) {
@@ -26,6 +28,7 @@ public abstract class SuperPacmanArea extends Area implements Logic {
             setBehavior(behavior);
             behavior.registerActors(this);
             areaGhostActors= behavior.getGhostActors();
+            areaGraph = behavior.getAreaGraph();
 
             createArea();
             return true;
@@ -36,6 +39,7 @@ public abstract class SuperPacmanArea extends Area implements Logic {
     public ArrayList<Ghost> getAreaGhostActors(){
         return areaGhostActors;
     }
+    public AreaGraph getAreaGraph(){return areaGraph;}
 
     public final float getCameraScaleFactor(){return cameraScaleFactor;}
 

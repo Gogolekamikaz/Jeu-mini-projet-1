@@ -5,6 +5,7 @@ import ch.epfl.cs107.play.game.areagame.actor.*;
 import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
 import ch.epfl.cs107.play.game.rpg.actor.Player;
 import ch.epfl.cs107.play.game.rpg.actor.RPGSprite;
+import ch.epfl.cs107.play.game.superpacman.area.SuperPacmanArea;
 import ch.epfl.cs107.play.game.superpacman.handler.GhostInteractionVisitor;
 import ch.epfl.cs107.play.game.superpacman.handler.SuperPacmanInteractionVisitor;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
@@ -20,6 +21,7 @@ public class Ghost extends MovableAreaEntity implements Interactor {
     protected Sprite sprite;
     private final int viewRadius = 5;
     float keepOriented = 2;
+    protected SuperPacmanArea ghostCurrentArea = (SuperPacmanArea)(getOwnerArea());
 
 
     private final GhostHandler handler = new GhostHandler();

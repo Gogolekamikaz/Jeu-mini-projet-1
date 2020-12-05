@@ -100,6 +100,10 @@ public class SuperPacmanPlayer extends Player {
 
     }
 
+    protected DiscreteCoordinates getCurrentPosition(){ return this.getCurrentMainCellCoordinates(); }
+
+
+
 
 
 

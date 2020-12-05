@@ -52,7 +52,6 @@ public class SuperPacman extends RPG {
                 ghost.setAfraid(player);
             }
         }
-
     }
 
     @Override

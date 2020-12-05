@@ -17,8 +17,8 @@ public class Inky extends Ghost{
     protected Sprite[][] sprites = RPGSprite.extractSprites ("superpacman/ghost.inky",4, 1, 1, this , 16, 16, new Orientation [] { Orientation.UP , Orientation.RIGHT , Orientation.DOWN , Orientation.LEFT });
 
 
-    public Inky(Area area, Orientation orientation, DiscreteCoordinates position, Vector positionRefuge) {
-        super(area, orientation, position, positionRefuge);
+    public Inky(Area area, Orientation orientation, DiscreteCoordinates position, Vector positionRefuge, DiscreteCoordinates positionRefugeCoord) {
+        super(area, orientation, position, positionRefuge, positionRefugeCoord);
         animationsNotScared = Animation.createAnimations(4,sprites);
         animationNotScared = animationsNotScared[Orientation.DOWN.ordinal()];
         currentAnimation = animationNotScared;
@@ -28,18 +28,14 @@ public class Inky extends Ghost{
     public void update(float deltaTime) {
         super.update(deltaTime);
         if(viewedPlayer == null){             //Si personnage repéré
-            Queue<Orientation> orientationSequence = ghostCurrentArea.getAreaGraph().shortestPath(this.getCurrentMainCellCoordinates(), generateReachableCell(getCurrentMainCellCoordinates(),MAX_DISTANCE_WHEN_NOT_SCARED));
+            Queue<Orientation> orientationSequence = ghostCurrentArea.getAreaGraph().shortestPath(this.getCurrentMainCellCoordinates(), generateReachableCell(positionRefugeCoord,MAX_DISTANCE_WHEN_NOT_SCARED));
         }
         else if (!isAfraid && viewedPlayer != null){
             Queue<Orientation> orientationSequence = ghostCurrentArea.getAreaGraph().shortestPath(this.getCurrentMainCellCoordinates(), viewedPlayer.getCurrentPosition());
         }
         else if(isAfraid){
-            //Queue<Orientation> orientationSequence = ghostCurrentArea.getAreaGraph().shortestPath(this.getCurrentMainCellCoordinates(), generateReachableCell(positionRefuge,MAX_DISTANCE_WHEN_SCARED));
+            Queue<Orientation> orientationSequence = ghostCurrentArea.getAreaGraph().shortestPath(this.getCurrentMainCellCoordinates(), generateReachableCell(positionRefugeCoord, MAX_DISTANCE_WHEN_SCARED));
         }
-
-
-
-
     }
     private DiscreteCoordinates generateReachableCell(DiscreteCoordinates origine, int radius){
         float distance = 0;

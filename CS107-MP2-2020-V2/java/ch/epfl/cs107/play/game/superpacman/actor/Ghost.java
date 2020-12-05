@@ -36,6 +36,7 @@ public class Ghost extends MovableAreaEntity implements Interactor {
 
     SuperPacmanPlayer viewedPlayer;
     protected Vector positionRefuge;
+    protected DiscreteCoordinates positionRefugeCoord;
     Orientation orientation;
     boolean isAfraid = false;
     float timer = SuperPacmanPlayer.timer;
@@ -77,9 +78,10 @@ public class Ghost extends MovableAreaEntity implements Interactor {
         }
     }
 
-    public Ghost(Area area, Orientation orientation, DiscreteCoordinates position, Vector positionRefuge) {
+    public Ghost(Area area, Orientation orientation, DiscreteCoordinates position, Vector positionRefuge, DiscreteCoordinates positionRefugeCoord) {
         super(area, orientation, position);
         this.positionRefuge = positionRefuge;
+        this.positionRefugeCoord = positionRefugeCoord;
     }
 
     public void setPositionRefuge() {

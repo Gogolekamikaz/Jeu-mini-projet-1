@@ -13,8 +13,8 @@ public class Blinky extends Ghost {
 
     protected Sprite [][] sprites = RPGSprite.extractSprites ("superpacman/ghost.blinky",4, 1, 1, this , 16, 16, new Orientation [] { Orientation.UP , Orientation.RIGHT , Orientation.DOWN , Orientation.LEFT });
 
-    public Blinky(Area area, Orientation orientation, DiscreteCoordinates position, Vector positionRefuge) {
-        super(area, orientation, position, positionRefuge);
+    public Blinky(Area area, Orientation orientation, DiscreteCoordinates position, Vector positionRefuge, DiscreteCoordinates positionRefugeCoord) {
+        super(area, orientation, position, positionRefuge, positionRefugeCoord);
         animationsNotScared = Animation.createAnimations(4,sprites);
         animationNotScared = animationsNotScared[Orientation.DOWN.ordinal()];
         currentAnimation = animationNotScared;

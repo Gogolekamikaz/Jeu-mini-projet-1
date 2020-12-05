@@ -81,17 +81,20 @@ public class SuperPacmanBehavior extends AreaBehavior {
                         break;
                     case FREE_WITH_BLINKY:
                         Vector positionRefuge = new Vector((float)(x),(float)(y));
-                        Blinky blinky = new Blinky(area, Orientation.UP, coordinates, positionRefuge);
+                        DiscreteCoordinates positionRefugeCoord = new DiscreteCoordinates(x,y);
+                        Blinky blinky = new Blinky(area, Orientation.UP, coordinates, positionRefuge, positionRefugeCoord);
                         area.registerActor(blinky);
                         ghostActors.add(blinky);
                     case FREE_WITH_INKY:
                         Vector positionRefuge2 = new Vector((float)(x),(float)(y));
-                        Inky inky = new Inky(area, Orientation.UP, coordinates, positionRefuge2);
+                        DiscreteCoordinates positionRefugeCoord2 = new DiscreteCoordinates(x,y);
+                        Inky inky = new Inky(area, Orientation.UP, coordinates, positionRefuge2, positionRefugeCoord2);
                         area.registerActor(inky);
                         ghostActors.add(inky);
                     case FREE_WITH_PINKY:
                         Vector positionRefuge3 = new Vector((float)(x),(float)(y));
-                        Pinky pinky = new Pinky(area, Orientation.UP, coordinates, positionRefuge3);
+                        DiscreteCoordinates positionRefugeCoord3 = new DiscreteCoordinates(x,y);
+                        Pinky pinky = new Pinky(area, Orientation.UP, coordinates, positionRefuge3 , positionRefugeCoord3);
                         area.registerActor(pinky);
                         ghostActors.add(pinky);
 

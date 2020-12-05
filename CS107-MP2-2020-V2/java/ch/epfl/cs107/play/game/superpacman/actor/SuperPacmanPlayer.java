@@ -74,7 +74,6 @@ public class SuperPacmanPlayer extends Player {
         Keyboard keyboard= getOwnerArea().getKeyboard();
         super.update(deltaTime);
 
-        System.out.println(this.getOwnerArea().getTitle());
         startOfSound+=deltaTime;
 
         if(this.getDesiredOrientation(keyboard) != null){

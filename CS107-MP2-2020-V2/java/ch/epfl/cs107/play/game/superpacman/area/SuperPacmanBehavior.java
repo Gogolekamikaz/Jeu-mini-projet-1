@@ -11,6 +11,7 @@ import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.math.Vector;
 import ch.epfl.cs107.play.window.Window;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 
@@ -101,10 +102,12 @@ public class SuperPacmanBehavior extends AreaBehavior {
             }
         }
     }
+
     AreaGraph areaGraph;
     public ArrayList<Ghost> getGhostActors(){
         return ghostActors;
     }
+
 
     public static boolean ghostActorsExist(ArrayList<Ghost> arraylist){
         if(arraylist.size() > 0){

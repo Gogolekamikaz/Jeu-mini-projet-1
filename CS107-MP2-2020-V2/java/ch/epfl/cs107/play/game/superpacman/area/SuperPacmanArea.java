@@ -30,6 +30,7 @@ public abstract class SuperPacmanArea extends Area implements Logic {
             setBehavior(behavior);
             behavior.registerActors(this);
             areaGhostActors= behavior.getGhostActors();
+            System.out.println("ghostTable exist : " + SuperPacmanBehavior.ghostActorsExist(areaGhostActors));
             areaGraph = behavior.getAreaGraph();
             pause = false;
 

@@ -46,6 +46,8 @@ public class SuperPacmanPlayer extends Player {
     private SoundAcoustics pacEatFruit = new SoundAcoustics("sounds/pacman_eatfruit.wav");
     private SoundAcoustics pacDeath = new SoundAcoustics("sounds/pacman_death.wav");
     private SoundAcoustics pacEatGhost = new SoundAcoustics("sounds/pacman_eatghost.wav");
+    private SoundAcoustics pacEatCoin = new SoundAcoustics("sounds/collectcoin.wav");
+    private SoundAcoustics pacEatKey = new SoundAcoustics("sounds/key_sound.wav");
 
 
     private final SuperPacmanPlayerHandler handler = new SuperPacmanPlayerHandler();
@@ -78,7 +80,7 @@ public class SuperPacmanPlayer extends Player {
 
         if(!this.isDisplacementOccurs()) {
             if (desiredOrientation!= getOrientation() && this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector())))) {
-                System.out.println(this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector()))));
+                //System.out.println(this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector()))));
                 this.orientate(desiredOrientation);
                 currentAnimation = animations[desiredOrientation.ordinal()];
             }
@@ -215,8 +217,11 @@ public class SuperPacmanPlayer extends Player {
             increaseScore(entity.getPOINTS_GIVEN());
             if(entity instanceof Bonus){
                 isInvincible = true;
+                pacEatCoin.shouldBeStarted();
             } else if (entity instanceof Cherry){
                 pacEatFruit.shouldBeStarted();
+            } else if (entity instanceof Key){
+                pacEatKey.shouldBeStarted();
             }
 
         }
@@ -246,10 +251,11 @@ public class SuperPacmanPlayer extends Player {
 
     @Override
     public void bip(Audio audio) {
-        pacPac.bip(audio);
+        //pacPac.bip(audio);
         pacEatFruit.bip(audio);
         pacEatGhost.bip(audio);
         pacDeath.bip(audio);
-
+        pacEatCoin.bip(audio);
+        pacEatKey.bip(audio);
     }
 }

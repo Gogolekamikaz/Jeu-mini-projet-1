@@ -14,6 +14,7 @@ public class SimpleGhost extends Entity {
 	 private float hp;
 	 private TextGraphics message;
 	 private Sprite sprite;
+
 	    /**
 	     * Default DemoActor constructor
 	     * @param position (Vector): initial position vector of the ghost

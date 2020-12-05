@@ -11,7 +11,6 @@ import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.math.Vector;
 import ch.epfl.cs107.play.window.Window;
 
-import javax.swing.plaf.basic.BasicListUI;
 import java.util.ArrayList;
 
 

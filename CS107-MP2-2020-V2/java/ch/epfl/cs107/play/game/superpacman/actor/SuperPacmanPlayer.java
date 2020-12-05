@@ -1,5 +1,6 @@
 package ch.epfl.cs107.play.game.superpacman.actor;
 
+import ch.epfl.cs107.play.game.actor.SoundAcoustics;
 import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.actor.*;
 import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
@@ -12,8 +13,11 @@ import ch.epfl.cs107.play.game.superpacman.handler.GhostInteractionVisitor;
 import ch.epfl.cs107.play.game.superpacman.handler.SuperPacmanInteractionVisitor;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.math.Vector;
+import ch.epfl.cs107.play.window.Audio;
 import ch.epfl.cs107.play.window.Canvas;
 import ch.epfl.cs107.play.window.Keyboard;
+import ch.epfl.cs107.play.window.Sound;
+
 import java.util.Collections;
 import java.util.List;
 
@@ -37,6 +41,12 @@ public class SuperPacmanPlayer extends Player {
     private Orientation desiredOrientation;
     private DiscreteCoordinates spawnPosition;
 
+    private SoundAcoustics pacPac = new SoundAcoustics("sounds/pacman_chomp.wav");
+    private double startOfSound = 0;
+    private SoundAcoustics pacEatFruit = new SoundAcoustics("sounds/pacman_eatfruit.wav");
+    private SoundAcoustics pacDeath = new SoundAcoustics("sounds/pacman_death.wav");
+    private SoundAcoustics pacEatGhost = new SoundAcoustics("sounds/pacman_eatghost.wav");
+
 
     private final SuperPacmanPlayerHandler handler = new SuperPacmanPlayerHandler();
 
@@ -47,6 +57,7 @@ public class SuperPacmanPlayer extends Player {
         status = new SuperPacmanPlayerStatusGUI(this);
         hp = 3;
         score = 0;
+        pacPac.shouldBeStarted();
     }
 
     @Override
@@ -59,6 +70,7 @@ public class SuperPacmanPlayer extends Player {
     public void update(float deltaTime) {
         Keyboard keyboard= getOwnerArea().getKeyboard();
         super.update(deltaTime);
+        startOfSound+=deltaTime;
 
         if(this.getDesiredOrientation(keyboard) != null){
             desiredOrientation = this.getDesiredOrientation(keyboard);
@@ -74,6 +86,10 @@ public class SuperPacmanPlayer extends Player {
         }
         if(isDisplacementOccurs()){
             currentAnimation.update(deltaTime);
+            if(startOfSound%0.7 < 0.05){
+                pacPac.shouldBeStarted();
+            }
+            startOfSound = startOfSound > 0.8 ? 0 : startOfSound;
         } else {
             currentAnimation.reset();
         }
@@ -199,17 +215,21 @@ public class SuperPacmanPlayer extends Player {
             increaseScore(entity.getPOINTS_GIVEN());
             if(entity instanceof Bonus){
                 isInvincible = true;
+            } else if (entity instanceof Cherry){
+                pacEatFruit.shouldBeStarted();
             }
 
         }
 
         public void interactWith(Ghost ghost) {
             if(isInvincible()){
+                pacEatGhost.shouldBeStarted();
                 ghost.forgetPacman();
                 ghost.setPositionRefuge();
                 increaseScore(ghost.getGHOST_SCORE()); //Si invicible, on mange le fantôme il nous rapporte donc des points
             }
             else{
+                pacDeath.shouldBeStarted();
                 hp -= 1;
                 ghost.setPositionRefuge();
                 ghost.forgetPacman();
@@ -222,5 +242,14 @@ public class SuperPacmanPlayer extends Player {
         public void interactWith(Key key){
 
         }
+    }
+
+    @Override
+    public void bip(Audio audio) {
+        pacPac.bip(audio);
+        pacEatFruit.bip(audio);
+        pacEatGhost.bip(audio);
+        pacDeath.bip(audio);
+
     }
 }

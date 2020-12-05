@@ -5,10 +5,10 @@ import ch.epfl.cs107.play.game.areagame.AreaGraph;
 import ch.epfl.cs107.play.game.superpacman.actor.Blinky;
 import ch.epfl.cs107.play.game.superpacman.actor.Diamond;
 import ch.epfl.cs107.play.game.superpacman.actor.Ghost;
-import ch.epfl.cs107.play.game.tutosSolution.Tuto2;
 import ch.epfl.cs107.play.io.FileSystem;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.signal.logic.Logic;
+import ch.epfl.cs107.play.window.Keyboard;
 import ch.epfl.cs107.play.window.Window;
 
 import java.util.ArrayList;
@@ -21,6 +21,8 @@ public abstract class SuperPacmanArea extends Area implements Logic {
     private AreaGraph areaGraph;
     protected final static float cameraScaleFactor = 15.f;
 
+    private boolean pause;
+
     public boolean begin(Window window, FileSystem fileSystem) {
         if (super.begin(window, fileSystem)) {
             // Set the behavior map
@@ -29,6 +31,7 @@ public abstract class SuperPacmanArea extends Area implements Logic {
             behavior.registerActors(this);
             areaGhostActors= behavior.getGhostActors();
             areaGraph = behavior.getAreaGraph();
+            pause = false;
 
             createArea();
             return true;
@@ -64,6 +67,22 @@ public abstract class SuperPacmanArea extends Area implements Logic {
     @Override
     public float getIntensity() {
         return 0;
+    }
+
+    @Override
+    public void update(float deltaTime) {
+        super.update(deltaTime);
+
+        Keyboard keyboard= this.getKeyboard();
+        if(keyboard.get(Keyboard.P).isPressed()){
+            suspend();
+        }
+    }
+
+    @Override
+    public void suspend(){
+        pause = true;
+        System.out.println("pause");
     }
 
 }

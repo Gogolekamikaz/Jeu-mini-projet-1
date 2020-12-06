@@ -13,6 +13,7 @@ import ch.epfl.cs107.play.window.Window;
 
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Queue;
 
 
 public class SuperPacmanBehavior extends AreaBehavior {
@@ -116,6 +117,10 @@ public class SuperPacmanBehavior extends AreaBehavior {
         else{
             return false;
         }
+    }
+
+    protected Queue<Orientation> shortestPath(DiscreteCoordinates origine, DiscreteCoordinates arrivee){
+        return areaGraph.shortestPath(origine, arrivee);
     }
 
     /**

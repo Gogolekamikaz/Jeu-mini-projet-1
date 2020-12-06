@@ -1,6 +1,7 @@
 package ch.epfl.cs107.play.game.superpacman.actor;
 
 import ch.epfl.cs107.play.game.areagame.Area;
+import ch.epfl.cs107.play.game.areagame.AreaGraph;
 import ch.epfl.cs107.play.game.areagame.actor.Animation;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.areagame.actor.Sprite;
@@ -14,7 +15,7 @@ import java.util.Queue;
 public class Inky extends Ghost{
     private final int MAX_DISTANCE_WHEN_NOT_SCARED = 10;
     private final int MAX_DISTANCE_WHEN_SCARED = 5;
-    protected DiscreteCoordinates targetPosition;
+    protected DiscreteCoordinates targetPosition = evaluateTargetPosition();
     protected boolean targetStateChange = false;
     protected boolean positionStateChange = false;
     protected boolean scareStateChange = false;
@@ -29,11 +30,16 @@ public class Inky extends Ghost{
         currentAnimation = animationNotScared;
     }
 
+
     @Override
     public void update(float deltaTime) {
         if(targetPosition != null && getCurrentMainCellCoordinates() == targetPosition){
             positionStateChange = true;
         }
+        if(isAfraid){
+            targetStateChange = true;
+        }
+
 
         if(stateChanges()){
             targetPosition = evaluateTargetPosition();
@@ -56,10 +62,7 @@ public class Inky extends Ghost{
     }
 
     protected Orientation getNextOrientation() {
-        Queue<Orientation> orientationSequence = null;
-        orientationSequence = ghostCurrentArea.getAreaGraph().shortestPath(this.getCurrentMainCellCoordinates(), targetPosition);
-
-
+        Queue<Orientation> orientationSequence = ghostCurrentArea.shortestPath(this.getCurrentMainCellCoordinates(), targetPosition);
         orientation = orientationSequence.poll();
         return orientation;
     }

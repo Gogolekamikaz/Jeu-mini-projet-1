@@ -2,6 +2,7 @@ package ch.epfl.cs107.play.game.superpacman.area;
 
 import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.AreaGraph;
+import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.superpacman.actor.Blinky;
 import ch.epfl.cs107.play.game.superpacman.actor.Diamond;
 import ch.epfl.cs107.play.game.superpacman.actor.Ghost;
@@ -12,6 +13,7 @@ import ch.epfl.cs107.play.window.Keyboard;
 import ch.epfl.cs107.play.window.Window;
 
 import java.util.ArrayList;
+import java.util.Queue;
 
 public abstract class SuperPacmanArea extends Area implements Logic {
 
@@ -42,6 +44,11 @@ public abstract class SuperPacmanArea extends Area implements Logic {
     public ArrayList<Ghost> getAreaGhostActors(){
         return areaGhostActors;
     }
+
+    public Queue<Orientation> shortestPath(DiscreteCoordinates origine, DiscreteCoordinates arrivee){
+        return(behavior.shortestPath(origine, arrivee));
+    }
+
     public AreaGraph getAreaGraph(){return areaGraph;}
 
     public final float getCameraScaleFactor(){return cameraScaleFactor;}

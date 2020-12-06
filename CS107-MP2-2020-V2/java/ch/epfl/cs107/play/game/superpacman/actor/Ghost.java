@@ -61,21 +61,18 @@ public class Ghost extends MovableAreaEntity implements Interactor {
 
 
         } else{
-            keepOriented -= deltaTime;
-            if (keepOriented < 0){
-                orientation = getNextOrientation();
-                if(!isAfraid){
-                    currentAnimation = animationsNotScared[orientation.ordinal()];
-                }
-                else{
-                    currentAnimation = animationScared;
-                }
-                this.orientate(orientation);
-                keepOriented = 2;
-                move(18);
+            orientation = getNextOrientation();
+            if(!isAfraid){
+                currentAnimation = animationsNotScared[orientation.ordinal()];
             }
+            else{
+                currentAnimation = animationScared;
+            }
+            this.orientate(orientation);
+            move(18);
         }
     }
+
 
     public Ghost(Area area, Orientation orientation, DiscreteCoordinates position, Vector positionRefuge, DiscreteCoordinates positionRefugeCoord) {
         super(area, orientation, position);

@@ -6,6 +6,7 @@ import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.superpacman.actor.Blinky;
 import ch.epfl.cs107.play.game.superpacman.actor.Diamond;
 import ch.epfl.cs107.play.game.superpacman.actor.Ghost;
+import ch.epfl.cs107.play.game.superpacman.actor.SuperPacmanPlayer;
 import ch.epfl.cs107.play.io.FileSystem;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.signal.logic.Logic;
@@ -31,8 +32,6 @@ public abstract class SuperPacmanArea extends Area implements Logic {
             behavior = new SuperPacmanBehavior(window, getTitle());
             setBehavior(behavior);
             behavior.registerActors(this);
-            areaGhostActors= behavior.getGhostActors();
-            areaGraph = behavior.getAreaGraph();
             pause = false;
 
             createArea();
@@ -47,6 +46,10 @@ public abstract class SuperPacmanArea extends Area implements Logic {
 
     public Queue<Orientation> shortestPath(DiscreteCoordinates origine, DiscreteCoordinates arrivee){
         return(behavior.shortestPath(origine, arrivee));
+    }
+
+    public void scareCheck(SuperPacmanPlayer player){
+        behavior.scareCheck(player);
     }
 
     public AreaGraph getAreaGraph(){return areaGraph;}

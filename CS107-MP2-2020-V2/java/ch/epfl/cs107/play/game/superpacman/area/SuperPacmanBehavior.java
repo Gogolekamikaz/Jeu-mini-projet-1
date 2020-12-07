@@ -6,6 +6,7 @@ import ch.epfl.cs107.play.game.areagame.actor.Interactable;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.areagame.AreaGraph;
 import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
+import ch.epfl.cs107.play.game.superpacman.SuperPacman;
 import ch.epfl.cs107.play.game.superpacman.actor.*;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.math.Vector;
@@ -105,12 +106,8 @@ public class SuperPacmanBehavior extends AreaBehavior {
     }
 
     AreaGraph areaGraph;
-    public ArrayList<Ghost> getGhostActors(){
-        return ghostActors;
-    }
 
-
-    public static boolean ghostActorsExist(ArrayList<Ghost> arraylist){
+    private static boolean ghostActorsExist(ArrayList<Ghost> arraylist){
         if(arraylist.size() > 0){
             return true;
         }
@@ -120,7 +117,23 @@ public class SuperPacmanBehavior extends AreaBehavior {
     }
 
     protected Queue<Orientation> shortestPath(DiscreteCoordinates origine, DiscreteCoordinates arrivee){
+        //DiscreteCoordinates tryArrival = new DiscreteCoordinates(14,15);
+        //DiscreteCoordinates tryArrival2 = new DiscreteCoordinates(14,13);
+        //Queue<Orientation> test = areaGraph.shortestPath(origine, tryArrival);
+        //Queue<Orientation> test2 = areaGraph.shortestPath(origine, tryArrival2);
+        //System.out.println(test);
+        //System.out.println(test2);
+        Queue<Orientation> sequence = areaGraph.shortestPath(origine, arrivee);
+        System.out.println(sequence);
         return areaGraph.shortestPath(origine, arrivee);
+    }
+
+    protected void scareCheck(SuperPacmanPlayer player){
+        if(player.isInvincible() && SuperPacmanBehavior.ghostActorsExist(ghostActors)){
+            for(Ghost ghost : ghostActors){
+                ghost.setAfraid(player);
+            }
+        }
     }
 
     /**
@@ -149,7 +162,6 @@ public class SuperPacmanBehavior extends AreaBehavior {
 
         }
     }
-    public AreaGraph getAreaGraph(){return areaGraph;}
 
     public class SuperPacmanCell extends AreaBehavior.Cell{
 
@@ -204,6 +216,10 @@ public class SuperPacmanBehavior extends AreaBehavior {
             return true;
         }
 
+        private SuperPacmanCellType getType(SuperPacmanCell cell){
+            return cell.type;
+        }
+
         private boolean[][] getWallNeighborhood(int x, int y){
             boolean[][] neigborhood = new boolean[3][3];
             for(int xcord = x-1, i = 0; xcord <= x+1; ++xcord , ++i){
@@ -220,43 +236,41 @@ public class SuperPacmanBehavior extends AreaBehavior {
         }
         
         protected boolean hasSideEdge(String Side, DiscreteCoordinates coordinates, int height){
-           
+
             SuperPacmanCellType color = null;
+            int x = 0;
+            int y = 0;
+
             if(Side == "LEFT") {
-                int x = coordinates.x - 1;
-                int y = coordinates.y;
-                if(cellExists(x,y)){
-                    color = SuperPacmanCellType.toType(getRGB(height - 1 - y, x));
+                x = coordinates.x - 1;
+                y = coordinates.y;
                 }
-            }
+
             else if(Side == "RIGHT") {
-                int x = coordinates.x + 1;
-                int y = coordinates.y;
-                if(cellExists(x,y)){
-                    color = SuperPacmanCellType.toType(getRGB(height - 1 - y, x));
-                }
+                x = coordinates.x + 1;
+                y = coordinates.y;
 
             }
             else if(Side == "DOWN") {
-                int x = coordinates.x;
-                int y = coordinates.y - 1;
-                if(cellExists(x,y)){
-                    color = SuperPacmanCellType.toType(getRGB(height - 1 - y, x));
-                }
+                x = coordinates.x;
+                y = coordinates.y - 1 ;
             }
             else if(Side == "UP") {
-                int x = coordinates.x;
-                int y = coordinates.y + 1;
-                if(cellExists(x,y)){
-                    color = SuperPacmanCellType.toType(getRGB(height - 1 - y, x));
-                }
-
+                x = coordinates.x;
+                y = coordinates.y + 1 ;
             }
-            
-            if (color == SuperPacmanCellType.WALL) {
-                return true;
-            } else {
-                return false; 
+
+            if(cellExists(x,y)){
+                SuperPacmanCellType currentType = SuperPacmanCellType.toType(getRGB(getHeight()-1-y, x));
+                if (currentType != SuperPacmanCellType.WALL){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+            else {
+                return false;
             }
         }
     }

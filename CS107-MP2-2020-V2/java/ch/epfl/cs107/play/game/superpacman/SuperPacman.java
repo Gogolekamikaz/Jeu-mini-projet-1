@@ -41,13 +41,8 @@ public class SuperPacman extends RPG {
     @Override
     public void update(float deltaTime) {
         super.update(deltaTime);
-        SuperPacmanArea ghostArea = (SuperPacmanArea)(getCurrentArea());
-        ghostActors = ghostArea.getAreaGhostActors();
-        if(player.isInvincible() && SuperPacmanBehavior.ghostActorsExist(ghostActors)){
-            for(Ghost ghost : ghostActors){
-                ghost.setAfraid(player);
-            }
-        }
+        SuperPacmanArea currentPacmanTypeArea = (SuperPacmanArea)(getCurrentArea());
+        currentPacmanTypeArea.scareCheck(player);
     }
 
     @Override

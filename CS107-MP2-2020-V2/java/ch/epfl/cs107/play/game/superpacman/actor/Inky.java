@@ -15,10 +15,13 @@ import java.util.Queue;
 public class Inky extends Ghost{
     private final int MAX_DISTANCE_WHEN_NOT_SCARED = 10;
     private final int MAX_DISTANCE_WHEN_SCARED = 5;
-    protected DiscreteCoordinates targetPosition = evaluateTargetPosition();
-    protected boolean targetStateChange = false;
+    protected DiscreteCoordinates targetPosition;
+    protected boolean targetingStateChange = false;
     protected boolean positionStateChange = false;
     protected boolean scareStateChange = false;
+    private boolean scareStateChangeAlreadyClaimed = false;
+    private boolean targetingStateChangeAlreadyClaimed = false;
+    private Queue<Orientation> orientationSequence;
 
     protected Sprite[][] sprites = RPGSprite.extractSprites ("superpacman/ghost.inky",4, 1, 1, this , 16, 16, new Orientation [] { Orientation.UP , Orientation.RIGHT , Orientation.DOWN , Orientation.LEFT });
 
@@ -28,68 +31,104 @@ public class Inky extends Ghost{
         animationsNotScared = Animation.createAnimations(4,sprites);
         animationNotScared = animationsNotScared[Orientation.DOWN.ordinal()];
         currentAnimation = animationNotScared;
-    }
 
+        targetPosition = evaluateTargetPosition();
+        orientationSequence = evaluateOrientationSequence();
+    }
 
     @Override
     public void update(float deltaTime) {
-        if(targetPosition != null && getCurrentMainCellCoordinates() == targetPosition){
+        //if(targetPosition != null && (getCurrentMainCellCoordinates().x == targetPosition.x && getCurrentMainCellCoordinates().y == targetPosition.y)){
+        //    positionStateChange = true;
+        //}
+
+        if(orientationSequence.size() == 0){
             positionStateChange = true;
+            System.out.println("Size = 0, finding new one");
         }
+
         if(isAfraid){
-            targetStateChange = true;
+            if(!scareStateChangeAlreadyClaimed){
+                scareStateChange = true;
+                scareStateChangeAlreadyClaimed = true;
+            }
+            if(timer < 0){
+                scareStateChange = true;
+                scareStateChangeAlreadyClaimed = false;
+            }
         }
+
+        if(this.viewedPlayer != null){
+            if(!targetingStateChangeAlreadyClaimed){
+                targetingStateChange = true;
+                targetingStateChangeAlreadyClaimed = true;
+            }
+        }
+
 
 
         if(stateChanges()){
+            System.out.println("State changes !");
             targetPosition = evaluateTargetPosition();
-        }
+            orientationSequence = evaluateOrientationSequence();
 
+            targetingStateChange = false;
+            positionStateChange = false;
+            scareStateChange = false;
+        }
 
         super.update(deltaTime);
     }
     private DiscreteCoordinates generateReachableCell(DiscreteCoordinates origine, int radius){
         float distance = 0;
+        Queue<Orientation> orientationSequenceTried;
         DiscreteCoordinates potentialDestination;
         do{
             int randomX = RandomGenerator.getInstance().nextInt(ghostCurrentArea.getWidth());
             int randomY = RandomGenerator.getInstance().nextInt(ghostCurrentArea.getHeight());
             potentialDestination = new DiscreteCoordinates(randomX,randomY);
             distance = DiscreteCoordinates.distanceBetween(origine,potentialDestination);
-        }while(distance > radius);
+            orientationSequenceTried =  ghostCurrentArea.shortestPath(getCurrentMainCellCoordinates(), potentialDestination);
+        }while(distance > radius || orientationSequenceTried == null);
         DiscreteCoordinates validDestination = potentialDestination;
         return validDestination;
     }
 
     protected Orientation getNextOrientation() {
-        Queue<Orientation> orientationSequence = ghostCurrentArea.shortestPath(this.getCurrentMainCellCoordinates(), targetPosition);
         orientation = orientationSequence.poll();
         return orientation;
     }
 
     private DiscreteCoordinates evaluateTargetPosition() {
-        DiscreteCoordinates targetPosition = null;
-        if (viewedPlayer == null) {
-            targetPosition = generateReachableCell(positionRefugeCoord, MAX_DISTANCE_WHEN_NOT_SCARED);
+        DiscreteCoordinates outputPosition = null;
+        if (viewedPlayer == null && !isAfraid) {
+            outputPosition = generateReachableCell(positionRefugeCoord, MAX_DISTANCE_WHEN_NOT_SCARED);
         }
         else if (!isAfraid && viewedPlayer != null){
-            targetPosition = viewedPlayer.getCurrentPosition();
+            outputPosition = viewedPlayer.getCurrentPosition();
         }
         else if(isAfraid){
-            targetPosition = generateReachableCell(positionRefugeCoord, MAX_DISTANCE_WHEN_SCARED);
+            outputPosition = generateReachableCell(positionRefugeCoord, MAX_DISTANCE_WHEN_SCARED);
         }
-        return targetPosition;
+        return outputPosition;
+    }
+
+    private Queue<Orientation> evaluateOrientationSequence(){
+        return ghostCurrentArea.shortestPath(getCurrentMainCellCoordinates(), targetPosition);
     }
 
     private boolean stateChanges(){
-        if(targetStateChange || positionStateChange || scareStateChange){
-            targetStateChange = false;
-            positionStateChange = false;
-            scareStateChange = false;
+        if(targetingStateChange || positionStateChange || scareStateChange){
             return true;
         }
         else{
             return false;
         }
+    }
+
+    public void forgetPacman() {
+        this.viewedPlayer = null;
+        targetingStateChange = true;
+        targetingStateChangeAlreadyClaimed = false;
     }
 }

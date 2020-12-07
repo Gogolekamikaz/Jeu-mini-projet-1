@@ -58,10 +58,10 @@ public class Ghost extends MovableAreaEntity implements Interactor {
             else{
                 currentAnimation = animationsNotScared[orientation.ordinal()];
             }
-
-
-        } else{
+        }
+        else{
             orientation = getNextOrientation();
+            //System.out.println(this + " avec une orientation : " + orientation);
             if(!isAfraid){
                 currentAnimation = animationsNotScared[orientation.ordinal()];
             }

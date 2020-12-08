@@ -3,8 +3,6 @@ package ch.epfl.cs107.play.game.superpacman.area;
 import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.AreaGraph;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
-import ch.epfl.cs107.play.game.superpacman.actor.Blinky;
-import ch.epfl.cs107.play.game.superpacman.actor.Diamond;
 import ch.epfl.cs107.play.game.superpacman.actor.Ghost;
 import ch.epfl.cs107.play.game.superpacman.actor.SuperPacmanPlayer;
 import ch.epfl.cs107.play.io.FileSystem;
@@ -23,6 +21,8 @@ public abstract class SuperPacmanArea extends Area implements Logic {
     private ArrayList<Ghost> areaGhostActors;
     private AreaGraph areaGraph;
     protected final static float cameraScaleFactor = 15.f;
+
+    private int diamondCount;
 
     private boolean pause;
 
@@ -54,25 +54,19 @@ public abstract class SuperPacmanArea extends Area implements Logic {
 
     public AreaGraph getAreaGraph(){return areaGraph;}
 
+    public void addDiamond(){ diamondCount++; }
+
+    public void removeDiamond(){ diamondCount--; }
+
     public final float getCameraScaleFactor(){return cameraScaleFactor;}
 
     public abstract DiscreteCoordinates getSpawnPoint();
 
     @Override
-    public boolean isOn() {
-        if(contains(new Diamond(this, new DiscreteCoordinates(0,0)))){
-            return false;
-        }
-        return true;
-    }
+    public boolean isOn() { return !isOff();}
 
     @Override
-    public boolean isOff() {
-        if(contains(new Diamond(this, new DiscreteCoordinates(0,0)))){
-            return true;
-        }
-        return false;
-    }
+    public boolean isOff() { return diamondCount>0;}
 
     @Override
     public float getIntensity() {
@@ -91,6 +85,7 @@ public abstract class SuperPacmanArea extends Area implements Logic {
 
     @Override
     public void suspend(){
+        super.suspend();
         pause = true;
         System.out.println("pause");
     }

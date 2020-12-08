@@ -9,6 +9,7 @@ import ch.epfl.cs107.play.game.rpg.actor.Player;
 import ch.epfl.cs107.play.game.rpg.actor.RPGSprite;
 import ch.epfl.cs107.play.game.rpg.actor.Sign;
 import ch.epfl.cs107.play.game.superpacman.area.Level0;
+import ch.epfl.cs107.play.game.superpacman.area.SuperPacmanArea;
 import ch.epfl.cs107.play.game.superpacman.handler.GhostInteractionVisitor;
 import ch.epfl.cs107.play.game.superpacman.handler.SuperPacmanInteractionVisitor;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
@@ -213,11 +214,12 @@ public class SuperPacmanPlayer extends Player {
             if(entity instanceof Bonus){
                 isInvincible = true;
                 pacEatCoin.shouldBeStarted();
-            }
-            else if (entity instanceof Cherry){
+            } else if (entity instanceof Cherry){
                 pacEatFruit.shouldBeStarted();
             } else if (entity instanceof Key){
                 pacEatKey.shouldBeStarted();
+            } else if (entity instanceof Diamond){
+                ((SuperPacmanArea)getOwnerArea()).removeDiamond();
             }
 
         }

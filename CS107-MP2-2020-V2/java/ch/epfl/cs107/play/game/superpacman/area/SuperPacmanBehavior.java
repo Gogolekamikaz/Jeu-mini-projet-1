@@ -1,18 +1,15 @@
 package ch.epfl.cs107.play.game.superpacman.area;
 
-import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.AreaBehavior;
 import ch.epfl.cs107.play.game.areagame.actor.Interactable;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.areagame.AreaGraph;
 import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
-import ch.epfl.cs107.play.game.superpacman.SuperPacman;
 import ch.epfl.cs107.play.game.superpacman.actor.*;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.math.Vector;
 import ch.epfl.cs107.play.window.Window;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Queue;
 
@@ -80,6 +77,7 @@ public class SuperPacmanBehavior extends AreaBehavior {
                     case FREE_WITH_DIAMOND:
                         Diamond diamond = new Diamond(area, coordinates);
                         area.registerActor(diamond);
+                        area.addDiamond();
                         break;
                     case FREE_WITH_BLINKY:
                         Vector positionRefuge = new Vector((float)(x),(float)(y));

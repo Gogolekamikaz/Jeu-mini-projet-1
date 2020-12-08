@@ -144,24 +144,6 @@ public abstract class Area implements Playable {
 		return actors.contains(a);
 	}
 
-	//////////////////////////////////////////////////////////////////////////////
-	///////MODIICATION DE LA MAQUETTE A SOUMETTRE///////////////////////////
-	//TODO
-
-	/**
-	 * Indicate if the given actor exists into the actor list
-	 * @param a (Actor): the given actor, may be null
-	 * @return (boolean): true if the given actor exists into actor list
-	 */
-	public boolean contains(Actor a){
-		for (Actor actor : actors) {
-			if(actor.getClass().getName().equals(a.getClass().getName())){
-				return true;
-			}
-		}
-		return false;
-	}
-
 	/**
 	 * Getter for the area width
 	 * @return (int) : the width in number of cols

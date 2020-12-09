@@ -19,30 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8d6f72c-b834-412f-8842-21d938aea8a0" name="Default Changelist" comment="new Sounds">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_12_2020_14_52__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_12_2020_14_52__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_12_2020_14_59__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_12_2020_14_59__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="b8d6f72c-b834-412f-8842-21d938aea8a0" name="Default Changelist" comment="tout est legal maintenant">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/areagame/Area.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/areagame/Area.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanArea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/Play.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/Play.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/SuperPacman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/SuperPacman.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Blinky.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Blinky.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Ghost.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Ghost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer$SuperPacmanPlayerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer$SuperPacmanPlayerHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/Level0.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/Level0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/Level1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/Level1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/Level2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/Level2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanArea.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior$SuperPacmanCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior$SuperPacmanCell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior$SuperPacmanCellType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior$SuperPacmanCellType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/userInterface/SuperPacmanGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/userInterface/SuperPacmanGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/tutosSolution/actor/SimpleGhost.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/tutosSolution/actor/SimpleGhost.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +64,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/res/images/behaviors" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -108,6 +91,17 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,7 +140,8 @@
       <workItem from="1607279018319" duration="70000" />
       <workItem from="1607425306251" duration="488000" />
       <workItem from="1607449866483" duration="641000" />
-      <workItem from="1607460950929" duration="2655000" />
+      <workItem from="1607460950929" duration="2807000" />
+      <workItem from="1607468028713" duration="11981000" />
     </task>
     <task id="LOCAL-00001" summary="Enoncé projet pret">
       <created>1606264291168</created>
@@ -288,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607177847215</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="tout est legal maintenant">
+      <created>1607466469727</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1607466469727</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +329,8 @@
     <MESSAGE value="Encapsulation de batard" />
     <MESSAGE value="Sound" />
     <MESSAGE value="new Sounds" />
-    <option name="LAST_COMMIT_MESSAGE" value="new Sounds" />
+    <MESSAGE value="tout est legal maintenant" />
+    <option name="LAST_COMMIT_MESSAGE" value="tout est legal maintenant" />
   </component>
   <component name="WindowStateProjectService">
     <state x="415" y="191" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1606310458628">
@@ -370,22 +373,22 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="93" y="93" width="1181" height="685" key="DiffContextDialog/0.0.1368.872@0.0.1368.872" timestamp="1607099694844" />
-    <state width="1326" height="226" key="GridCell.Tab.0.bottom" timestamp="1607465873928">
+    <state width="1326" height="226" key="GridCell.Tab.0.bottom" timestamp="1607532456859">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="226" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1607465873928" />
-    <state width="1326" height="226" key="GridCell.Tab.0.center" timestamp="1607465873928">
+    <state width="1326" height="226" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1607532456859" />
+    <state width="1326" height="226" key="GridCell.Tab.0.center" timestamp="1607532456859">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="226" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1607465873928" />
-    <state width="1326" height="226" key="GridCell.Tab.0.left" timestamp="1607465873927">
+    <state width="1326" height="226" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1607532456859" />
+    <state width="1326" height="226" key="GridCell.Tab.0.left" timestamp="1607532456859">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="226" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1607465873927" />
-    <state width="1326" height="226" key="GridCell.Tab.0.right" timestamp="1607465873928">
+    <state width="1326" height="226" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1607532456859" />
+    <state width="1326" height="226" key="GridCell.Tab.0.right" timestamp="1607532456859">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="226" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1607465873928" />
+    <state width="1326" height="226" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1607532456859" />
     <state width="1326" height="281" key="GridCell.Tab.1.bottom" timestamp="1607124964293">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -402,22 +405,34 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1326" height="281" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1607124964293" />
-    <state x="265" y="179" key="IDE.errors.dialog" timestamp="1606483294536">
+    <state x="265" y="179" key="IDE.errors.dialog" timestamp="1607550874352">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="265" y="179" key="IDE.errors.dialog/0.0.1368.872@0.0.1368.872" timestamp="1606483294536" />
+    <state x="265" y="179" key="IDE.errors.dialog/0.0.1368.872@0.0.1368.872" timestamp="1607550874352" />
     <state x="130" y="70" key="MergeDialog" timestamp="1607175614399">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="130" y="70" key="MergeDialog/0.0.1368.872@0.0.1368.872" timestamp="1607175614399" />
+    <state x="323" y="198" key="MultipleFileMergeDialog" timestamp="1607550383108">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="323" y="198" key="MultipleFileMergeDialog/0.0.1368.872@0.0.1368.872" timestamp="1607550383108" />
+    <state x="186" y="23" key="SettingsEditor" timestamp="1607546766740">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="186" y="23" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1607546766740" />
+    <state x="93" y="93" width="1181" height="685" key="VCS.FileHistoryDialog" timestamp="1607532784836">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="93" y="93" width="1181" height="685" key="VCS.FileHistoryDialog/0.0.1368.872@0.0.1368.872" timestamp="1607532784836" />
     <state x="277" y="169" key="Vcs.Push.Dialog.v2" timestamp="1607177855007">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="277" y="169" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1607177855007" />
-    <state x="502" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607450148550">
+    <state x="502" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607550332077">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="502" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1368.872@0.0.1368.872" timestamp="1607450148550" />
+    <state x="502" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1368.872@0.0.1368.872" timestamp="1607550332077" />
     <state x="231" y="172" width="904" height="627" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1607123544588">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -426,6 +441,10 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="394" y="139" width="579" height="592" key="find.popup/0.0.1368.872@0.0.1368.872" timestamp="1606755664677" />
+    <state x="276" y="87" key="new project wizard" timestamp="1607550834252">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="276" y="87" key="new project wizard/0.0.1368.872@0.0.1368.872" timestamp="1607550834252" />
     <state x="343" y="200" key="run.anything.popup" timestamp="1607268600300">
       <screen x="0" y="0" width="1368" height="872" />
     </state>

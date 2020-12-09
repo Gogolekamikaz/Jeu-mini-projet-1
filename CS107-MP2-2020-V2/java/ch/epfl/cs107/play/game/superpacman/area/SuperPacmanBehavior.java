@@ -150,7 +150,6 @@ public class SuperPacmanBehavior extends AreaBehavior {
             for (int x = 0; x < width ; x++) {
                 SuperPacmanCellType color = SuperPacmanCellType.toType(getRGB(height-1-y, x));
                 setCell(x,y, new SuperPacmanCell(x,y,color));
-                
                 SuperPacmanCell cell = (SuperPacmanCell)getCell(x,y);
                 DiscreteCoordinates coordinates = new DiscreteCoordinates(x,y);
                 if(color != SuperPacmanCellType.WALL){

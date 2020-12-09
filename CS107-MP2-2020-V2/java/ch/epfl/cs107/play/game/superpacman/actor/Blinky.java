@@ -9,7 +9,7 @@ import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.math.RandomGenerator;
 import ch.epfl.cs107.play.math.Vector;
 
-public class Blinky extends Ghost {
+public class Blinky extends Ghost{
 
     protected Sprite [][] sprites = RPGSprite.extractSprites ("superpacman/ghost.blinky",4, 1, 1, this , 16, 16, new Orientation [] { Orientation.UP , Orientation.RIGHT , Orientation.DOWN , Orientation.LEFT });
 
@@ -25,7 +25,7 @@ public class Blinky extends Ghost {
     }
 
     @Override
-    protected Orientation getNextOrientation() {
+    public Orientation getNextOrientation() {
         int randomInt = RandomGenerator.getInstance().nextInt(4);
         for(int i =0; i <=4; ++i){
             if(randomInt == i){
@@ -33,5 +33,9 @@ public class Blinky extends Ghost {
             }
         }
         return orientation;
+    }
+
+    public void forgetPacman() {
+        viewedPlayer = null;
     }
 }

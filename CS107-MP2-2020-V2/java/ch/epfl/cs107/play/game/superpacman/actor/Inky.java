@@ -38,13 +38,13 @@ public class Inky extends Ghost{
 
     @Override
     public void update(float deltaTime) {
-        //if(targetPosition != null && (getCurrentMainCellCoordinates().x == targetPosition.x && getCurrentMainCellCoordinates().y == targetPosition.y)){
-        //    positionStateChange = true;
-        //}
 
         if(orientationSequence.size() == 0){
             positionStateChange = true;
-            System.out.println("Size = 0, finding new one");
+        }
+
+        if(orientationSequence == null){
+            positionStateChange = true;
         }
 
         if(isAfraid){
@@ -68,10 +68,8 @@ public class Inky extends Ghost{
 
 
         if(stateChanges()){
-            System.out.println("State changes !");
             targetPosition = evaluateTargetPosition();
-            orientationSequence = evaluateOrientationSequence();
-
+            //orientationSequence = evaluateOrientationSequence();
             targetingStateChange = false;
             positionStateChange = false;
             scareStateChange = false;
@@ -95,6 +93,7 @@ public class Inky extends Ghost{
     }
 
     protected Orientation getNextOrientation() {
+        orientationSequence = evaluateOrientationSequence();
         orientation = orientationSequence.poll();
         return orientation;
     }

@@ -17,7 +17,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Ghost extends MovableAreaEntity implements Interactor {
+public abstract class Ghost extends MovableAreaEntity implements Interactor {
+
     protected final int GHOST_SCORE = 500;
     protected Sprite sprite;
     private final int viewRadius = 5;
@@ -70,7 +71,7 @@ public class Ghost extends MovableAreaEntity implements Interactor {
                 currentAnimation = animationScared;
             }
             this.orientate(orientation);
-            move(18);
+            move(23);
         }
     }
 
@@ -88,20 +89,16 @@ public class Ghost extends MovableAreaEntity implements Interactor {
         resetMotion();
     }
 
-    protected Orientation getNextOrientation() {
-        Orientation orientation = null;
-        return orientation;
-    }
+    protected abstract Orientation getNextOrientation();
 
     public void setAfraid(SuperPacmanPlayer player) {
         if(player.isInvincible()){
             isAfraid = true;
         }
+    }
 
-    }
-    public void forgetPacman() {
-        this.viewedPlayer = null;
-    }
+    public abstract void forgetPacman();
+    //abstract void forgetPacman(){}
 
     public int getGHOST_SCORE() {
         return GHOST_SCORE;
@@ -166,7 +163,6 @@ public class Ghost extends MovableAreaEntity implements Interactor {
     }
 
     private class GhostHandler implements GhostInteractionVisitor {
-
 
         public void interactWith(SuperPacmanPlayer player){
             viewedPlayer = player;

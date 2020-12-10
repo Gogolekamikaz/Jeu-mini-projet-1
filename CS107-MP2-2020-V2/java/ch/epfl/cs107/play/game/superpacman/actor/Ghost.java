@@ -71,7 +71,7 @@ public abstract class Ghost extends MovableAreaEntity implements Interactor {
                 currentAnimation = animationScared;
             }
             this.orientate(orientation);
-            move(23);
+            move(10);
         }
     }
 

@@ -88,6 +88,10 @@ public abstract class AgressiveGhost extends Ghost {
     }
 
     protected Orientation getNextOrientation(){
+        if(viewedPlayer != null){
+            targetPosition = evaluateTargetPosition();
+            orientationSequence = evaluateOrientationSequence();
+        }
         Orientation orientation = orientationSequence.poll();
         return orientation;
     }

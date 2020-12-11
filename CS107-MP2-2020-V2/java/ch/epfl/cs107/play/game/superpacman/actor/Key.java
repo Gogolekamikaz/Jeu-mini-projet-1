@@ -44,6 +44,10 @@ public class Key extends SuperPacmanCollectableAreaEntity implements Logic {
 
     @Override
     public float getIntensity() {
-        return 0;
+        if(isOn()){
+            return 1.0f;
+        } else {
+            return 0.f;
+        }
     }
 }

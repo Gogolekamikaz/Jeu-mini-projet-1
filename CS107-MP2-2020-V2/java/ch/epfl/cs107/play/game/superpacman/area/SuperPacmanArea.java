@@ -70,7 +70,11 @@ public abstract class SuperPacmanArea extends Area implements Logic {
 
     @Override
     public float getIntensity() {
-        return 0;
+        if(isOn()){
+            return 1.f;
+        } else {
+            return 0.f;
+        }
     }
 
     @Override

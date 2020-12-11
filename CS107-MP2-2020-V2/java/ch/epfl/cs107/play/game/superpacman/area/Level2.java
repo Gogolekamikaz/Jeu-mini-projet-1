@@ -4,6 +4,7 @@ import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.superpacman.actor.Gate;
 import ch.epfl.cs107.play.game.superpacman.actor.Key;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
+import ch.epfl.cs107.play.signal.logic.And;
 
 public class Level2 extends SuperPacmanArea {
 
@@ -32,10 +33,10 @@ public class Level2 extends SuperPacmanArea {
         gates[5] = new Gate(this, Orientation.DOWN, new DiscreteCoordinates(24,12), keys[1]);
         gates[6] = new Gate(this, Orientation.RIGHT, new DiscreteCoordinates(21,10), keys[1]);
         gates[7] = new Gate(this, Orientation.RIGHT, new DiscreteCoordinates(21,8), keys[1]);
-        gates[8] = new Gate(this, Orientation.RIGHT, new DiscreteCoordinates(10,2), keys[2], keys[3]);
-        gates[9] = new Gate(this, Orientation.RIGHT, new DiscreteCoordinates(19,2), keys[2], keys[3]);
-        gates[10] = new Gate(this, Orientation.RIGHT, new DiscreteCoordinates(12,8), keys[2], keys[3]);
-        gates[11] = new Gate(this, Orientation.RIGHT, new DiscreteCoordinates(17,8), keys[2], keys[3]);
+        gates[8] = new Gate(this, Orientation.RIGHT, new DiscreteCoordinates(10,2), new And(keys[2], keys[3]));
+        gates[9] = new Gate(this, Orientation.RIGHT, new DiscreteCoordinates(19,2), new And(keys[2], keys[3]));
+        gates[10] = new Gate(this, Orientation.RIGHT, new DiscreteCoordinates(12,8), new And(keys[2], keys[3]));
+        gates[11] = new Gate(this, Orientation.RIGHT, new DiscreteCoordinates(17,8), new And(keys[2], keys[3]));
         gates[12] = new Gate(this, Orientation.RIGHT, new DiscreteCoordinates(14,3), this);
         gates[13] = new Gate(this, Orientation.RIGHT, new DiscreteCoordinates(15,3), this);
         for (Gate gate : gates) {

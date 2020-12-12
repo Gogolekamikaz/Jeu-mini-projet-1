@@ -14,10 +14,7 @@ import ch.epfl.cs107.play.game.superpacman.handler.GhostInteractionVisitor;
 import ch.epfl.cs107.play.game.superpacman.handler.SuperPacmanInteractionVisitor;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.math.Vector;
-import ch.epfl.cs107.play.window.Audio;
-import ch.epfl.cs107.play.window.Canvas;
-import ch.epfl.cs107.play.window.Keyboard;
-import ch.epfl.cs107.play.window.Sound;
+import ch.epfl.cs107.play.window.*;
 
 import java.util.Collections;
 import java.util.List;
@@ -49,13 +46,16 @@ public class SuperPacmanPlayer extends Player {
     private SoundAcoustics pacEatGhost = new SoundAcoustics("sounds/pacman_eatghost.wav");
     private SoundAcoustics pacEatCoin = new SoundAcoustics("sounds/collectcoin.wav");
     private SoundAcoustics pacEatKey = new SoundAcoustics("sounds/key_sound.wav");
+    int buttonUP = Keyboard.UP;
+    int buttonDOWN = Keyboard.DOWN;
+    int buttonRIGHT = Keyboard.RIGHT;
+    int buttonLEFT = Keyboard.LEFT;
 
 
     private final SuperPacmanPlayerHandler handler = new SuperPacmanPlayerHandler();
 
     public SuperPacmanPlayer(Area area, Orientation orientation, DiscreteCoordinates coordinates) {
         super(area, orientation, coordinates);
-
         currentAnimation = animations[Orientation.UP.ordinal()];
         desiredOrientation = Orientation.UP;
         status = new SuperPacmanPlayerStatusGUI(this);
@@ -119,19 +119,19 @@ public class SuperPacmanPlayer extends Player {
         }
         this.enterArea(getOwnerArea(), spawnPosition);
     }
-    protected DiscreteCoordinates getCurrentPosition(){ return this.getCurrentMainCellCoordinates(); }
+    public DiscreteCoordinates getCurrentPosition(){ return this.getCurrentMainCellCoordinates(); }
 
     private Orientation getDesiredOrientation(Keyboard keyboard){
-        if(keyboard.get(Keyboard.LEFT).isDown()){
+        if(keyboard.get(buttonLEFT).isDown()){
             return Orientation.LEFT;
         }
-        else if(keyboard.get(Keyboard.RIGHT).isDown()){
+        else if(keyboard.get(buttonRIGHT).isDown()){
             return Orientation.RIGHT;
         }
-        else if(keyboard.get(Keyboard.UP).isDown()){
+        else if(keyboard.get(buttonUP).isDown()){
             return Orientation.UP;
         }
-        else if(keyboard.get(Keyboard.DOWN).isDown()){
+        else if(keyboard.get(buttonDOWN).isDown()){
             return Orientation.DOWN;
         }
         return null;
@@ -144,6 +144,13 @@ public class SuperPacmanPlayer extends Player {
     }
 
     public int getHealth(){ return hp;}
+
+    public void changeButtons(){
+        buttonDOWN = Keyboard.S;
+        buttonUP = Keyboard.W;
+        buttonLEFT = Keyboard.A;
+        buttonRIGHT = Keyboard.D;
+    }
 
 
     @Override

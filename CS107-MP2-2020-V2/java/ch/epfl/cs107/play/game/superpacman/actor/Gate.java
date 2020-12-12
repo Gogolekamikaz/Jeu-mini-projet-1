@@ -34,7 +34,6 @@ public class Gate extends AreaEntity {
 
     @Override
     public void draw(Canvas canvas) {
-
         if(!isOpen){
             Sprite sprite;
 

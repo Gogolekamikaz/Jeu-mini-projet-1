@@ -167,10 +167,18 @@ public class SuperPacmanBehavior extends AreaBehavior {
         }
     }
 
-
-
     private static boolean ghostActorsExist(ArrayList<Ghost> arraylist){
         if(arraylist.size() > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    protected boolean isCellWalkableBehavior(DiscreteCoordinates coordinates, String SIDE){
+        SuperPacmanCell cell = (SuperPacmanCell)(getCell(coordinates.x, coordinates.y));
+        if(cell.hasSideEdge(SIDE,coordinates,getHeight())){
             return true;
         }
         else{
@@ -221,7 +229,7 @@ public class SuperPacmanBehavior extends AreaBehavior {
         }
 
         @Override
-        protected boolean canEnter(Interactable entity) {   //If cell already has an entity occupying all the cell space, it's not traversable
+        public boolean canEnter(Interactable entity) {   //If cell already has an entity occupying all the cell space, it's not traversable
             if(this.hasNonTraversableContent()){
                 return false;
             }

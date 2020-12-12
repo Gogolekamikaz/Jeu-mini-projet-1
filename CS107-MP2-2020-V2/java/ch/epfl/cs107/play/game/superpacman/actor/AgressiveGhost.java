@@ -34,6 +34,7 @@ public abstract class AgressiveGhost extends Ghost {
         }
 
         if(orientationSequence == null){
+            System.out.println("SEQUENCE NULLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
             positionStateChange = true;
         }
         // Control ghost scare state

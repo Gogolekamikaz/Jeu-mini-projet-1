@@ -68,6 +68,15 @@ public abstract class SuperPacmanArea extends Area implements Logic {
 
     public AreaGraph getAreaGraph(){return areaGraph;}
 
+    public boolean isCellWalkable(DiscreteCoordinates coordinates, String SIDE){
+        if(behavior.isCellWalkableBehavior(coordinates, SIDE)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     public void addDiamond(){ diamondCount++; }
 
     public void removeDiamond(){ diamondCount--; }

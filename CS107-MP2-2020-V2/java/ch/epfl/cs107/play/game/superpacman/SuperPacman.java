@@ -18,6 +18,9 @@ public class SuperPacman extends RPG {
 
     private ArrayList<Ghost> ghostActors;
 
+    boolean infiniteGame = true;
+    private MazeLevel maze;
+
     /**
      * Add all the areas
      */
@@ -25,7 +28,6 @@ public class SuperPacman extends RPG {
         addArea(new Level0());
         addArea(new Level1());
         addArea(new Level2());
-
     }
 
     @Override
@@ -49,8 +51,14 @@ public class SuperPacman extends RPG {
     public boolean begin(Window window, FileSystem fileSystem) {
         if (super.begin(window, fileSystem)) {
             createAreas();
-            area = (SuperPacmanArea)setCurrentArea("superpacman/Level0", true);
-            player = new SuperPacmanPlayer(area, Orientation.UP, area.getSpawnPoint());
+            if(infiniteGame){
+                maze = new MazeLevel();
+                player = new SuperPacmanPlayer(maze, Orientation.UP, maze.getSpawnPoint());
+            } else {
+                area = (SuperPacmanArea)setCurrentArea("superpacman/MazeLevel", true);
+                player = new SuperPacmanPlayer(area, Orientation.UP, area.getSpawnPoint());
+            }
+
             initPlayer(player);
             return true;
         }

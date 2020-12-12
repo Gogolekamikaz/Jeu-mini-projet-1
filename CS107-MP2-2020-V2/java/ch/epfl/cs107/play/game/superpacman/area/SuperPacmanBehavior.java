@@ -16,6 +16,9 @@ import java.util.Queue;
 
 public class SuperPacmanBehavior extends AreaBehavior {
 
+    AreaGraph areaGraph;
+    ArrayList<Ghost> ghostActors = new ArrayList<Ghost>();
+
     public enum SuperPacmanCellType {
 
         //https://stackoverflow.com/questions/25761438/understanding-bufferedimage-getrgb-output-values
@@ -50,16 +53,59 @@ public class SuperPacmanBehavior extends AreaBehavior {
         }
     }
 
-    ArrayList<Ghost> ghostActors = new ArrayList<Ghost>();
+
+
+
+    /**
+     * Default AreaBehavior Constructor
+     *
+     * @param window (Window): graphic context, not null
+     * @param name   (String): name of the behavior image, not null
+     */
+    public SuperPacmanBehavior(Window window, String name) {
+        super(window, name);
+        areaGraph = new AreaGraph();
+
+        int height = getHeight();
+        int width = getWidth();
+        for(int y = 0; y < height; y++) {
+            for (int x = 0; x < width ; x++) {
+                SuperPacmanCellType color = SuperPacmanCellType.toType(getRGB(height-1-y, x));
+                setCell(x,y, new SuperPacmanCell(x,y,color));
+            }
+        }
+    }
+
+    /**
+     * Default AreaBehavior Constructor
+     *
+     * @param window (Window): graphic context, not null
+     */
+    public SuperPacmanBehavior(Window window, int width, int height) {
+        super(window, width, height);
+        areaGraph = new AreaGraph();
+
+        for(int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                setCell(x, y, new SuperPacmanCell(x, y, SuperPacmanBehavior.SuperPacmanCellType.NONE));
+            }
+        }
+
+    }
+
 
     protected void registerActors(SuperPacmanArea area){
+
         DiscreteCoordinates coordinates;
         int height = getHeight();
         int width = getWidth();
+
+        createGraph();
+
         for(int x = 0; x < width; ++x ) {
             for(int y = 0; y < height; ++y){
-                SuperPacmanCellType color = SuperPacmanCellType.toType(getRGB(height-1-y, x));
                 SuperPacmanCell cell = (SuperPacmanCell)getCell(x,y);
+                SuperPacmanCellType color = cell.getType();
                 coordinates = new DiscreteCoordinates(x,y);
                 switch(color){
                     case WALL:
@@ -103,7 +149,25 @@ public class SuperPacmanBehavior extends AreaBehavior {
         }
     }
 
-    AreaGraph areaGraph;
+    private void createGraph(){
+
+        int height = getHeight();
+        int width = getWidth();
+
+        for(int y = 0; y < height; y++) {
+            for (int x = 0; x < width ; x++) {
+                SuperPacmanCell cell = (SuperPacmanCell)getCell(x,y);
+                DiscreteCoordinates coordinates = new DiscreteCoordinates(x,y);
+                SuperPacmanCellType color = ((SuperPacmanCell)getCell(x,y)).getType();
+                if(color != SuperPacmanCellType.WALL){
+                    areaGraph.addNode(coordinates , cell.hasSideEdge("LEFT",coordinates,height), cell.hasSideEdge("UP",coordinates,height), cell.hasSideEdge("RIGHT", coordinates,height),cell.hasSideEdge("DOWN", coordinates,height));
+                }
+            }
+
+        }
+    }
+
+
 
     private static boolean ghostActorsExist(ArrayList<Ghost> arraylist){
         if(arraylist.size() > 0){
@@ -134,35 +198,11 @@ public class SuperPacmanBehavior extends AreaBehavior {
         }
     }
 
-    /**
-     * Default AreaBehavior Constructor
-     *
-     * @param window (Window): graphic context, not null
-     * @param name   (String): name of the behavior image, not null
-     */
-    public SuperPacmanBehavior(Window window, String name) {
-        super(window, name);
-        areaGraph = new AreaGraph();
 
-        int height = getHeight();
-        int width = getWidth();
-        for(int y = 0; y < height; y++) {
-            for (int x = 0; x < width ; x++) {
-                SuperPacmanCellType color = SuperPacmanCellType.toType(getRGB(height-1-y, x));
-                setCell(x,y, new SuperPacmanCell(x,y,color));
-                SuperPacmanCell cell = (SuperPacmanCell)getCell(x,y);
-                DiscreteCoordinates coordinates = new DiscreteCoordinates(x,y);
-                if(color != SuperPacmanCellType.WALL){
-                    areaGraph.addNode(coordinates , cell.hasSideEdge("LEFT",coordinates,height), cell.hasSideEdge("UP",coordinates,height), cell.hasSideEdge("RIGHT", coordinates,height),cell.hasSideEdge("DOWN", coordinates,height));
-                }
-            }
-
-        }
-    }
 
     public class SuperPacmanCell extends AreaBehavior.Cell{
 
-        private final SuperPacmanCellType type;
+        private SuperPacmanCellType type;
 
         /**
          * Default Cell constructor
@@ -213,15 +253,19 @@ public class SuperPacmanBehavior extends AreaBehavior {
             return true;
         }
 
-        private SuperPacmanCellType getType(SuperPacmanCell cell){
-            return cell.type;
+        private SuperPacmanCellType getType(){
+            return this.type;
+        }
+
+        protected void setType(SuperPacmanCellType type){
+            this.type = type;
         }
 
         private boolean[][] getWallNeighborhood(int x, int y){
             boolean[][] neigborhood = new boolean[3][3];
             for(int xcord = x-1, i = 0; xcord <= x+1; ++xcord , ++i){
                 for(int ycord = y+1, j = 0; ycord >= y-1; --ycord, ++j){
-                    if(cellExists(xcord, ycord) &&  SuperPacmanCellType.toType(getRGB(getHeight()-1-ycord, xcord)) == SuperPacmanCellType.WALL){
+                    if(cellExists(xcord, ycord) &&  ((SuperPacmanCell)getCell(xcord,ycord)).getType() == SuperPacmanCellType.WALL){
                         neigborhood[i][j] = true;
                     }
                     else{
@@ -258,7 +302,7 @@ public class SuperPacmanBehavior extends AreaBehavior {
             }
 
             if(cellExists(x,y)){
-                SuperPacmanCellType currentType = SuperPacmanCellType.toType(getRGB(getHeight()-1-y, x));
+                SuperPacmanCellType currentType = ((SuperPacmanCell)getCell(x,y)).getType();
                 if (currentType != SuperPacmanCellType.WALL){
                     return true;
                 }

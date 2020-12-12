@@ -38,6 +38,22 @@ public abstract class AreaBehavior
         cells = new Cell[width][height];
     }
 
+    /**
+     * Default AreaBehavior Constructor
+     * @param window (Window): graphic context, not null
+     */
+    //TODO
+    public AreaBehavior(Window window, int width, int height){
+
+        //No Behavior Image
+        behaviorMap = null;
+
+        // Get the corresponding dimension and init the array
+        this.height = height;
+        this.width = width;
+        cells = new Cell[width][height];
+    }
+
 
     protected void cellInteractionOf(Interactor interactor){
         for(DiscreteCoordinates dc : interactor.getCurrentCells()){
@@ -94,7 +110,8 @@ public abstract class AreaBehavior
     }
 
     protected int getRGB(int r, int c) {
-        return behaviorMap.getRGB(r, c);
+        int color = behaviorMap != null? behaviorMap.getRGB(r, c) : 0;
+        return color;
     }
 
     protected int getHeight() {

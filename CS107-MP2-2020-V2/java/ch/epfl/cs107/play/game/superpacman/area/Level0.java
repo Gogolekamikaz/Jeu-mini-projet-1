@@ -19,13 +19,11 @@ public class Level0 extends SuperPacmanArea {
         registerActor(door);
 
         Key key = new Key(this, new DiscreteCoordinates(3,4));
-        Key key2 = new Key(this, new DiscreteCoordinates(10, 8));
         registerActor(key);
-        registerActor(key2);
 
         Gate[] gates = new Gate[2];
-        gates[0] = new Gate(this, Orientation.RIGHT, new DiscreteCoordinates(5,8), new And(key, key2));
-        gates[1] = new Gate(this, Orientation.LEFT, new DiscreteCoordinates(6,8), new And(key, key2));
+        gates[0] = new Gate(this, Orientation.RIGHT, new DiscreteCoordinates(5,8), key);
+        gates[1] = new Gate(this, Orientation.LEFT, new DiscreteCoordinates(6,8), key);
         for (Gate gate : gates) {
             registerActor(gate);
         }

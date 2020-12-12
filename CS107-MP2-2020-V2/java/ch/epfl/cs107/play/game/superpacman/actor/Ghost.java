@@ -37,7 +37,7 @@ public abstract class Ghost extends MovableAreaEntity implements Interactor {
     protected Vector positionRefuge;
     protected DiscreteCoordinates positionRefugeCoord;
     Orientation orientation;
-    boolean isAfraid = false;
+    protected boolean isAfraid = false;
     float timer = SuperPacmanPlayer.timer;
 
     public void update(float deltaTime) {

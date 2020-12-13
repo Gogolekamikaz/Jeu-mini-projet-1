@@ -51,18 +51,30 @@ public class Pinky extends AgressiveGhost{
     }
 
         protected DiscreteCoordinates evaluateTargetPosition() {
+
+        boolean imprisonedBetweenGates = false;
         DiscreteCoordinates outputPosition = null;
-        if (viewedPlayer == null && !isAfraid) {
+
+        //Détermine si Pinky est emprisonné entre des barrières ou pas. Si tel est le cas, on adapte la recherche de la position cible.
+        if(viewedPlayer != null){
+            targetPosition = viewedPlayer.getCurrentPosition();
+            if(evaluateOrientationSequence() == null){
+                imprisonedBetweenGates = true;
+            }
+        }
+
+        if ((viewedPlayer == null && !isAfraid) || imprisonedBetweenGates)  {
             outputPosition = generateReachableCell(trivialPosition, MAX_DISTANCE_WHEN_NOT_SCARED);
         }
-        else if (!isAfraid && viewedPlayer != null){
+
+        else if (!isAfraid && viewedPlayer != null && !imprisonedBetweenGates){
             outputPosition = viewedPlayer.getCurrentPosition();
         }
         else if(isAfraid && viewedPlayer == null){
             outputPosition = generateReachableCell(trivialPosition, MAX_DISTANCE_WHEN_SCARED_BUT_WITH_PLAYER_UNSEEN);
         }
 
-        else if(isAfraid && viewedPlayer != null){
+        else if(isAfraid && viewedPlayer != null && !imprisonedBetweenGates){
             outputPosition = generateReachableEscapeCell();
         }
         return outputPosition;

@@ -67,7 +67,7 @@ public class SuperPacman extends RPG {
                 maze = (MazeLevel)setCurrentArea("superpacman/MazeLevel", true);
                 player = new SuperPacmanPlayer(maze, Orientation.UP, maze.getSpawnPoint());
             } else {
-                area = (SuperPacmanArea)setCurrentArea("superpacman/Level0", true);
+                area = (SuperPacmanArea)setCurrentArea("superpacman/Level2", true);
                 player = new SuperPacmanPlayer(area, Orientation.UP, area.getSpawnPoint());
             }
 

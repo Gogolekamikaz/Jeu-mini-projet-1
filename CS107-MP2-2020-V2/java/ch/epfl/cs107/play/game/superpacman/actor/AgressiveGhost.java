@@ -29,11 +29,8 @@ public abstract class AgressiveGhost extends Ghost {
     public void update(float deltaTime) {
 
         //Control ghost position state
-        if(orientationSequence.size() == 0){
-            positionStateChange = true;
-        }
 
-        if(orientationSequence == null){
+        if(orientationSequence == null || orientationSequence.size() == 0){
             System.out.println("SEQUENCE NULLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
             positionStateChange = true;
         }
@@ -66,6 +63,7 @@ public abstract class AgressiveGhost extends Ghost {
             System.out.println("Targeting state: " + targetingStateChange + " Scare state: "+ scareStateChange+ " position state change : " + positionStateChange);
             targetPosition = evaluateTargetPosition();
             orientationSequence = evaluateOrientationSequence();
+            System.out.println(orientationSequence);
             targetingStateChange = false;
             positionStateChange = false;
             scareStateChange = false;
@@ -92,6 +90,7 @@ public abstract class AgressiveGhost extends Ghost {
         if(viewedPlayer != null){
             targetPosition = evaluateTargetPosition();
             orientationSequence = evaluateOrientationSequence();
+            System.out.println(orientationSequence);
         }
         Orientation orientation = orientationSequence.poll();
         return orientation;

@@ -31,9 +31,10 @@ public class Gate extends AreaEntity {
         super(area, orientation, position);
         this.logic1 = logic;
         isOpen = false;
+        System.out.println("Here is the LOGIC : " + logic.isOff());
         if(!isOpen){
-            SuperPacmanArea currentArea= (SuperPacmanArea)(getOwnerArea());
-            currentArea.deactivateNode(getCurrentMainCellCoordinates(), logic1);
+        SuperPacmanArea currentArea= (SuperPacmanArea)(getOwnerArea());
+           currentArea.deactivateNode(getCurrentMainCellCoordinates(), logic1);
         }
     }
 

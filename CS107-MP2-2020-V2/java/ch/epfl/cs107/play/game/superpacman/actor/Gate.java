@@ -5,6 +5,7 @@ import ch.epfl.cs107.play.game.areagame.actor.AreaEntity;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.areagame.actor.Sprite;
 import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
+import ch.epfl.cs107.play.game.superpacman.area.SuperPacmanArea;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.math.RegionOfInterest;
 import ch.epfl.cs107.play.signal.logic.Logic;
@@ -30,6 +31,10 @@ public class Gate extends AreaEntity {
         super(area, orientation, position);
         this.logic1 = logic;
         isOpen = false;
+        if(!isOpen){
+            SuperPacmanArea currentArea= (SuperPacmanArea)(getOwnerArea());
+            currentArea.deactivateNode(getCurrentMainCellCoordinates(), logic1);
+        }
     }
 
     @Override

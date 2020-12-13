@@ -226,6 +226,7 @@ public class SuperPacmanPlayer extends Player {
             } else if (entity instanceof Key){
                 pacEatKey.shouldBeStarted();
             } else if (entity instanceof Diamond){
+                System.out.println("Interacting with diamand");
                 ((SuperPacmanArea)getOwnerArea()).removeDiamond();
             }
 

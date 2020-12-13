@@ -54,6 +54,10 @@ public abstract class SuperPacmanArea extends Area implements Logic {
         return false;
     }
 
+    public void deactivateNode(DiscreteCoordinates coordinates, Logic logic){
+        behavior.deactivateNode(coordinates, logic);
+    }
+
     public ArrayList<Ghost> getAreaGhostActors(){
         return areaGhostActors;
     }

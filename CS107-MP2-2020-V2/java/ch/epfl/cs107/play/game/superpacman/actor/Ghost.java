@@ -17,33 +17,32 @@ import java.util.List;
 
 public abstract class Ghost extends MovableAreaEntity implements Interactor {
 
-    protected final int GHOST_SCORE = 500;
+    private final int GHOST_SCORE = 500;
     protected Sprite sprite;
     private final int viewRadius = 5;
-    float keepOriented = 2;
     protected SuperPacmanArea ghostCurrentArea = (SuperPacmanArea)(getOwnerArea());
 
     private final GhostHandler handler = new GhostHandler();
 
-    protected Sprite [][] spritesScared = RPGSprite.extractSprites ("superpacman/ghost.afraid",2, 1, 1, this , 16, 16, new Orientation [] { Orientation.UP , Orientation.DOWN, Orientation.LEFT, Orientation.RIGHT});
-    Animation[] animationsScared = Animation.createAnimations(4,spritesScared);
-    Animation animationScared = animationsScared[Orientation.UP.ordinal()];
+    private Sprite [][] spritesScared = RPGSprite.extractSprites ("superpacman/ghost.afraid",2, 1, 1, this , 16, 16, new Orientation [] { Orientation.UP , Orientation.DOWN, Orientation.LEFT, Orientation.RIGHT});
+    private Animation[] animationsScared = Animation.createAnimations(4,spritesScared);
+    private Animation animationScared = animationsScared[Orientation.UP.ordinal()];
 
-    public Animation currentAnimation = null;
-    public Animation animationNotScared;
-    public Animation[] animationsNotScared = null;
+    protected Animation currentAnimation = null;
+    protected Animation animationNotScared;
+    protected Animation[] animationsNotScared = null;
 
-    SuperPacmanPlayer viewedPlayer;
+    protected SuperPacmanPlayer viewedPlayer;
     protected Vector positionRefuge;
     protected DiscreteCoordinates positionRefugeCoord;
-    Orientation orientation;
+    protected Orientation orientation;
     protected boolean isAfraid = false;
-    float timer = SuperPacmanPlayer.timer;
+    private float timer = SuperPacmanPlayer.timer;
 
     public void update(float deltaTime) {
         super.update(deltaTime);
 
-        if(isAfraid){  // Le fantôme reste effrayé autant de temps que le joueur est invicible (
+        if(isAfraid){  // Le fantôme reste effrayé autant de temps que le joueur est invincible (
             timer -= deltaTime;
             if(timer < 0){
                 isAfraid = false;
@@ -61,7 +60,6 @@ public abstract class Ghost extends MovableAreaEntity implements Interactor {
         }
         else{
             orientation = getNextOrientation();
-            //System.out.println(this + " avec une orientation : " + orientation);
             if(!isAfraid){
                 currentAnimation = animationsNotScared[orientation.ordinal()];
             }

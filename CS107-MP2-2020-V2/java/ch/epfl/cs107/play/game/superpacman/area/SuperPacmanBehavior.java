@@ -8,6 +8,7 @@ import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
 import ch.epfl.cs107.play.game.superpacman.actor.*;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.math.Vector;
+import ch.epfl.cs107.play.signal.logic.Logic;
 import ch.epfl.cs107.play.window.Window;
 
 import java.util.ArrayList;
@@ -52,7 +53,6 @@ public class SuperPacmanBehavior extends AreaBehavior {
 
         }
     }
-
 
 
 
@@ -184,6 +184,10 @@ public class SuperPacmanBehavior extends AreaBehavior {
         else{
             return false;
         }
+    }
+
+    protected void deactivateNode(DiscreteCoordinates coordinates, Logic logic){
+        areaGraph.setSignal(coordinates , logic);
     }
 
     protected Queue<Orientation> shortestPath(DiscreteCoordinates origine, DiscreteCoordinates arrivee){

@@ -16,11 +16,11 @@ import java.util.Queue;
 public class Pinky extends AgressiveGhost{
 
     protected Sprite[][] sprites = RPGSprite.extractSprites ("superpacman/ghost.pinky",4, 1, 1, this , 16, 16, new Orientation [] { Orientation.UP , Orientation.RIGHT , Orientation.DOWN , Orientation.LEFT });
-    DiscreteCoordinates trivialPosition = new DiscreteCoordinates(0,0);
-    private int MAX_DISTANCE_WHEN_NOT_SCARED = ghostCurrentArea.getWidth();
-    private int MAX_DISTANCE_WHEN_SCARED_BUT_WITH_PLAYER_UNSEEN = MAX_DISTANCE_WHEN_NOT_SCARED;
-    private int MIN_AFRAID_DISTANCE = 10;
-    private int MAX_RANDOM_ATTEMPT = 200;
+    private final DiscreteCoordinates trivialPosition = new DiscreteCoordinates(0,0);
+    private final int MAX_DISTANCE_WHEN_NOT_SCARED = ghostCurrentArea.getWidth();
+    private final int MAX_DISTANCE_WHEN_SCARED_BUT_WITH_PLAYER_UNSEEN = MAX_DISTANCE_WHEN_NOT_SCARED;
+    private final int MIN_AFRAID_DISTANCE = 10;
+    private final int MAX_RANDOM_ATTEMPT = 200;
 
     public Pinky(Area area, Orientation orientation, DiscreteCoordinates position, Vector positionRefuge, DiscreteCoordinates positionRefugeCoord) {
         super(area, orientation, position, positionRefuge, positionRefugeCoord);

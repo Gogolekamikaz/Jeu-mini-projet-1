@@ -12,12 +12,12 @@ import java.util.Queue;
 public abstract class AgressiveGhost extends Ghost {
 
     protected DiscreteCoordinates targetPosition;
-    protected boolean targetingStateChange = false;
-    protected boolean positionStateChange = false;
-    protected boolean scareStateChange = false;
-    protected boolean scareStateChangeAlreadyClaimed = false;
-    protected boolean targetingStateChangeAlreadyClaimed = false;
-    protected boolean unscareStateChangeAlreadyClaimed = true;
+    private boolean targetingStateChange = false;
+    private boolean positionStateChange = false;
+    private boolean scareStateChange = false;
+    private boolean scareStateChangeAlreadyClaimed = false;
+    private boolean targetingStateChangeAlreadyClaimed = false;
+    private boolean unscareStateChangeAlreadyClaimed = true;
     protected Queue<Orientation> orientationSequence;
 
     public AgressiveGhost(Area area, Orientation orientation, DiscreteCoordinates position, Vector positionRefuge, DiscreteCoordinates positionRefugeCoord) {

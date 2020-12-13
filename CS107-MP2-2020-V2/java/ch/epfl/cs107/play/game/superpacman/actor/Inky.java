@@ -14,8 +14,8 @@ import java.util.Queue;
 
 public class Inky extends AgressiveGhost {
 
-    protected final int MAX_DISTANCE_WHEN_NOT_SCARED = 10;
-    protected final int MAX_DISTANCE_WHEN_SCARED = 5;
+    private final int MAX_DISTANCE_WHEN_NOT_SCARED = 10;
+    private final int MAX_DISTANCE_WHEN_SCARED = 5;
 
     protected Sprite[][] sprites = RPGSprite.extractSprites("superpacman/ghost.inky", 4, 1, 1, this, 16, 16, new Orientation[]{Orientation.UP, Orientation.RIGHT, Orientation.DOWN, Orientation.LEFT});
 

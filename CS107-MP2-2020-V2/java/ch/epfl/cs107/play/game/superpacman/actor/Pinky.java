@@ -46,6 +46,7 @@ public class Pinky extends AgressiveGhost{
             attempt += 1;
 
         }while((distance < MIN_AFRAID_DISTANCE || orientationSequenceTried == null) && attempt < MAX_RANDOM_ATTEMPT);
+
         DiscreteCoordinates validEscapeDestination = potentialDestination;
         return validEscapeDestination;
     }
@@ -62,18 +63,22 @@ public class Pinky extends AgressiveGhost{
                 imprisonedBetweenGates = true;
             }
         }
-
+        // Dans le cas où Pinky est emprisonné, on veut qu'il se balade simplement dans sa zone délimitée
         if ((viewedPlayer == null && !isAfraid) || imprisonedBetweenGates)  {
             outputPosition = generateReachableCell(trivialPosition, MAX_DISTANCE_WHEN_NOT_SCARED);
         }
 
+        //Prend pour cible le joueur
         else if (!isAfraid && viewedPlayer != null && !imprisonedBetweenGates){
             outputPosition = viewedPlayer.getCurrentPosition();
         }
+
+        //Recherche de position en état appeuré
         else if(isAfraid && viewedPlayer == null){
             outputPosition = generateReachableCell(trivialPosition, MAX_DISTANCE_WHEN_SCARED_BUT_WITH_PLAYER_UNSEEN);
         }
 
+        // Cherche une position de fuite
         else if(isAfraid && viewedPlayer != null && !imprisonedBetweenGates){
             outputPosition = generateReachableEscapeCell();
         }

@@ -5,6 +5,7 @@ import ch.epfl.cs107.play.game.areagame.AreaGraph;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.superpacman.actor.Ghost;
 import ch.epfl.cs107.play.game.superpacman.actor.SuperPacmanPlayer;
+import ch.epfl.cs107.play.game.superpacman.userInterface.SuperPacmanAreaGUIEntity;
 import ch.epfl.cs107.play.io.FileSystem;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.signal.logic.Logic;
@@ -25,6 +26,9 @@ public abstract class SuperPacmanArea extends Area implements Logic {
     private int diamondCount;
 
     private boolean pause;
+    private Window window;
+
+    private SuperPacmanAreaGUIEntity display;
 
     public boolean begin(Window window, FileSystem fileSystem) {
         if (super.begin(window, fileSystem)) {
@@ -33,8 +37,10 @@ public abstract class SuperPacmanArea extends Area implements Logic {
             setBehavior(behavior);
             behavior.registerActors(this);
             pause = false;
+            this.window = window;
 
             createArea();
+            display = new SuperPacmanAreaGUIEntity(this);
             return true;
         }
         return false;
@@ -49,6 +55,7 @@ public abstract class SuperPacmanArea extends Area implements Logic {
             pause = false;
 
             createArea();
+            display = new SuperPacmanAreaGUIEntity(this);
             return true;
         }
         return false;

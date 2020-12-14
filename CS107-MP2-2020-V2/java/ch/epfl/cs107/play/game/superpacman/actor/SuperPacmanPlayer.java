@@ -13,6 +13,7 @@ import ch.epfl.cs107.play.game.superpacman.area.MazeLevel;
 import ch.epfl.cs107.play.game.superpacman.area.SuperPacmanArea;
 import ch.epfl.cs107.play.game.superpacman.handler.GhostInteractionVisitor;
 import ch.epfl.cs107.play.game.superpacman.handler.SuperPacmanInteractionVisitor;
+import ch.epfl.cs107.play.game.superpacman.userInterface.Pause.PauseScreen;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.math.Vector;
 import ch.epfl.cs107.play.window.*;
@@ -33,6 +34,7 @@ public class SuperPacmanPlayer extends Player {
     private boolean isInvincible = false;
 
     private SuperPacmanPlayerStatusGUI status;
+    private PauseScreen pauseScreen;
     private int hp;
     private int score;
     public static float timer = 20;
@@ -63,12 +65,14 @@ public class SuperPacmanPlayer extends Player {
         hp = 3;
         score = 0;
         pacPac.shouldBeStarted();
+        pauseScreen = new PauseScreen((SuperPacmanArea)area);
     }
 
     @Override
     public void draw(Canvas canvas) {
         status.draw(canvas);
         currentAnimation.draw(canvas);
+        pauseScreen.draw(canvas);
     }
 
     @Override

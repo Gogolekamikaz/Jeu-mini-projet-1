@@ -21,7 +21,7 @@ public abstract class SuperPacmanArea extends Area implements Logic {
     private SuperPacmanBehavior behavior;
     private ArrayList<Ghost> areaGhostActors;
     private AreaGraph areaGraph;
-    protected final static float cameraScaleFactor = 15.f;
+    public static float cameraScaleFactor = 15.f;
 
     private int diamondCount;
 

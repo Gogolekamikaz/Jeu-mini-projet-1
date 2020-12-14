@@ -6,6 +6,7 @@ import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.rpg.RPG;
 import ch.epfl.cs107.play.game.rpg.actor.Player;
 import ch.epfl.cs107.play.game.superpacman.actor.Ghost;
+import ch.epfl.cs107.play.game.superpacman.actor.InvisibleMadeForViewCandidate;
 import ch.epfl.cs107.play.game.superpacman.actor.SuperPacmanPlayer;
 import ch.epfl.cs107.play.game.superpacman.area.*;
 import ch.epfl.cs107.play.io.FileSystem;
@@ -18,8 +19,13 @@ import java.util.ArrayList;
 public class SuperPacman extends RPG {
 
     private SuperPacmanPlayer player;
+    private SuperPacmanPlayer player2;
     private SuperPacmanArea area;
     private SuperPacmanArea currentPacmanTypeArea;
+    private float zoomMin = 15.f;
+    private boolean coopGameStarted = false;
+    private float lastUpdateDistance = 0;
+    private boolean coopGameAlreadyStarted = false;
 
     private ArrayList<Ghost> ghostActors;
 
@@ -54,8 +60,13 @@ public class SuperPacman extends RPG {
 
         Keyboard keyboard= currentPacmanTypeArea.getKeyboard();
         if(keyboard.get(Keyboard.SPACE).isDown()){
-            System.out.println("Starting coop game");
-            startCooperationGame();
+            if(!coopGameAlreadyStarted){
+                startCooperationGame();
+                coopGameAlreadyStarted = true;
+            }
+        }
+        if(coopGameStarted){
+            updateCameraTarget();
         }
     }
 
@@ -70,7 +81,6 @@ public class SuperPacman extends RPG {
                 area = (SuperPacmanArea)setCurrentArea("superpacman/Level0", true);
                 player = new SuperPacmanPlayer(area, Orientation.UP, area.getSpawnPoint());
             }
-
             initPlayer(player);
             return true;
         }
@@ -80,7 +90,8 @@ public class SuperPacman extends RPG {
 
     private void startCooperationGame(){
 
-        SuperPacmanPlayer player2 = new SuperPacmanPlayer(currentPacmanTypeArea,Orientation.UP,generatePlayer2Spawn());
+        coopGameStarted = true;
+        player2 = new SuperPacmanPlayer(currentPacmanTypeArea,Orientation.UP,generatePlayer2Spawn());
         initPlayer(player2);
         currentPacmanTypeArea.setViewCandidate(player);
         player2.changeButtons();
@@ -111,6 +122,38 @@ public class SuperPacman extends RPG {
             return null;
         }
     }
+
+    private float evaluatePlayersDistance(){
+        float distance = DiscreteCoordinates.distanceBetween(player.getCurrentPosition(), player2.getCurrentPosition());
+        return distance;
+    }
+
+    private DiscreteCoordinates evaluateMiddlePositionBetweenPlayers(){
+        int middleX = (player.getCurrentPosition().x + player2.getCurrentPosition().x)/2;
+        int middleY = (player.getCurrentPosition().y + player2.getCurrentPosition().y)/2;
+        return (new DiscreteCoordinates(middleX,middleY));
+    }
+    private void updateCameraTarget(){
+
+        float distanceBetweenPlayer = evaluatePlayersDistance();
+        if((distanceBetweenPlayer > lastUpdateDistance) && (distanceBetweenPlayer > 9)){
+            DiscreteCoordinates middlePosition = evaluateMiddlePositionBetweenPlayers();
+            InvisibleMadeForViewCandidate viewObject = new InvisibleMadeForViewCandidate(getCurrentArea(), middlePosition);
+            getCurrentArea().setViewCandidate(viewObject);
+        }
+        lastUpdateDistance = evaluatePlayersDistance();
+
+
+        //SuperPacmanArea.cameraScaleFactor = 15.f;
+        //for(float i = 0.f ; i <= distanceBetweenPlayer; ++i){
+        //    SuperPacmanArea.cameraScaleFactor += 1;
+        //}
+
+
+
+
+    }
+
 
     @Override
     public void end() {

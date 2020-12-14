@@ -41,7 +41,7 @@ public class Home extends SuperPacmanGUIWindow {
 
     @Override
     protected void createDisplay() {
-        background = new Background("Accueil", getWindowWidth(), getWindowHeight(), new RegionOfInterest(0,0,2400,2400));
+        background = new Background("superpacman/Home", getWindowWidth(), getWindowHeight(), new RegionOfInterest(0,0,2400,2400));
         registerActor(background);
 
         Graphics homePage = new HomeDisplay();

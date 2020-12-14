@@ -1,10 +1,10 @@
 package ch.epfl.cs107.play.game.superpacman.userInterface;
 
+import ch.epfl.cs107.play.game.actor.Graphics;
 import ch.epfl.cs107.play.game.areagame.actor.AreaEntity;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
 import ch.epfl.cs107.play.game.superpacman.area.SuperPacmanArea;
-import ch.epfl.cs107.play.game.superpacman.userInterface.Pause.PauseScreen;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.window.Canvas;
 
@@ -13,22 +13,24 @@ import java.util.List;
 
 public class SuperPacmanAreaGUIEntity extends AreaEntity {
 
-    private PauseScreen pauseScreen;
+    private static Graphics[] displays;
 
     /**
      * Default AreaEntity constructor
      *
      * @param area        (Area): Owner area. Not null
      */
-    public SuperPacmanAreaGUIEntity(SuperPacmanArea area) {
+    public SuperPacmanAreaGUIEntity(SuperPacmanArea area, Graphics... displays) {
         super(area, Orientation.UP, area.getSpawnPoint());
+        this.displays = displays.clone();
 
-        pauseScreen = new PauseScreen(area);
     }
 
     @Override
     public void draw(Canvas canvas) {
-        pauseScreen.draw(canvas);
+        for (int i=0; i<displays.length; i++){
+            displays[i].draw(canvas);
+        }
     }
 
     @Override

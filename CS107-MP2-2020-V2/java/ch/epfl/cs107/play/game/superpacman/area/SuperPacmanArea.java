@@ -5,6 +5,7 @@ import ch.epfl.cs107.play.game.areagame.AreaGraph;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.superpacman.actor.Ghost;
 import ch.epfl.cs107.play.game.superpacman.actor.SuperPacmanPlayer;
+import ch.epfl.cs107.play.game.superpacman.userInterface.Pause.PauseScreen;
 import ch.epfl.cs107.play.game.superpacman.userInterface.SuperPacmanAreaGUIEntity;
 import ch.epfl.cs107.play.io.FileSystem;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
@@ -28,7 +29,7 @@ public abstract class SuperPacmanArea extends Area implements Logic {
     private boolean pause;
     private Window window;
 
-    private SuperPacmanAreaGUIEntity display;
+    private SuperPacmanAreaGUIEntity displayPause;
 
     public boolean begin(Window window, FileSystem fileSystem) {
         if (super.begin(window, fileSystem)) {
@@ -40,8 +41,8 @@ public abstract class SuperPacmanArea extends Area implements Logic {
             this.window = window;
 
             createArea();
-            display = new SuperPacmanAreaGUIEntity(this);
-            registerActor(display);
+            displayPause = new SuperPacmanAreaGUIEntity(this, new PauseScreen(this));
+            registerActor(displayPause);
             return true;
         }
         return false;
@@ -56,8 +57,8 @@ public abstract class SuperPacmanArea extends Area implements Logic {
             pause = false;
 
             createArea();
-            display = new SuperPacmanAreaGUIEntity(this);
-            registerActor(display);
+            displayPause = new SuperPacmanAreaGUIEntity(this, new PauseScreen(this));
+            registerActor(displayPause);
             return true;
         }
         return false;

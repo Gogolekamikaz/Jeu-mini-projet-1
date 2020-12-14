@@ -21,18 +21,27 @@ class SuperPacmanPlayerStatusGUI implements Graphics {
         this.player = player;
     }
 
+    float width;
+    float height;
+    Vector anchor;
+    ImageGraphics health;
+    String lifeDisplayString = "superpacman/lifeDisplay";
+
+    public void changeLifeDisplayString(){
+        lifeDisplayString = "superpacman/lifeDisplayRed";
+    }
+
    private void manageHealth(Canvas canvas){
 
-        float width = canvas.getScaledWidth ();
-        float height = canvas.getScaledHeight ();
-        Vector anchor = canvas.getTransform().getOrigin().sub(new Vector(width/2,-height/2));
+        width = canvas.getScaledWidth ();
+        height = canvas.getScaledHeight ();
+        anchor = canvas.getTransform().getOrigin().sub(new Vector(width/2,-height/2));
 
         for (int i = 0; i < MAX_HEALTH; i++) {
-            ImageGraphics health;
             if(i<player.getHealth()){
-                health = new ImageGraphics(ResourcePath.getSprite("superpacman/lifeDisplay"), 1.f, 1.f, new RegionOfInterest(0, 0, 64, 64) , anchor.add(new Vector(1.f+i, - 1.7f)), 1, 10);
+                health = new ImageGraphics(ResourcePath.getSprite(lifeDisplayString), 1.f, 1.f, new RegionOfInterest(0, 0, 64, 64) , anchor.add(new Vector(1.f+i, - 1.7f)), 1, 10);
             } else {
-                health = new ImageGraphics(ResourcePath.getSprite("superpacman/lifeDisplay"), 1.f, 1.f, new RegionOfInterest(64, 0, 64, 64) , anchor.add(new Vector(1.f+i, - 1.7f)), 1, 10);
+                health = new ImageGraphics(ResourcePath.getSprite(lifeDisplayString), 1.f, 1.f, new RegionOfInterest(64, 0, 64, 64) , anchor.add(new Vector(1.f+i, - 1.7f)), 1, 10);
             }
             health.draw(canvas);
         }

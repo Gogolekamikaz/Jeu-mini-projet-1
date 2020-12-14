@@ -97,6 +97,7 @@ public class SuperPacman extends RPG {
         initPlayer(player2);
         currentPacmanTypeArea.setViewCandidate(player);
         player2.changeButtons();
+        player2.changeSprite();
 
     }
 

@@ -159,6 +159,11 @@ public class SuperPacmanPlayer extends Player {
         buttonRIGHT = Keyboard.D;
     }
 
+    public void changeSprite(){
+        sprites = RPGSprite.extractSprites ("superpacman/pacmanRed",4, 1, 1, this , 64, 64, new Orientation [] { Orientation.DOWN , Orientation.LEFT , Orientation.UP , Orientation.RIGHT });
+        animations = Animation.createAnimations(SPEED/2, sprites );
+    }
+
 
     @Override
     public List<DiscreteCoordinates> getCurrentCells() {

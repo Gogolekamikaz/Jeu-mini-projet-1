@@ -30,7 +30,7 @@ public class SuperPacman extends RPG {
 
     private ArrayList<Ghost> ghostActors;
 
-    boolean infiniteGame = true;
+    boolean infiniteGame = false;
     private MazeLevel maze;
 
     /**
@@ -80,7 +80,7 @@ public class SuperPacman extends RPG {
                 maze = (MazeLevel)setCurrentArea("superpacman/MazeLevel", true);
                 player = new SuperPacmanPlayer(maze, Orientation.UP, maze.getSpawnPoint());
             } else {
-                area = (SuperPacmanArea)setCurrentArea("superpacman/Home", true);
+                area = (SuperPacmanArea)setCurrentArea("superpacman/Level0", true);
                 player = new SuperPacmanPlayer(area, Orientation.UP, area.getSpawnPoint());
             }
             initPlayer(player);
@@ -98,6 +98,7 @@ public class SuperPacman extends RPG {
         currentPacmanTypeArea.setViewCandidate(player);
         player2.changeButtons();
         player2.changeSprite();
+        player2.adaptGUI();
 
     }
 

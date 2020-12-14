@@ -57,7 +57,7 @@ public class SuperPacmanPlayer extends Player {
         super(area, orientation, coordinates);
         currentAnimation = animations[Orientation.UP.ordinal()];
         desiredOrientation = Orientation.UP;
-        status = new SuperPacmanPlayerStatusGUI(this, new Vector(1.f,12.5f));
+        status = new SuperPacmanPlayerStatusGUI(this);
         hp = 3;
         score = 0;
         pacPac.shouldBeStarted();
@@ -161,6 +161,9 @@ public class SuperPacmanPlayer extends Player {
         animations = Animation.createAnimations(SPEED/2, sprites );
     }
 
+    public void adaptGUI(){
+        status.adaptGUI();
+    }
 
     @Override
     public List<DiscreteCoordinates> getCurrentCells() {

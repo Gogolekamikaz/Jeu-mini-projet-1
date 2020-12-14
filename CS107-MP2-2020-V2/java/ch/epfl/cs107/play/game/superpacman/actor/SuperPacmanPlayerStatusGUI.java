@@ -16,25 +16,32 @@ class SuperPacmanPlayerStatusGUI implements Graphics {
     private final int MAX_HEALTH = 5;
 
     private final SuperPacmanPlayer player;
-    private final Vector coordinates;
+    private Vector coordinates = new Vector(1.f,13.2f);
+    private String lifeDisplayString = "superpacman/lifeDisplay";
+    private Color COLOR = Color.YELLOW;
 
-    SuperPacmanPlayerStatusGUI(SuperPacmanPlayer player, Vector coordinates){
+    SuperPacmanPlayerStatusGUI(SuperPacmanPlayer player){
         this.player = player;
-        this.coordinates = coordinates;
+    }
+
+    protected void adaptGUI(){
+        lifeDisplayString = "superpacman/lifeDisplayRed";
+        coordinates = new Vector(1.f, 12.2f);
+        COLOR = Color.RED;
     }
 
    private void manageHealth(Canvas canvas){
 
-        float width = canvas.getScaledWidth ();
-        float height = canvas.getScaledHeight ();
+        float width = canvas.getScaledWidth();
+        float height = canvas.getScaledHeight();
         Vector anchor = canvas.getTransform().getOrigin().sub(new Vector(width/2,height/2));
 
         for (int i = 0; i < MAX_HEALTH; i++) {
             ImageGraphics health;
             if(i<player.getHealth()){
-                health = new ImageGraphics(ResourcePath.getSprite("superpacman/lifeDisplay"), 1.f, 1.f, new RegionOfInterest(0, 0, 64, 64) , anchor.add(new Vector(coordinates.x+i, coordinates.y)), 1, 10);
+                health = new ImageGraphics(ResourcePath.getSprite(lifeDisplayString), 1.f, 1.f, new RegionOfInterest(0, 0, 64, 64) , anchor.add(new Vector(coordinates.x+i, coordinates.y)), 1, 10);
             } else {
-                health = new ImageGraphics(ResourcePath.getSprite("superpacman/lifeDisplay"), 1.f, 1.f, new RegionOfInterest(64, 0, 64, 64) , anchor.add(new Vector(coordinates.x+i, coordinates.y)), 1, 10);
+                health = new ImageGraphics(ResourcePath.getSprite(lifeDisplayString), 1.f, 1.f, new RegionOfInterest(64, 0, 64, 64) , anchor.add(new Vector(coordinates.x+i, coordinates.y)), 1, 10);
             }
             health.draw(canvas);
         }
@@ -45,7 +52,7 @@ class SuperPacmanPlayerStatusGUI implements Graphics {
         float height = canvas.getScaledHeight();
         Vector anchor = canvas.getTransform().getOrigin().sub(new Vector(width/2,height/2));
 
-        TextGraphics scoreText = new TextGraphics("Score : "+player.getScore(), 1.f, Color.YELLOW);
+        TextGraphics scoreText = new TextGraphics("Score : "+player.getScore(), 1.f, COLOR);
         scoreText.setOutlineColor(Color.ORANGE);
         scoreText.setThickness(0.05f);
         scoreText.setBold(true);

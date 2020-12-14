@@ -60,7 +60,7 @@ public class SuperPacmanPlayer extends Player {
         super(area, orientation, coordinates);
         currentAnimation = animations[Orientation.UP.ordinal()];
         desiredOrientation = Orientation.UP;
-        status = new SuperPacmanPlayerStatusGUI(this);
+        status = new SuperPacmanPlayerStatusGUI(this, new Vector(1.f,12.5f));
         hp = 3;
         score = 0;
         pacPac.shouldBeStarted();

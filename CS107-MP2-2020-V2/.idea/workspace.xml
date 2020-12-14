@@ -22,65 +22,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8d6f72c-b834-412f-8842-21d938aea8a0" name="Default Changelist" comment="Menu pause réparé + Amélioration labyrinthe avec symétrie">
+    <list default="true" id="b8d6f72c-b834-412f-8842-21d938aea8a0" name="Default Changelist" comment="Plus erreur">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/Play.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/areagame/Area.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/areagame/AreaBehavior$Cell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/areagame/AreaBehavior.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/areagame/AreaGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/areagame/actor/AreaEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/areagame/actor/Background.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/areagame/actor/CellMouseIndicator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/areagame/actor/CollectableAreaEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/areagame/actor/Foreground.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/areagame/actor/Grid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/areagame/actor/MovableAreaEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/areagame/actor/Text.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/rpg/RPG.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/rpg/actor/Dialog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/rpg/actor/Door.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/rpg/actor/LightHalo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/rpg/actor/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/rpg/actor/Sign.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/rpg/handler/RPGInteractionVisitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/SuperPacman.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Blinky.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Bonus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Cherry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Diamond.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Gate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Ghost.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Key.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanCollectableAreaEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer$SuperPacmanPlayerHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayerStatusGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Wall.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/Level0.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/Level1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/Level2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanArea.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior$SuperPacmanCell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior$SuperPacmanCellType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/handler/SuperPacmanInteractionVisitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/userInterface/GraphicButton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/userInterface/SuperPacmanGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/tutos/area/SimpleArea.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/tutosSolution/Tuto1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/tutosSolution/Tuto2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/tutosSolution/Tuto2Behavior$Tuto2Cell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/tutosSolution/Tuto2Behavior$Tuto2CellType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/tutosSolution/Tuto2Behavior.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/tutosSolution/actor/GhostPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/tutosSolution/area/SimpleArea.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/tutosSolution/area/Tuto2Area.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/tutosSolution/area/tuto1/Ferme.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/tutosSolution/area/tuto1/Village.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/tutosSolution/area/tuto2/Ferme.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/tutosSolution/area/tuto2/Village.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/SuperPacman.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/SuperPacman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/AgressiveGhost.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/AgressiveGhost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/Ghost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayerStatusGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayerStatusGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanAutoGeneratedMazeBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanAutoGeneratedMazeBehavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/Home/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/Home/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/LevelChoice/LevelChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/LevelChoice/LevelChoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/Menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/Menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/SuperPacmanGUIWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/SuperPacmanGUIWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/SuperPacman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/SuperPacman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayerStatusGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayerStatusGUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -433,7 +389,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607957142679</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Plus erreur">
+      <created>1607965149461</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1607965149461</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +415,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Vas y Thomas" />
     <MESSAGE value="Animations pacman avec porte affichée en rouge mais toujours impossible de la franchir" />
     <MESSAGE value="et voila pour les portes qui s'affichent" />
     <MESSAGE value="Correction door et creation &#10;*$objets CollectableAreaEntity vides" />
@@ -477,7 +439,8 @@
     <MESSAGE value="Menu pause en cours" />
     <MESSAGE value="Menu pause en cours 2" />
     <MESSAGE value="Menu pause en cours 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Menu pause en cours 3" />
+    <MESSAGE value="Plus erreur" />
+    <option name="LAST_COMMIT_MESSAGE" value="Plus erreur" />
   </component>
   <component name="WindowStateProjectService">
     <state x="415" y="191" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1606310458628">
@@ -492,10 +455,10 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="431" y="238" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1368.872@0.0.1368.872" timestamp="1607104057388" />
-    <state x="490" y="143" key="#com.intellij.ide.util.MemberChooser" timestamp="1607952771969">
+    <state x="490" y="143" key="#com.intellij.ide.util.MemberChooser" timestamp="1607967611193">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="490" y="143" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1607952771969" />
+    <state x="490" y="143" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1607967611193" />
     <state x="648" y="217" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1607161635967">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -520,26 +483,26 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="93" y="93" width="1181" height="685" key="DiffContextDialog/0.0.1368.872@0.0.1368.872" timestamp="1607099694844" />
-    <state width="1326" height="233" key="GridCell.Tab.0.bottom" timestamp="1607964653984">
+    <state width="1326" height="233" key="GridCell.Tab.0.bottom" timestamp="1607969477682">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1878" height="212" key="GridCell.Tab.0.bottom/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1607962286152" />
-    <state width="1326" height="233" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1607964653984" />
-    <state width="1326" height="233" key="GridCell.Tab.0.center" timestamp="1607964653984">
+    <state width="1326" height="233" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1607969477682" />
+    <state width="1326" height="233" key="GridCell.Tab.0.center" timestamp="1607969477682">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1878" height="212" key="GridCell.Tab.0.center/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1607962286150" />
-    <state width="1326" height="233" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1607964653984" />
-    <state width="1326" height="233" key="GridCell.Tab.0.left" timestamp="1607964653984">
+    <state width="1326" height="233" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1607969477682" />
+    <state width="1326" height="233" key="GridCell.Tab.0.left" timestamp="1607969477682">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1878" height="212" key="GridCell.Tab.0.left/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1607962286148" />
-    <state width="1326" height="233" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1607964653984" />
-    <state width="1326" height="233" key="GridCell.Tab.0.right" timestamp="1607964653984">
+    <state width="1326" height="233" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1607969477682" />
+    <state width="1326" height="233" key="GridCell.Tab.0.right" timestamp="1607969477682">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1878" height="212" key="GridCell.Tab.0.right/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1607962286151" />
-    <state width="1326" height="233" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1607964653984" />
+    <state width="1326" height="233" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1607969477682" />
     <state width="1326" height="281" key="GridCell.Tab.1.bottom" timestamp="1607959159311">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -576,14 +539,14 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="93" y="93" width="1181" height="685" key="VCS.FileHistoryDialog/0.0.1368.872@0.0.1368.872" timestamp="1607532784836" />
-    <state x="277" y="169" key="Vcs.Push.Dialog.v2" timestamp="1607964837542">
+    <state x="277" y="169" key="Vcs.Push.Dialog.v2" timestamp="1607965168755">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="277" y="169" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1607964837542" />
-    <state x="502" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607862209310">
+    <state x="277" y="169" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1607965168755" />
+    <state x="502" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607965345747">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="502" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1368.872@0.0.1368.872" timestamp="1607862209310" />
+    <state x="502" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1368.872@0.0.1368.872" timestamp="1607965345747" />
     <state x="231" y="172" width="904" height="627" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1607959101306">
       <screen x="0" y="0" width="1368" height="872" />
     </state>

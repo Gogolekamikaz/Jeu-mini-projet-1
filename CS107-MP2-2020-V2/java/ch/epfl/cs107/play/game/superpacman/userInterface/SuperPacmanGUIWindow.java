@@ -1,10 +1,11 @@
 package ch.epfl.cs107.play.game.superpacman.userInterface;
 
 import ch.epfl.cs107.play.game.areagame.Area;
+import ch.epfl.cs107.play.game.superpacman.area.SuperPacmanArea;
 import ch.epfl.cs107.play.io.FileSystem;
 import ch.epfl.cs107.play.window.Window;
 
-public abstract class SuperPacmanGUIWindow extends Area {
+public abstract class SuperPacmanGUIWindow extends SuperPacmanArea {
 
     protected final static float cameraScaleFactor = 15.f;
     private int width, height;
@@ -19,11 +20,6 @@ public abstract class SuperPacmanGUIWindow extends Area {
             return true;
         }
         return false;
-    }
-
-    @Override
-    public float getCameraScaleFactor() {
-        return cameraScaleFactor;
     }
 
     protected int getWindowWidth(){ return width; }

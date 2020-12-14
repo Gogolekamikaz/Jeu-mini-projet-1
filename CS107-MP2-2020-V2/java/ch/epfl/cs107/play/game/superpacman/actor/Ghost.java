@@ -161,7 +161,6 @@ public abstract class Ghost extends MovableAreaEntity implements Interactor {
 
         public void interactWith(SuperPacmanPlayer player){
             viewedPlayer = player;
-
         }
     }
 

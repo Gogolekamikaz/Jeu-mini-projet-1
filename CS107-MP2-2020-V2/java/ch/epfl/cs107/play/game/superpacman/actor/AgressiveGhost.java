@@ -2,14 +2,19 @@ package ch.epfl.cs107.play.game.superpacman.actor;
 
 import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
+import ch.epfl.cs107.play.game.areagame.actor.Path;
 import ch.epfl.cs107.play.game.superpacman.actor.Ghost;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.math.RandomGenerator;
 import ch.epfl.cs107.play.math.Vector;
+import ch.epfl.cs107.play.window.Canvas;
 
+import java.util.LinkedList;
 import java.util.Queue;
 
 public abstract class AgressiveGhost extends Ghost {
+
+    private static final boolean DEBUG_PATH = false;
 
     protected DiscreteCoordinates targetPosition;
     private boolean targetingStateChange = false;
@@ -19,6 +24,8 @@ public abstract class AgressiveGhost extends Ghost {
     private boolean targetingStateChangeAlreadyClaimed = false;
     private boolean unscareStateChangeAlreadyClaimed = true;
     protected Queue<Orientation> orientationSequence;
+
+    Path path;
 
     public AgressiveGhost(Area area, Orientation orientation, DiscreteCoordinates position, Vector positionRefuge, DiscreteCoordinates positionRefugeCoord) {
         super(area, orientation, position, positionRefuge, positionRefugeCoord);
@@ -93,6 +100,8 @@ public abstract class AgressiveGhost extends Ghost {
             System.out.println(orientationSequence);
         }
         Orientation orientation = orientationSequence.poll();
+
+        path = new Path(getPosition(), new LinkedList<>(orientationSequence));
         return orientation;
     }
 
@@ -115,5 +124,13 @@ public abstract class AgressiveGhost extends Ghost {
         this.viewedPlayer = null;
         targetingStateChange = true;
         targetingStateChangeAlreadyClaimed = false;
+    }
+
+    @Override
+    public void draw(Canvas canvas) {
+        super.draw(canvas);
+        if(DEBUG_PATH){
+            path.draw(canvas);
+        }
     }
 }

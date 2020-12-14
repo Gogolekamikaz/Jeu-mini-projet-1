@@ -22,18 +22,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8d6f72c-b834-412f-8842-21d938aea8a0" name="Default Changelist" comment="Modif status">
+    <list default="true" id="b8d6f72c-b834-412f-8842-21d938aea8a0" name="Default Changelist" comment="Graphics">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanArea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/Home/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/Home/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/SuperPacmanAreaGUIEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/SuperPacmanAreaGUIEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/SuperPacman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/SuperPacman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/Home/HomeDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/Home/HomeDisplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer$SuperPacmanPlayerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer$SuperPacmanPlayerHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayerStatusGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayerStatusGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanArea.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/Accueil.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/behaviors/superpacman/Home.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -389,7 +384,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607957142679</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Graphics">
+      <created>1607972735511</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1607972735511</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +410,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Vas y Thomas" />
     <MESSAGE value="Animations pacman avec porte affichée en rouge mais toujours impossible de la franchir" />
     <MESSAGE value="et voila pour les portes qui s'affichent" />
     <MESSAGE value="Correction door et creation &#10;*$objets CollectableAreaEntity vides" />
@@ -433,7 +434,8 @@
     <MESSAGE value="Menu pause en cours" />
     <MESSAGE value="Menu pause en cours 2" />
     <MESSAGE value="Menu pause en cours 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Menu pause en cours 3" />
+    <MESSAGE value="Graphics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Graphics" />
   </component>
   <component name="WindowStateProjectService">
     <state x="415" y="191" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1606310458628">
@@ -476,30 +478,30 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="93" y="93" width="1181" height="685" key="DiffContextDialog/0.0.1368.872@0.0.1368.872" timestamp="1607099694844" />
-    <state width="1326" height="233" key="GridCell.Tab.0.bottom" timestamp="1607972321599">
+    <state width="1326" height="233" key="GridCell.Tab.0.bottom" timestamp="1607974126477">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1617" height="201" key="GridCell.Tab.0.bottom/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1607966678358" />
     <state width="1878" height="212" key="GridCell.Tab.0.bottom/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1607962286152" />
-    <state width="1326" height="233" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1607972321599" />
-    <state width="1326" height="233" key="GridCell.Tab.0.center" timestamp="1607972321599">
+    <state width="1326" height="233" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1607974126477" />
+    <state width="1326" height="233" key="GridCell.Tab.0.center" timestamp="1607974126477">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1617" height="201" key="GridCell.Tab.0.center/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1607966678356" />
     <state width="1878" height="212" key="GridCell.Tab.0.center/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1607962286150" />
-    <state width="1326" height="233" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1607972321599" />
-    <state width="1326" height="233" key="GridCell.Tab.0.left" timestamp="1607972321599">
+    <state width="1326" height="233" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1607974126477" />
+    <state width="1326" height="233" key="GridCell.Tab.0.left" timestamp="1607974126477">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1617" height="201" key="GridCell.Tab.0.left/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1607966678356" />
     <state width="1878" height="212" key="GridCell.Tab.0.left/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1607962286148" />
-    <state width="1326" height="233" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1607972321599" />
-    <state width="1326" height="233" key="GridCell.Tab.0.right" timestamp="1607972321599">
+    <state width="1326" height="233" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1607974126477" />
+    <state width="1326" height="233" key="GridCell.Tab.0.right" timestamp="1607974126477">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1617" height="201" key="GridCell.Tab.0.right/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1607966678357" />
     <state width="1878" height="212" key="GridCell.Tab.0.right/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1607962286151" />
-    <state width="1326" height="233" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1607972321599" />
+    <state width="1326" height="233" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1607974126477" />
     <state width="1326" height="281" key="GridCell.Tab.1.bottom" timestamp="1607970276772">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -536,10 +538,10 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="93" y="93" width="1181" height="685" key="VCS.FileHistoryDialog/0.0.1368.872@0.0.1368.872" timestamp="1607532784836" />
-    <state x="277" y="169" key="Vcs.Push.Dialog.v2" timestamp="1607969902481">
+    <state x="277" y="169" key="Vcs.Push.Dialog.v2" timestamp="1607972754574">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="277" y="169" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1607969902481" />
+    <state x="277" y="169" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1607972754574" />
     <state x="-1215" y="267" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607968840252">
       <screen x="-1920" y="-157" width="1920" height="1057" />
     </state>

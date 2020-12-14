@@ -1,5 +1,6 @@
 package ch.epfl.cs107.play.game.superpacman.actor;
 
+import ch.epfl.cs107.play.game.actor.Graphics;
 import ch.epfl.cs107.play.game.actor.SoundAcoustics;
 import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.actor.*;
@@ -11,6 +12,7 @@ import ch.epfl.cs107.play.game.superpacman.area.MazeLevel;
 import ch.epfl.cs107.play.game.superpacman.area.SuperPacmanArea;
 import ch.epfl.cs107.play.game.superpacman.handler.GhostInteractionVisitor;
 import ch.epfl.cs107.play.game.superpacman.handler.SuperPacmanInteractionVisitor;
+import ch.epfl.cs107.play.game.superpacman.userInterface.Home.HomeDisplay;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.math.Vector;
 import ch.epfl.cs107.play.window.*;
@@ -24,6 +26,7 @@ public class SuperPacmanPlayer extends Player {
     // crée un tableau de 4 animation
     private Animation[] animations = Animation.createAnimations(SPEED/2, sprites );
     private Animation currentAnimation;
+    private Graphics display = new HomeDisplay();
     boolean blockPlayer = false;
     float blockTimer = 0.5f;
 
@@ -67,6 +70,7 @@ public class SuperPacmanPlayer extends Player {
     public void draw(Canvas canvas) {
         status.draw(canvas);
         currentAnimation.draw(canvas);
+        display.draw(canvas);
     }
 
     @Override

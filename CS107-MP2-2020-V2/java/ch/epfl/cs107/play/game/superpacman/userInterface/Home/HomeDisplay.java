@@ -12,9 +12,10 @@ public class HomeDisplay implements Graphics {
     private ImageGraphics background(Canvas canvas){
         float width = canvas.getScaledWidth ();
         float height = canvas.getScaledHeight ();
-        Vector anchor = canvas.getTransform().getOrigin().add(new Vector(-width/2,height/2));
+        //Vector anchor = canvas.getTransform().getOrigin().add(new Vector(width/2,height/2));
+        Vector anchor = canvas.getTransform().getOrigin();
 
-        return new ImageGraphics(ResourcePath.getSprite("superpacman/lifeDisplay"), 1.f, 1.f, new RegionOfInterest(0, 0, 64, 64) , anchor.add(new Vector(1.f, - 1.7f)), 1, 10);
+        return new ImageGraphics(ResourcePath.getSprite("superpacman/Home"), 1.f, 1.f, new RegionOfInterest(0, 0, 2400, 2400) , anchor.add(new Vector(1.f, - 1.7f)), 1, 10);
     }
 
     @Override

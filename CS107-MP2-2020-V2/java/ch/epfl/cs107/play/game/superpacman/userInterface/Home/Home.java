@@ -3,6 +3,7 @@ package ch.epfl.cs107.play.game.superpacman.userInterface.Home;
 import ch.epfl.cs107.play.game.actor.Graphics;
 import ch.epfl.cs107.play.game.areagame.actor.Background;
 import ch.epfl.cs107.play.game.superpacman.userInterface.GraphicButton;
+import ch.epfl.cs107.play.game.superpacman.userInterface.SuperPacmanAreaGUIEntity;
 import ch.epfl.cs107.play.game.superpacman.userInterface.SuperPacmanGUIBehavior;
 import ch.epfl.cs107.play.game.superpacman.userInterface.SuperPacmanGUIWindow;
 import ch.epfl.cs107.play.io.FileSystem;
@@ -12,7 +13,7 @@ import ch.epfl.cs107.play.window.Window;
 
 public class Home extends SuperPacmanGUIWindow {
 
-    private Background background;
+    private SuperPacmanAreaGUIEntity display;
     private GraphicButton playButton;
 
     @Override
@@ -41,10 +42,9 @@ public class Home extends SuperPacmanGUIWindow {
 
     @Override
     protected void createDisplay() {
-        background = new Background("superpacman/Home", getWindowWidth(), getWindowHeight(), new RegionOfInterest(0,0,2400,2400));
-        registerActor(background);
+        display = new SuperPacmanAreaGUIEntity(this, new HomeDisplay());
+        registerActor(display);
 
-        Graphics homePage = new HomeDisplay();
 
         //playButton = new GraphicButton("play",this, new DiscreteCoordinates(1,1), "Play");
         //registerActor(playButton);

@@ -9,6 +9,7 @@ import ch.epfl.cs107.play.game.rpg.actor.Player;
 import ch.epfl.cs107.play.game.rpg.actor.RPGSprite;
 import ch.epfl.cs107.play.game.rpg.actor.Sign;
 import ch.epfl.cs107.play.game.superpacman.area.Level0;
+import ch.epfl.cs107.play.game.superpacman.area.MazeLevel;
 import ch.epfl.cs107.play.game.superpacman.area.SuperPacmanArea;
 import ch.epfl.cs107.play.game.superpacman.handler.GhostInteractionVisitor;
 import ch.epfl.cs107.play.game.superpacman.handler.SuperPacmanInteractionVisitor;
@@ -116,6 +117,9 @@ public class SuperPacmanPlayer extends Player {
         }
         else if(getOwnerArea().getTitle() == "superpacman/Level2") {
             spawnPosition = new DiscreteCoordinates(15,29);
+        }
+        else if (getOwnerArea().getTitle() == "superpacman/MazeLevel"){
+            spawnPosition = ((MazeLevel)getOwnerArea()).getSpawnPoint();
         }
         this.enterArea(getOwnerArea(), spawnPosition);
     }
@@ -226,7 +230,6 @@ public class SuperPacmanPlayer extends Player {
             } else if (entity instanceof Key){
                 pacEatKey.shouldBeStarted();
             } else if (entity instanceof Diamond){
-                System.out.println("Interacting with diamand");
                 ((SuperPacmanArea)getOwnerArea()).removeDiamond();
             }
 

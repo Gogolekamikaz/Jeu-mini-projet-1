@@ -107,6 +107,7 @@ public class SuperPacmanBehavior extends AreaBehavior {
                 SuperPacmanCell cell = (SuperPacmanCell)getCell(x,y);
                 SuperPacmanCellType color = cell.getType();
                 coordinates = new DiscreteCoordinates(x,y);
+
                 switch(color){
                     case WALL:
                         Wall wallActor = new Wall(area,coordinates,cell.getWallNeighborhood(x,y));
@@ -131,22 +132,26 @@ public class SuperPacmanBehavior extends AreaBehavior {
                         Blinky blinky = new Blinky(area, Orientation.UP, coordinates, positionRefuge, positionRefugeCoord);
                         area.registerActor(blinky);
                         ghostActors.add(blinky);
+                        break;
                     case FREE_WITH_INKY:
                         Vector positionRefuge2 = new Vector((float)(x),(float)(y));
                         DiscreteCoordinates positionRefugeCoord2 = new DiscreteCoordinates(x,y);
                         Inky inky = new Inky(area, Orientation.UP, coordinates, positionRefuge2, positionRefugeCoord2);
                         area.registerActor(inky);
                         ghostActors.add(inky);
+                        break;
                     case FREE_WITH_PINKY:
                         Vector positionRefuge3 = new Vector((float)(x),(float)(y));
                         DiscreteCoordinates positionRefugeCoord3 = new DiscreteCoordinates(x,y);
                         Pinky pinky = new Pinky(area, Orientation.UP, coordinates, positionRefuge3 , positionRefugeCoord3);
                         area.registerActor(pinky);
                         ghostActors.add(pinky);
+                        break;
 
                 }
             }
         }
+
     }
 
     private void createGraph(){
@@ -265,7 +270,7 @@ public class SuperPacmanBehavior extends AreaBehavior {
             return true;
         }
 
-        private SuperPacmanCellType getType(){
+        protected SuperPacmanCellType getType(){
             return this.type;
         }
 

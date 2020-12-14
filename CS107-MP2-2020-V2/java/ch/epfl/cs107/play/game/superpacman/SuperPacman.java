@@ -140,7 +140,7 @@ public class SuperPacman extends RPG {
     private void updateCameraTarget(){
 
         float distanceBetweenPlayer = evaluatePlayersDistance();
-        if((distanceBetweenPlayer > lastUpdateDistance) && (distanceBetweenPlayer > 9)){
+        if((distanceBetweenPlayer > lastUpdateDistance) && (distanceBetweenPlayer > 6.5)){
             DiscreteCoordinates middlePosition = evaluateMiddlePositionBetweenPlayers();
             InvisibleMadeForViewCandidate viewObject = new InvisibleMadeForViewCandidate(getCurrentArea(), middlePosition);
             getCurrentArea().setViewCandidate(viewObject);

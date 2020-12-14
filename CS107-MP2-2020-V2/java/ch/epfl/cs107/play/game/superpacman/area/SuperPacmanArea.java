@@ -125,7 +125,7 @@ public abstract class SuperPacmanArea extends Area implements Logic {
     public void suspend(){
         super.suspend();
         pause = !pause;
-        System.out.println("pause");
+        System.out.println("pause : "+pause);
     }
 
     public boolean isPaused(){ return pause; }

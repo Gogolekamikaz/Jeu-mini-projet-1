@@ -22,7 +22,7 @@ public class SuperPacmanAreaGUIEntity extends AreaEntity {
     public SuperPacmanAreaGUIEntity(SuperPacmanArea area) {
         super(area, Orientation.UP, area.getSpawnPoint());
 
-        pauseScreen = new PauseScreen(area);
+        pauseScreen = new PauseScreen((SuperPacmanArea)area);
     }
 
     @Override

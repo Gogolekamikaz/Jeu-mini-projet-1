@@ -29,8 +29,14 @@ public class PauseScreen implements Graphics {
         pauseText.setThickness(0.05f);
         pauseText.setBold(true);
         pauseText.setDepth(12);
-        pauseText.setAnchor(anchor.add(new Vector(width/5, 2*height/3)));
+        pauseText.setAnchor(anchor.add(new Vector(width/5, 3*height/5)));
         pauseText.draw(canvas);
+
+        TextGraphics instructions = new TextGraphics("Press P to resume the game", 0.8f, Color.WHITE);
+        instructions.setAnchor(anchor.add(new Vector(width/7, height/3)));
+        instructions.setBold(true);
+        instructions.setDepth(12);
+        instructions.draw(canvas);
     }
 
     public void background(Canvas canvas) {

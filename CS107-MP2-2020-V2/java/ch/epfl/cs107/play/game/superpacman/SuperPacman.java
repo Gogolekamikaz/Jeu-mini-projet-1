@@ -23,7 +23,7 @@ public class SuperPacman extends RPG {
 
     private ArrayList<Ghost> ghostActors;
 
-    boolean infiniteGame = false;
+    boolean infiniteGame = true;
     private MazeLevel maze;
 
     /**

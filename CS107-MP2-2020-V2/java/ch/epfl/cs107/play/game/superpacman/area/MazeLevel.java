@@ -2,6 +2,7 @@ package ch.epfl.cs107.play.game.superpacman.area;
 
 import ch.epfl.cs107.play.game.areagame.AreaGraph;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
+import ch.epfl.cs107.play.game.superpacman.actor.Gate;
 import ch.epfl.cs107.play.game.superpacman.actor.Ghost;
 import ch.epfl.cs107.play.game.superpacman.actor.SuperPacmanPlayer;
 import ch.epfl.cs107.play.io.FileSystem;
@@ -28,6 +29,13 @@ public class MazeLevel extends SuperPacmanArea{
     @Override
     protected void createArea() {
 
+        Gate[] gates = new Gate[2];
+        gates[0] = new Gate(this, Orientation.RIGHT, new DiscreteCoordinates(5,1), this);
+        gates[1] = new Gate(this, Orientation.LEFT, new DiscreteCoordinates(4,1), this);
+
+        for (Gate gate : gates) {
+            registerActor(gate);
+        }
     }
 
     @Override

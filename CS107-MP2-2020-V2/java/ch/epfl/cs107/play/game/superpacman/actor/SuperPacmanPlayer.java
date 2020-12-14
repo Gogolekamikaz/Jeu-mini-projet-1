@@ -73,38 +73,40 @@ public class SuperPacmanPlayer extends Player {
 
     @Override
     public void update(float deltaTime) {
-        Keyboard keyboard= getOwnerArea().getKeyboard();
-        super.update(deltaTime);
+        if(!((SuperPacmanArea)getOwnerArea()).isPaused()) {
+            Keyboard keyboard = getOwnerArea().getKeyboard();
+            super.update(deltaTime);
 
-        startOfSound+=deltaTime;
+            startOfSound += deltaTime;
 
-        if(this.getDesiredOrientation(keyboard) != null){
-            desiredOrientation = this.getDesiredOrientation(keyboard);
-        }
-
-        if(!this.isDisplacementOccurs()) {
-            if (desiredOrientation!= getOrientation() && this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector())))) {
-                //System.out.println(this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector()))));
-                this.orientate(desiredOrientation);
-                currentAnimation = animations[desiredOrientation.ordinal()];
+            if (this.getDesiredOrientation(keyboard) != null) {
+                desiredOrientation = this.getDesiredOrientation(keyboard);
             }
-            this.move(SPEED);
-        }
-        if(isDisplacementOccurs()){
-            currentAnimation.update(deltaTime);
-            if(startOfSound%0.7 < 0.05){
-                pacPac.shouldBeStarted();
-            }
-            startOfSound = startOfSound > 0.8 ? 0 : startOfSound;
-        } else {
-            currentAnimation.reset();
-        }
 
-        if(isInvincible == true){
-            timer -= deltaTime;
-            if(timer < 0){
-                isInvincible = false;
-                timer = 10;
+            if (!this.isDisplacementOccurs()) {
+                if (desiredOrientation != getOrientation() && this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector())))) {
+                    //System.out.println(this.getOwnerArea().canEnterAreaCells(this, Collections.singletonList(getCurrentMainCellCoordinates().jump(desiredOrientation.toVector()))));
+                    this.orientate(desiredOrientation);
+                    currentAnimation = animations[desiredOrientation.ordinal()];
+                }
+                this.move(SPEED);
+            }
+            if (isDisplacementOccurs()) {
+                currentAnimation.update(deltaTime);
+                if (startOfSound % 0.7 < 0.05) {
+                    pacPac.shouldBeStarted();
+                }
+                startOfSound = startOfSound > 0.8 ? 0 : startOfSound;
+            } else {
+                currentAnimation.reset();
+            }
+
+            if (isInvincible == true) {
+                timer -= deltaTime;
+                if (timer < 0) {
+                    isInvincible = false;
+                    timer = 10;
+                }
             }
         }
     }

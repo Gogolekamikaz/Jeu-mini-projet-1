@@ -40,34 +40,33 @@ public abstract class Ghost extends MovableAreaEntity implements Interactor {
     private float timer = SuperPacmanPlayer.timer;
 
     public void update(float deltaTime) {
-        super.update(deltaTime);
+        if(!((SuperPacmanArea)getOwnerArea()).isPaused()) {
+            super.update(deltaTime);
 
-        if(isAfraid){  // Le fantôme reste effrayé autant de temps que le joueur est invincible (
-            timer -= deltaTime;
-            if(timer < 0){
-                isAfraid = false;
-                timer = SuperPacmanPlayer.timer;
+            if (isAfraid) {  // Le fantôme reste effrayé autant de temps que le joueur est invincible (
+                timer -= deltaTime;
+                if (timer < 0) {
+                    isAfraid = false;
+                    timer = SuperPacmanPlayer.timer;
+                }
             }
-        }
 
-        if (isDisplacementOccurs()) {
-            if(isAfraid){
-                currentAnimation = animationScared;
+            if (isDisplacementOccurs()) {
+                if (isAfraid) {
+                    currentAnimation = animationScared;
+                } else {
+                    currentAnimation = animationsNotScared[orientation.ordinal()];
+                }
+            } else {
+                orientation = getNextOrientation();
+                if (!isAfraid) {
+                    currentAnimation = animationsNotScared[orientation.ordinal()];
+                } else {
+                    currentAnimation = animationScared;
+                }
+                this.orientate(orientation);
+                move(10);
             }
-            else{
-                currentAnimation = animationsNotScared[orientation.ordinal()];
-            }
-        }
-        else{
-            orientation = getNextOrientation();
-            if(!isAfraid){
-                currentAnimation = animationsNotScared[orientation.ordinal()];
-            }
-            else{
-                currentAnimation = animationScared;
-            }
-            this.orientate(orientation);
-            move(10);
         }
     }
 

@@ -22,7 +22,7 @@ public class Home extends SuperPacmanGUIWindow {
     @Override
     public boolean begin(Window window, FileSystem fileSystem) {
         if (super.begin(window, fileSystem)) {
-            setBehavior(new SuperPacmanGUIBehavior(window, "Accueil"));
+            setBehavior(new SuperPacmanGUIBehavior(window));
             return true;
         }
         return false;

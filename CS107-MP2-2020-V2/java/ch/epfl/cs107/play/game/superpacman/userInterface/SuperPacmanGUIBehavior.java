@@ -8,9 +8,8 @@ public class SuperPacmanGUIBehavior extends AreaBehavior {
      * Default AreaBehavior Constructor
      *
      * @param window (Window): graphic context, not null
-     * @param name   (String): name of the behavior image, not null
      */
-    public SuperPacmanGUIBehavior(Window window, String name) {
-        super(window, name);
+    public SuperPacmanGUIBehavior(Window window) {
+        super(window, window.getWidth(), window.getHeight());
     }
 }

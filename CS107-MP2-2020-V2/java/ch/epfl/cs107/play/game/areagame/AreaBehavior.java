@@ -92,6 +92,7 @@ public abstract class AreaBehavior
             if(!cells[c.x][c.y].canEnter(entity))
                 return false;
         }
+
         return true;
     }
 

@@ -5,6 +5,7 @@ import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
 import ch.epfl.cs107.play.game.rpg.handler.RPGInteractionVisitor;
 import ch.epfl.cs107.play.game.superpacman.handler.SuperPacmanInteractionVisitor;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
+import ch.epfl.cs107.play.math.Vector;
 import ch.epfl.cs107.play.window.Canvas;
 
 import java.util.Collections;
@@ -13,6 +14,7 @@ import java.util.List;
 public abstract class CollectableAreaEntity extends AreaEntity {
 
     private boolean isPicked;
+    private boolean isAlreadyCollected = false;
 
     /**
      * Default CollectableAreaEntity constructor
@@ -30,8 +32,12 @@ public abstract class CollectableAreaEntity extends AreaEntity {
 
 
     public void pickActor(){
-        isPicked = true;
-        getOwnerArea().unregisterActor(this);
+        if(!isAlreadyCollected){
+            isPicked = true;
+            getOwnerArea().unregisterActor(this);
+            isAlreadyCollected = true;
+        }
+
     }
 
     @Override

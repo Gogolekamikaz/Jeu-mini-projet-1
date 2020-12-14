@@ -34,7 +34,6 @@ public class SuperPacmanPlayer extends Player {
     private boolean isInvincible = false;
 
     private SuperPacmanPlayerStatusGUI status;
-    private PauseScreen pauseScreen;
     private int hp;
     private int score;
     public static float timer = 20;
@@ -65,14 +64,12 @@ public class SuperPacmanPlayer extends Player {
         hp = 3;
         score = 0;
         pacPac.shouldBeStarted();
-        pauseScreen = new PauseScreen((SuperPacmanArea)area);
     }
 
     @Override
     public void draw(Canvas canvas) {
         status.draw(canvas);
         currentAnimation.draw(canvas);
-        pauseScreen.draw(canvas);
     }
 
     @Override

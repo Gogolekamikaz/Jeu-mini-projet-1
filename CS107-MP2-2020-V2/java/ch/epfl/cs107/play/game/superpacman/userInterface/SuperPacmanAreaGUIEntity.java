@@ -8,6 +8,7 @@ import ch.epfl.cs107.play.game.superpacman.userInterface.Pause.PauseScreen;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.window.Canvas;
 
+import java.util.Collections;
 import java.util.List;
 
 public class SuperPacmanAreaGUIEntity extends AreaEntity {
@@ -22,7 +23,7 @@ public class SuperPacmanAreaGUIEntity extends AreaEntity {
     public SuperPacmanAreaGUIEntity(SuperPacmanArea area) {
         super(area, Orientation.UP, area.getSpawnPoint());
 
-        pauseScreen = new PauseScreen((SuperPacmanArea)area);
+        pauseScreen = new PauseScreen(area);
     }
 
     @Override
@@ -32,7 +33,7 @@ public class SuperPacmanAreaGUIEntity extends AreaEntity {
 
     @Override
     public List<DiscreteCoordinates> getCurrentCells() {
-        return null;
+        return Collections.singletonList(getCurrentMainCellCoordinates());
     }
 
     @Override
@@ -52,6 +53,5 @@ public class SuperPacmanAreaGUIEntity extends AreaEntity {
 
     @Override
     public void acceptInteraction(AreaInteractionVisitor v) {
-
     }
 }

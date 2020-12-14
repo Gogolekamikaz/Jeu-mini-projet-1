@@ -41,6 +41,7 @@ public abstract class SuperPacmanArea extends Area implements Logic {
 
             createArea();
             display = new SuperPacmanAreaGUIEntity(this);
+            registerActor(display);
             return true;
         }
         return false;
@@ -56,6 +57,7 @@ public abstract class SuperPacmanArea extends Area implements Logic {
 
             createArea();
             display = new SuperPacmanAreaGUIEntity(this);
+            registerActor(display);
             return true;
         }
         return false;

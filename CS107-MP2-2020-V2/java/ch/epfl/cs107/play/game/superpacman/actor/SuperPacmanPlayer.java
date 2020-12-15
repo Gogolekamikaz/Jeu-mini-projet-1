@@ -124,7 +124,7 @@ public class SuperPacmanPlayer extends Player {
         else if(getOwnerArea().getTitle() == "superpacman/Level2") {
             spawnPosition = new DiscreteCoordinates(15,29);
         }
-        else if (getOwnerArea().getTitle() == "superpacman/MazeLevel"){
+        else if (getOwnerArea() instanceof MazeLevel){
             spawnPosition = ((MazeLevel)getOwnerArea()).getSpawnPoint();
         }
         this.enterArea(getOwnerArea(), spawnPosition);

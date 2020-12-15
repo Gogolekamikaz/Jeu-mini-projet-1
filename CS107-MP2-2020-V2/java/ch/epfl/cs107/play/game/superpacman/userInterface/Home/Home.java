@@ -16,8 +16,6 @@ import ch.epfl.cs107.play.window.Window;
 
 public class Home extends SuperPacmanGUIWindow {
 
-    private GraphicButton playButton;
-
     public Home(SuperPacman game){ super(game); }
 
     @Override

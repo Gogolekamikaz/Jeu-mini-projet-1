@@ -40,7 +40,7 @@ public class Menu extends SuperPacmanGUIWindow {
         registerActor(title);
         GraphicButton arcade = new GraphicButton("Mode Arcade", this, new DiscreteCoordinates(6, 11), "superpacman/Level0", new Vector(0.7f, 0.8f));
         registerActor(arcade);
-        GraphicButton infinite = new GraphicButton("Mode Infini", this, new DiscreteCoordinates(6, 8), "superpacman/MazeLevel", new Vector(0.7f, 0.8f));
+        GraphicButton infinite = new GraphicButton("Mode Infini", this, new DiscreteCoordinates(6, 8), "superpacman/MazeLevel0", new Vector(0.7f, 0.8f));
         registerActor(infinite);
         GraphicButton choix = new GraphicButton("Choix Niveau", this, new DiscreteCoordinates(6, 5), "superpacman/LevelChoice", new Vector(0.7f, 0.8f));
         registerActor(choix);

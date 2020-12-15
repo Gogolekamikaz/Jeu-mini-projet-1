@@ -1,5 +1,6 @@
 package ch.epfl.cs107.play.game.superpacman.userInterface;
 
+import ch.epfl.cs107.play.game.actor.SoundAcoustics;
 import ch.epfl.cs107.play.game.actor.TextGraphics;
 import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.actor.AreaEntity;
@@ -9,6 +10,7 @@ import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.math.RegionOfInterest;
 import ch.epfl.cs107.play.math.Vector;
+import ch.epfl.cs107.play.window.Audio;
 import ch.epfl.cs107.play.window.Canvas;
 import ch.epfl.cs107.play.window.Mouse;
 
@@ -24,6 +26,9 @@ public class GraphicButton extends AreaEntity {
     private Sprite spriteHoover;
     private TextGraphics buttonName;
     private Vector textCoordinates;
+
+    private SoundAcoustics click = new SoundAcoustics("sounds/minecraft_click.wav");
+    private boolean clicked;
 
     private final float width = 8.f;
     private final float height = 2.f;
@@ -41,6 +46,7 @@ public class GraphicButton extends AreaEntity {
         this.buttonName.setBold(true);
         this.buttonName.setParent(this);
         this.buttonName.setAnchor(new Vector(textCoordinates.x, textCoordinates.y));
+        clicked = false;
     }
 
 
@@ -60,7 +66,9 @@ public class GraphicButton extends AreaEntity {
 
     @Override
     public void update(float deltaTime) {
-        if(isMouseOver() && getOwnerArea().getMouse().getLeftButton().isPressed()){
+        if(isMouseOver() && !clicked && getOwnerArea().getMouse().getLeftButton().isPressed()){
+            clicked = true;
+            click.shouldBeStarted();
             ((SuperPacmanGUIWindow)getOwnerArea()).switchArea(destination);
         }
     }
@@ -95,4 +103,8 @@ public class GraphicButton extends AreaEntity {
     public void acceptInteraction(AreaInteractionVisitor v) {
     }
 
+    @Override
+    public void bip(Audio audio) {
+        click.bip(audio);
+    }
 }

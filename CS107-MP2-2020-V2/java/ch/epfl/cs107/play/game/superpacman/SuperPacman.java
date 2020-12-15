@@ -32,8 +32,9 @@ public class SuperPacman extends RPG {
 
     private ArrayList<Ghost> ghostActors;
 
-    boolean infiniteGame = false;
+    private boolean infiniteGame = false;
     private MazeLevel maze;
+    private int mazeCount = 0;
 
     /**
      * Add all the areas
@@ -45,7 +46,7 @@ public class SuperPacman extends RPG {
         addArea(new Level0());
         addArea(new Level1());
         addArea(new Level2());
-        addArea(new MazeLevel());
+        addArea(new MazeLevel(mazeCount));
     }
 
     @Override
@@ -78,6 +79,10 @@ public class SuperPacman extends RPG {
         if(((SuperPacmanArea)getCurrentArea()).getBackToMenu()){
             setNextArea("superpacman/Menu");
         }
+
+        if(getCurrentArea() instanceof MazeLevel && ((MazeLevel)getCurrentArea()).getMazeNum() == mazeCount){
+            nextMaze();
+        }
     }
 
     @Override
@@ -85,7 +90,7 @@ public class SuperPacman extends RPG {
         if (super.begin(window, fileSystem)) {
             createAreas();
             if(infiniteGame){
-                maze = (MazeLevel)setCurrentArea("superpacman/MazeLevel", true);
+                maze = (MazeLevel)setCurrentArea("superpacman/MazeLevel"+mazeCount, true);
                 player = new SuperPacmanPlayer(maze, Orientation.UP, maze.getSpawnPoint());
             } else {
                 area = (SuperPacmanArea)setCurrentArea("superpacman/Home", true);
@@ -160,10 +165,6 @@ public class SuperPacman extends RPG {
         //for(float i = 0.f ; i <= distanceBetweenPlayer; ++i){
         //    SuperPacmanArea.cameraScaleFactor += 1;
         //}
-
-
-
-
     }
 
     public void setNextArea(String destination) {
@@ -174,6 +175,11 @@ public class SuperPacman extends RPG {
             player = new SuperPacmanPlayer(area, Orientation.UP, area.getSpawnPoint());
         }
         initPlayer(player);
+    }
+
+    public void nextMaze(){
+        mazeCount++;
+        addArea(new MazeLevel(mazeCount));
     }
 
     @Override

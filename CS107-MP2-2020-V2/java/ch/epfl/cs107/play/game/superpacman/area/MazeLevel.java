@@ -2,11 +2,13 @@ package ch.epfl.cs107.play.game.superpacman.area;
 
 import ch.epfl.cs107.play.game.areagame.AreaGraph;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
+import ch.epfl.cs107.play.game.rpg.actor.Door;
 import ch.epfl.cs107.play.game.superpacman.actor.Gate;
 import ch.epfl.cs107.play.game.superpacman.actor.Ghost;
 import ch.epfl.cs107.play.game.superpacman.actor.SuperPacmanPlayer;
 import ch.epfl.cs107.play.io.FileSystem;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
+import ch.epfl.cs107.play.signal.logic.Logic;
 import ch.epfl.cs107.play.window.Window;
 
 import java.util.ArrayList;
@@ -20,16 +22,26 @@ public class MazeLevel extends SuperPacmanArea{
     private AreaGraph areaGraph;
 
     private int diamondCount;
+    private int mazeNumber;
 
     private static DiscreteCoordinates PLAYER_SPAWN_POSITION;
+
+    public MazeLevel(int a){
+        mazeNumber = a;
+    }
 
 
     @Override
     protected void createArea() {
 
+        String destination = "superpacman/MazeLevel" + (mazeNumber+1);
+
+        Door door = new Door(destination, new DiscreteCoordinates(1, getHeight()-2), Logic.TRUE, this, Orientation.UP, new DiscreteCoordinates(4,0), new DiscreteCoordinates(5,0));
+        registerActor(door);
+
         Gate[] gates = new Gate[2];
-        gates[0] = new Gate(this, Orientation.RIGHT, new DiscreteCoordinates(5,1), this);
-        gates[1] = new Gate(this, Orientation.LEFT, new DiscreteCoordinates(4,1), this);
+        gates[0] = new Gate(this, Orientation.RIGHT, new DiscreteCoordinates(5,1), Logic.TRUE /*this*/);
+        gates[1] = new Gate(this, Orientation.LEFT, new DiscreteCoordinates(4,1), Logic.TRUE /*this*/);
 
         for (Gate gate : gates) {
             registerActor(gate);
@@ -42,8 +54,6 @@ public class MazeLevel extends SuperPacmanArea{
         if (super.begin(window, fileSystem, behavior)) {
             // Set the behavior map
             PLAYER_SPAWN_POSITION = behavior.getSpawnPoint();
-
-            //createArea();
             return true;
         }
         return false;
@@ -51,7 +61,7 @@ public class MazeLevel extends SuperPacmanArea{
 
     @Override
     public String getTitle() {
-        return "superpacman/MazeLevel";
+        return "superpacman/MazeLevel"+mazeNumber;
     }
 
     public ArrayList<Ghost> getAreaGhostActors(){
@@ -97,5 +107,7 @@ public class MazeLevel extends SuperPacmanArea{
     public void update(float deltaTime) {
         super.update(deltaTime);
     }
+
+    public int getMazeNum(){ return mazeNumber; }
 
 }

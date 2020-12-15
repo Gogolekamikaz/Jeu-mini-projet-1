@@ -5,8 +5,10 @@ import ch.epfl.cs107.play.game.areagame.AreaGraph;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.superpacman.actor.Ghost;
 import ch.epfl.cs107.play.game.superpacman.actor.SuperPacmanPlayer;
+import ch.epfl.cs107.play.game.superpacman.userInterface.End.EndDisplay;
 import ch.epfl.cs107.play.game.superpacman.userInterface.Pause.PauseScreen;
 import ch.epfl.cs107.play.game.superpacman.userInterface.SuperPacmanAreaGUIEntity;
+import ch.epfl.cs107.play.game.superpacman.userInterface.SuperPacmanGUIBehavior;
 import ch.epfl.cs107.play.io.FileSystem;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.signal.logic.Logic;
@@ -26,10 +28,14 @@ public abstract class SuperPacmanArea extends Area implements Logic {
 
     private int diamondCount;
 
-    private boolean pause;
+    private boolean pause, gameEnd, win, backToMenu;
+    private int finalScore;
+
     private Window window;
 
     private SuperPacmanAreaGUIEntity displayPause;
+    private SuperPacmanAreaGUIEntity displayEnd;
+
 
     public boolean begin(Window window, FileSystem fileSystem) {
         if (super.begin(window, fileSystem)) {
@@ -38,6 +44,10 @@ public abstract class SuperPacmanArea extends Area implements Logic {
             setBehavior(behavior);
             behavior.registerActors(this);
             pause = false;
+            gameEnd = false;
+            win = false;
+            backToMenu = false;
+            finalScore = 0;
             this.window = window;
 
             createArea();
@@ -54,6 +64,22 @@ public abstract class SuperPacmanArea extends Area implements Logic {
             this.behavior = behavior;
             setBehavior(behavior);
             behavior.registerActors(this);
+            pause = false;
+
+            createArea();
+            displayPause = new SuperPacmanAreaGUIEntity(this, new PauseScreen(this));
+            registerActor(displayPause);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean begin(Window window, FileSystem fileSystem, SuperPacmanGUIBehavior behavior) {
+        if (super.begin(window, fileSystem)) {
+            // Set the behavior map
+            this.behavior = behavior;
+            setBehavior(behavior);
+            //behavior.registerActors(this);
             pause = false;
 
             createArea();
@@ -122,6 +148,10 @@ public abstract class SuperPacmanArea extends Area implements Logic {
         if(keyboard.get(Keyboard.P).isPressed()){
             suspend();
         }
+
+        /*if(keyboard.get(Keyboard.ENTER).isPressed() && pause && gameEnd){
+            backToMenu = true;
+        }*/
     }
 
     @Override
@@ -129,8 +159,24 @@ public abstract class SuperPacmanArea extends Area implements Logic {
         super.suspend();
         pause = !pause;
         System.out.println("pause : "+pause);
+
+        if(gameEnd){
+            displayEnd = new SuperPacmanAreaGUIEntity(this, new EndDisplay(this, win, finalScore));
+            registerActor(displayEnd);
+        }
     }
 
     public boolean isPaused(){ return pause; }
+
+    public void finish(boolean win, int finalScore){
+        gameEnd = true;
+        this.win = win;
+        this.finalScore = finalScore;
+        suspend();
+    }
+
+    public boolean isGameEnd(){ return gameEnd; }
+
+    public boolean getBackToMenu(){ return backToMenu; }
 
 }

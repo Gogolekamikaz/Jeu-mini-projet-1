@@ -10,6 +10,8 @@ import ch.epfl.cs107.play.game.superpacman.actor.InvisibleMadeForViewCandidate;
 import ch.epfl.cs107.play.game.superpacman.actor.SuperPacmanPlayer;
 import ch.epfl.cs107.play.game.superpacman.area.*;
 import ch.epfl.cs107.play.game.superpacman.userInterface.Home.Home;
+import ch.epfl.cs107.play.game.superpacman.userInterface.LevelChoice.LevelChoice;
+import ch.epfl.cs107.play.game.superpacman.userInterface.Menu.Menu;
 import ch.epfl.cs107.play.io.FileSystem;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.window.Keyboard;
@@ -37,7 +39,9 @@ public class SuperPacman extends RPG {
      * Add all the areas
      */
     private void createAreas(){
-        addArea(new Home());
+        addArea(new Home(this));
+        addArea(new Menu(this));
+        addArea(new LevelChoice(this));
         addArea(new Level0());
         addArea(new Level1());
         addArea(new Level2());
@@ -70,6 +74,10 @@ public class SuperPacman extends RPG {
         if(coopGameStarted){
             updateCameraTarget();
         }
+
+        if(((SuperPacmanArea)getCurrentArea()).getBackToMenu()){
+            setNextArea("superpacman/Menu");
+        }
     }
 
     @Override
@@ -80,7 +88,7 @@ public class SuperPacman extends RPG {
                 maze = (MazeLevel)setCurrentArea("superpacman/MazeLevel", true);
                 player = new SuperPacmanPlayer(maze, Orientation.UP, maze.getSpawnPoint());
             } else {
-                area = (SuperPacmanArea)setCurrentArea("superpacman/Level0", true);
+                area = (SuperPacmanArea)setCurrentArea("superpacman/Home", true);
                 player = new SuperPacmanPlayer(area, Orientation.UP, area.getSpawnPoint());
             }
             initPlayer(player);
@@ -158,6 +166,15 @@ public class SuperPacman extends RPG {
 
     }
 
+    public void setNextArea(String destination) {
+        this.area = (SuperPacmanArea)setCurrentArea(destination, true);
+        if(area instanceof MazeLevel){
+            player = new SuperPacmanPlayer((MazeLevel)area, Orientation.UP, ((MazeLevel)area).getSpawnPoint());
+        } else {
+            player = new SuperPacmanPlayer(area, Orientation.UP, area.getSpawnPoint());
+        }
+        initPlayer(player);
+    }
 
     @Override
     public void end() {

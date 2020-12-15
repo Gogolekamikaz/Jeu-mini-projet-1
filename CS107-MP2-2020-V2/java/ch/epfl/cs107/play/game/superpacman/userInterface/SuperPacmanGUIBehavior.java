@@ -1,9 +1,10 @@
 package ch.epfl.cs107.play.game.superpacman.userInterface;
 
 import ch.epfl.cs107.play.game.areagame.AreaBehavior;
+import ch.epfl.cs107.play.game.superpacman.area.SuperPacmanBehavior;
 import ch.epfl.cs107.play.window.Window;
 
-public class SuperPacmanGUIBehavior extends AreaBehavior {
+public class SuperPacmanGUIBehavior extends SuperPacmanBehavior {
     /**
      * Default AreaBehavior Constructor
      *

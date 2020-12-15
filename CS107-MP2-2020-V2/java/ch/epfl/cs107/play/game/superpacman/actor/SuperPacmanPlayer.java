@@ -13,8 +13,8 @@ import ch.epfl.cs107.play.game.superpacman.area.SuperPacmanArea;
 import ch.epfl.cs107.play.game.superpacman.handler.GhostInteractionVisitor;
 import ch.epfl.cs107.play.game.superpacman.handler.SuperPacmanInteractionVisitor;
 import ch.epfl.cs107.play.game.superpacman.userInterface.Home.HomeDisplay;
+import ch.epfl.cs107.play.game.superpacman.userInterface.SuperPacmanGUIWindow;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
-import ch.epfl.cs107.play.math.Vector;
 import ch.epfl.cs107.play.window.*;
 
 import java.util.Collections;
@@ -68,14 +68,16 @@ public class SuperPacmanPlayer extends Player {
 
     @Override
     public void draw(Canvas canvas) {
-        status.draw(canvas);
+        if(!((SuperPacmanArea)getOwnerArea()).isGameEnd()){
+            status.draw(canvas);
+        }
         currentAnimation.draw(canvas);
-        display.draw(canvas);
+        //display.draw(canvas);
     }
 
     @Override
     public void update(float deltaTime) {
-        if(!((SuperPacmanArea)getOwnerArea()).isPaused()) {
+        if(!((SuperPacmanArea)getOwnerArea()).isPaused() && !(getOwnerArea() instanceof SuperPacmanGUIWindow)) {
             Keyboard keyboard = getOwnerArea().getKeyboard();
             super.update(deltaTime);
 
@@ -260,6 +262,10 @@ public class SuperPacmanPlayer extends Player {
                 ghost.setPositionRefuge();
                 ghost.forgetPacman();
                 respawnPlayer();
+
+                if(hp <= 0){
+                    ((SuperPacmanArea)getOwnerArea()).finish(false, score);
+                }
             }
         }
         @Override

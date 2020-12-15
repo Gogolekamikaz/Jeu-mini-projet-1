@@ -3,7 +3,6 @@ package ch.epfl.cs107.play;
 import ch.epfl.cs107.play.game.Game;
 import ch.epfl.cs107.play.game.areagame.io.ResourcePath;
 import ch.epfl.cs107.play.game.superpacman.SuperPacman;
-import ch.epfl.cs107.play.game.superpacman.userInterface.SuperPacmanGUI;
 import ch.epfl.cs107.play.io.DefaultFileSystem;
 import ch.epfl.cs107.play.io.FileSystem;
 import ch.epfl.cs107.play.io.ResourceFileSystem;
@@ -32,7 +31,6 @@ public class Play {
         // Create a demo game :
 		// (it is expected that at the beginning, the provided file does not compile)
 
-		final SuperPacmanGUI menu = new SuperPacmanGUI();
         final Game game = new SuperPacman();
 
 		// Use Swing display
@@ -41,44 +39,8 @@ public class Play {
 		
 		Recorder recorder = new Recorder(window);
 		RecordReplayer replayer = new RecordReplayer(window);
+
 		try {
-
-			/*if (menu.begin(window, fileSystem)) {
-				//recorder.start();
-				//replayer.start("record1.xml");
-
-				// Use system clock to keep track of time progression
-				long currentTime = System.nanoTime();
-				long lastTime;
-				final float frameDuration = ONE_SEC / menu.getFrameRate();
-
-				// Run until the user try to close the window
-				while (!window.isCloseRequested()) {
-
-					// Compute time interval
-					lastTime = currentTime;
-					currentTime = System.nanoTime();
-					float deltaTime = (currentTime - lastTime);
-
-					try {
-						int timeDiff = Math.max(0, (int) (frameDuration - deltaTime));
-						Thread.sleep((int) (timeDiff / 1E6), (int) (timeDiff % 1E6));
-					} catch (InterruptedException e) {
-						System.out.println("Thread sleep interrupted");
-					}
-
-					currentTime = System.nanoTime();
-					deltaTime = (currentTime - lastTime) / ONE_SEC;
-
-					// Let the game do its stuff
-					menu.update(deltaTime);
-
-					// Render and update input
-					window.update();
-					//recorder.update();
-					//replayer.update();
-				}
-			}*/
 
 			if (game.begin(window, fileSystem)) {
 				//recorder.start();

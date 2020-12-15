@@ -23,7 +23,6 @@ public class SuperPacmanAreaGUIEntity extends AreaEntity {
     public SuperPacmanAreaGUIEntity(SuperPacmanArea area, Graphics... displays) {
         super(area, Orientation.UP, area.getSpawnPoint());
         this.displays = displays.clone();
-
     }
 
     @Override

@@ -63,17 +63,27 @@ public class SuperPacman extends RPG {
     public void update(float deltaTime) {
         super.update(deltaTime);
         currentPacmanTypeArea = (SuperPacmanArea)(getCurrentArea());
-        currentPacmanTypeArea.scareCheck(player);
+        currentPacmanTypeArea.scareCheck(player);           //Check si les fantômes doivent être effrayés du joueur 1
+        if(coopGameStarted){
+            currentPacmanTypeArea.scareCheck(player2);     //Check si les fantômes doivent être effrayés du joueur 2
+            updateCameraTarget(); // On adapte perpetuellement la caméra en fonction de la distance entre les joueurs (voir la fonction)
+
+            // Si un des joueurs passent une porte, on souhaite que l'autre joueur le suive dans sa nouvelle aire.
+
+            //if(player.isPassingADoor()){
+            //    player2.passesDoor(player.passedDoor());
+            //}
+            //else if(player2.isPassingADoor()){
+            //    player.passesDoor(player2.passedDoor());
+            //}
+        }
 
         Keyboard keyboard= currentPacmanTypeArea.getKeyboard();
         if(keyboard.get(Keyboard.SPACE).isDown()){
             if(!coopGameAlreadyStarted){
                 startCooperationGame();
-                coopGameAlreadyStarted = true;
+                coopGameAlreadyStarted = true;          //On veuille à ce que l'utilisateur ne puisse créer qu'un seul autre joueur coopératif.
             }
-        }
-        if(coopGameStarted){
-            updateCameraTarget();
         }
 
         if(((SuperPacmanArea)getCurrentArea()).getBackToMenu()){
@@ -112,6 +122,7 @@ public class SuperPacman extends RPG {
         player2.changeButtons();
         player2.changeSprite();
         player2.adaptGUI();
+
 
     }
 

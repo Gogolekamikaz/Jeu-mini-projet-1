@@ -176,6 +176,10 @@ public class SuperPacmanPlayer extends Player {
         return Collections.singletonList(getCurrentMainCellCoordinates());
     }
 
+    public void passesDoor(Door door){      //Méthode dédiée au mode multijoueur
+        setIsPassingADoor(door);
+    }
+
     @Override
     public List<DiscreteCoordinates> getFieldOfViewCells() {
         return null;
@@ -251,16 +255,15 @@ public class SuperPacmanPlayer extends Player {
 
         public void interactWith(Ghost ghost) {
             if(isInvincible()){
-                pacEatGhost.shouldBeStarted();
-                ghost.forgetPacman();
+                pacEatGhost.shouldBeStarted(); //Eat Sound
                 ghost.setPositionRefuge();
+                ghost.forgetPacman();
                 increaseScore(ghost.getGHOST_SCORE()); //Si invicible, on mange le fantôme il nous rapporte donc des points
             }
             else{
-                pacDeath.shouldBeStarted();
+                pacDeath.shouldBeStarted(); //Death Sound
                 hp -= 1;
-                ghost.setPositionRefuge();
-                ghost.forgetPacman();
+                ((SuperPacmanArea)(getOwnerArea())).BackToRefugeAndForget();  // Tous les fantômes reviennent à leur position refuge et oublient le Player.
                 respawnPlayer();
 
                 if(hp <= 0){

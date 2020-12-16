@@ -106,6 +106,10 @@ public abstract class SuperPacmanArea extends Area implements Logic {
         behavior.scareCheck(player);
     }
 
+    public void BackToRefugeAndForget(){
+        behavior.BackToRefugeAndForget();
+    }
+
     public AreaGraph getAreaGraph(){return areaGraph;}
 
     public boolean isCellWalkable(DiscreteCoordinates coordinates, String SIDE){

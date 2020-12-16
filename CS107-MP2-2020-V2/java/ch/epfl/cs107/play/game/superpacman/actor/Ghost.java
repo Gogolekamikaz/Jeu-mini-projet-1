@@ -19,7 +19,7 @@ public abstract class Ghost extends MovableAreaEntity implements Interactor {
 
     private final int GHOST_SCORE = 500;
     protected Sprite sprite;
-    private final int viewRadius = 5;
+    private final int viewRadius = 4;
     protected SuperPacmanArea ghostCurrentArea = (SuperPacmanArea)(getOwnerArea());
 
     private final GhostHandler handler = new GhostHandler();
@@ -93,7 +93,6 @@ public abstract class Ghost extends MovableAreaEntity implements Interactor {
     }
 
     public abstract void forgetPacman();
-    //abstract void forgetPacman(){}
 
     public int getGHOST_SCORE() {
         return GHOST_SCORE;

@@ -215,6 +215,13 @@ public class SuperPacmanBehavior extends AreaBehavior {
         }
     }
 
+    protected void BackToRefugeAndForget(){
+        for(Ghost ghost : ghostActors){
+            ghost.setPositionRefuge();
+            ghost.forgetPacman();
+        }
+    }
+
 
 
     public class SuperPacmanCell extends AreaBehavior.Cell{

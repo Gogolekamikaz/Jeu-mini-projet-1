@@ -23,16 +23,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8d6f72c-b834-412f-8842-21d938aea8a0" name="Default Changelist" comment="Menu + Ecran de fin + Modes">
-      <change afterPath="$PROJECT_DIR$/res/sounds/minecraft_click.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/rpg/actor/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/rpg/actor/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/SuperPacman.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/SuperPacman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/Ghost.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/MazeLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/MazeLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/GraphicButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/GraphicButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/Home/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/Home/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/Menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/userInterface/Menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/Play.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/Play.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/SuperPacman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/SuperPacman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Ghost.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Ghost.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer$SuperPacmanPlayerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer$SuperPacmanPlayerHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/Level0.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/Level0.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/Level1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/Level1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/Level2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/Level2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanArea.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior$SuperPacmanCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior$SuperPacmanCell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior$SuperPacmanCellType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior$SuperPacmanCellType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/userInterface/GraphicButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/userInterface/GraphicButton.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -489,29 +499,33 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="93" y="93" width="1181" height="685" key="DiffContextDialog/0.0.1368.872@0.0.1368.872" timestamp="1607099694844" />
-    <state width="1326" height="233" key="GridCell.Tab.0.bottom" timestamp="1608037842178">
-      <screen x="0" y="0" width="1368" height="872" />
+    <state width="1878" height="136" key="GridCell.Tab.0.bottom" timestamp="1608080900941">
+      <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state width="1617" height="136" key="GridCell.Tab.0.bottom/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1607976760881" />
-    <state width="1878" height="212" key="GridCell.Tab.0.bottom/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1607962286152" />
+    <state width="1398" height="136" key="GridCell.Tab.0.bottom/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1608076588569" />
+    <state width="1878" height="136" key="GridCell.Tab.0.bottom/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1608080900941" />
+    <state width="1878" height="136" key="GridCell.Tab.0.bottom/-1920.-180.1920.1080/0.23.1440.828@-1920.-180.1920.1080" timestamp="1608080168729" />
     <state width="1326" height="233" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1608037842178" />
-    <state width="1326" height="233" key="GridCell.Tab.0.center" timestamp="1608037842178">
-      <screen x="0" y="0" width="1368" height="872" />
+    <state width="1878" height="136" key="GridCell.Tab.0.center" timestamp="1608080900939">
+      <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state width="1617" height="136" key="GridCell.Tab.0.center/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1607976760878" />
-    <state width="1878" height="212" key="GridCell.Tab.0.center/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1607962286150" />
+    <state width="1398" height="136" key="GridCell.Tab.0.center/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1608076588566" />
+    <state width="1878" height="136" key="GridCell.Tab.0.center/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1608080900939" />
+    <state width="1878" height="136" key="GridCell.Tab.0.center/-1920.-180.1920.1080/0.23.1440.828@-1920.-180.1920.1080" timestamp="1608080168726" />
     <state width="1326" height="233" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1608037842178" />
-    <state width="1326" height="233" key="GridCell.Tab.0.left" timestamp="1608037842178">
-      <screen x="0" y="0" width="1368" height="872" />
+    <state width="1878" height="136" key="GridCell.Tab.0.left" timestamp="1608080900937">
+      <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state width="1617" height="136" key="GridCell.Tab.0.left/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1607976760876" />
-    <state width="1878" height="212" key="GridCell.Tab.0.left/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1607962286148" />
+    <state width="1398" height="136" key="GridCell.Tab.0.left/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1608076588564" />
+    <state width="1878" height="136" key="GridCell.Tab.0.left/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1608080900937" />
+    <state width="1878" height="136" key="GridCell.Tab.0.left/-1920.-180.1920.1080/0.23.1440.828@-1920.-180.1920.1080" timestamp="1608080168725" />
     <state width="1326" height="233" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1608037842178" />
-    <state width="1326" height="233" key="GridCell.Tab.0.right" timestamp="1608037842178">
-      <screen x="0" y="0" width="1368" height="872" />
+    <state width="1878" height="136" key="GridCell.Tab.0.right" timestamp="1608080900940">
+      <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state width="1617" height="136" key="GridCell.Tab.0.right/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1607976760880" />
-    <state width="1878" height="212" key="GridCell.Tab.0.right/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1607962286151" />
+    <state width="1398" height="136" key="GridCell.Tab.0.right/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1608076588567" />
+    <state width="1878" height="136" key="GridCell.Tab.0.right/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1608080900940" />
+    <state width="1878" height="136" key="GridCell.Tab.0.right/-1920.-180.1920.1080/0.23.1440.828@-1920.-180.1920.1080" timestamp="1608080168727" />
     <state width="1326" height="233" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1608037842178" />
     <state width="1326" height="281" key="GridCell.Tab.1.bottom" timestamp="1607993282579">
       <screen x="0" y="0" width="1368" height="872" />

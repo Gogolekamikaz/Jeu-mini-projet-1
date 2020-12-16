@@ -24,136 +24,136 @@
   <component name="ChangeListManager">
     <list default="true" id="b8d6f72c-b834-412f-8842-21d938aea8a0" name="Default Changelist" comment="improvements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/Grotte.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/GrotteMew.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/Level1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/PetalburgArena1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/PetalburgCenter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/PetalburgCity.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/PetalburgShop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/PetalburgTimmy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/Road104.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/bag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/fightBackground.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/fightBackground.2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/fightBackground.3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/grass.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/icmonPauseMenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/pipegame/Level1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/see.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/zelda/Chateau.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/zelda/Ferme.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/zelda/Route.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/zelda/RouteChateau.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/zelda/RouteTemple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/zelda/Temple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/backgrounds/zelda/Village.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/Grotte.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/GrotteMew.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/Level1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/PetalburgArena1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/PetalburgCenter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/PetalburgCity.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/PetalburgShop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/PetalburgTimmy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/Road104.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/pipegame/Level1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/zelda/Chateau.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/zelda/Ferme.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/zelda/Route.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/zelda/RouteChateau.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/zelda/RouteTemple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/zelda/Temple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/behaviors/zelda/Village.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/001.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/031.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/408.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/Bachelorball.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/Manball.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/Masterball.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/Mecaball.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/Satball.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/Syscomball.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/XPbar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/assistant.fixed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/bag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/boy.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/cellOver.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/dialog.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/flora.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/girl.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/max.old.bike.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/max.old.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/max.old.surf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/max.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/mew.fixed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/pipegame/car.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/pipegame/deadEndRoad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/pipegame/grass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/pipegame/roadCorner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/pipegame/roadCrossing.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/pipegame/roadJunction.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/pipegame/straightRoad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/pipegame/tent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/player_surf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/policeman.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/rock.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/rock.2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/rock.3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/scoreboard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/shopAssistant.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/arrow.icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/bomb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/bow.icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/bridge.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/castleDoor.close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/castleDoor.open.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/cave.close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/cave.open.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/character.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/coin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/coinsDisplay.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/darkLord.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/darkLord.spell.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/dialog.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/digits.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/explosion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/fire.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/flameskull.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/gearDisplay.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/grass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/grass.sliced.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/heart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/heartDisplay.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/inventory.background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/inventory.selector.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/inventory.slot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/key.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/king.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/logMonster.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/logMonster.sleeping.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/logMonster.wakingUp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/magicWaterProjectile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/orb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/player.bow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/player.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/player.staff_water.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/player.sword.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/selector.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/staff.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/staff_water.icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/sword.icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/vanish.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sprites/zelda/waterfall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sounds/PetalburgCenter.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sounds/PetalburgCity.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sounds/Road104.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sounds/dialogNext.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sounds/fight.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sounds/recovery.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sounds/transactionFail.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sounds/transactionOk.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/Grotte.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/GrotteMew.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/Level1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/PetalburgArena1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/PetalburgCenter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/PetalburgCity.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/PetalburgShop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/PetalburgTimmy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/Road104.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/bag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/fightBackground.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/fightBackground.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/fightBackground.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/grass.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/icmonPauseMenu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/pipegame/Level1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/see.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/zelda/Chateau.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/zelda/Ferme.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/zelda/Route.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/zelda/RouteChateau.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/zelda/RouteTemple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/zelda/Temple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/backgrounds/zelda/Village.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/behaviors/Grotte.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/behaviors/GrotteMew.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/behaviors/Level1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/behaviors/PetalburgArena1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/behaviors/PetalburgCenter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/behaviors/PetalburgCity.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/behaviors/PetalburgShop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/behaviors/PetalburgTimmy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/behaviors/Road104.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/behaviors/pipegame/Level1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/behaviors/zelda/Chateau.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/behaviors/zelda/Ferme.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/behaviors/zelda/Route.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/behaviors/zelda/RouteChateau.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/behaviors/zelda/RouteTemple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/behaviors/zelda/Temple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/behaviors/zelda/Village.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/031.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/408.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/Bachelorball.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/Manball.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/Masterball.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/Mecaball.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/Satball.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/Syscomball.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/XPbar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/assistant.fixed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/bag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/boy.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/cellOver.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/dialog.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/flora.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/girl.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/max.old.bike.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/max.old.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/max.old.surf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/max.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/mew.fixed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/pipegame/car.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/pipegame/deadEndRoad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/pipegame/grass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/pipegame/roadCorner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/pipegame/roadCrossing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/pipegame/roadJunction.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/pipegame/straightRoad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/pipegame/tent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/player_surf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/policeman.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/rock.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/rock.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/rock.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/scoreboard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/shopAssistant.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/arrow.icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/bomb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/bow.icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/bridge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/castleDoor.close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/castleDoor.open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/cave.close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/cave.open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/character.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/coin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/coinsDisplay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/darkLord.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/darkLord.spell.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/dialog.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/digits.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/explosion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/fire.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/flameskull.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/gearDisplay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/grass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/grass.sliced.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/heart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/heartDisplay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/inventory.background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/inventory.selector.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/inventory.slot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/key.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/king.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/logMonster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/logMonster.sleeping.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/logMonster.wakingUp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/magicWaterProjectile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/orb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/player.bow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/player.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/player.staff_water.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/player.sword.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/selector.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/staff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/staff_water.icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/sword.icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/vanish.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/images/sprites/zelda/waterfall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/sounds/PetalburgCenter.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/sounds/PetalburgCity.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/sounds/Road104.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/sounds/dialogNext.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/sounds/fight.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/sounds/recovery.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/sounds/transactionFail.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/sounds/transactionOk.wav" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,6 +230,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Play" />
@@ -276,7 +287,8 @@
       <workItem from="1607977736386" duration="12683000" />
       <workItem from="1608003080533" duration="1824000" />
       <workItem from="1608027365931" duration="4987000" />
-      <workItem from="1608146534391" duration="405000" />
+      <workItem from="1608146534391" duration="1949000" />
+      <workItem from="1608153590326" duration="1459000" />
     </task>
     <task id="LOCAL-00001" summary="Enoncé projet pret">
       <created>1606264291168</created>
@@ -537,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608144184068</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="improvements">
+      <created>1608147210998</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1608147210998</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,34 +647,34 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="465" y="163" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1608140468269" />
-    <state width="1326" height="219" key="GridCell.Tab.0.bottom" timestamp="1608145157615">
+    <state width="1326" height="218" key="GridCell.Tab.0.bottom" timestamp="1608152068299">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1398" height="136" key="GridCell.Tab.0.bottom/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1608076588569" />
     <state width="1878" height="136" key="GridCell.Tab.0.bottom/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1608115034479" />
     <state width="1878" height="136" key="GridCell.Tab.0.bottom/-1920.-180.1920.1080/0.23.1440.828@-1920.-180.1920.1080" timestamp="1608113639275" />
-    <state width="1326" height="219" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1608145157615" />
-    <state width="1326" height="219" key="GridCell.Tab.0.center" timestamp="1608145157615">
+    <state width="1326" height="218" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1608152068299" />
+    <state width="1326" height="218" key="GridCell.Tab.0.center" timestamp="1608152068299">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1398" height="136" key="GridCell.Tab.0.center/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1608076588566" />
     <state width="1878" height="136" key="GridCell.Tab.0.center/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1608115034477" />
     <state width="1878" height="136" key="GridCell.Tab.0.center/-1920.-180.1920.1080/0.23.1440.828@-1920.-180.1920.1080" timestamp="1608113639272" />
-    <state width="1326" height="219" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1608145157615" />
-    <state width="1326" height="219" key="GridCell.Tab.0.left" timestamp="1608145157615">
+    <state width="1326" height="218" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1608152068299" />
+    <state width="1326" height="218" key="GridCell.Tab.0.left" timestamp="1608152068298">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1398" height="136" key="GridCell.Tab.0.left/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1608076588564" />
     <state width="1878" height="136" key="GridCell.Tab.0.left/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1608115034476" />
     <state width="1878" height="136" key="GridCell.Tab.0.left/-1920.-180.1920.1080/0.23.1440.828@-1920.-180.1920.1080" timestamp="1608113639269" />
-    <state width="1326" height="219" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1608145157615" />
-    <state width="1326" height="219" key="GridCell.Tab.0.right" timestamp="1608145157615">
+    <state width="1326" height="218" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1608152068298" />
+    <state width="1326" height="218" key="GridCell.Tab.0.right" timestamp="1608152068299">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1398" height="136" key="GridCell.Tab.0.right/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1608076588567" />
     <state width="1878" height="136" key="GridCell.Tab.0.right/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1608115034478" />
     <state width="1878" height="136" key="GridCell.Tab.0.right/-1920.-180.1920.1080/0.23.1440.828@-1920.-180.1920.1080" timestamp="1608113639273" />
-    <state width="1326" height="219" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1608145157615" />
+    <state width="1326" height="218" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1608152068299" />
     <state width="1878" height="327" key="GridCell.Tab.1.bottom" timestamp="1608082778038">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
@@ -700,12 +719,12 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="93" y="93" width="1181" height="685" key="VCS.FileHistoryDialog/0.0.1368.872@0.0.1368.872" timestamp="1607532784836" />
-    <state x="277" y="169" key="Vcs.Push.Dialog.v2" timestamp="1608144209283">
+    <state x="277" y="169" key="Vcs.Push.Dialog.v2" timestamp="1608151089951">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="-1531" y="48" key="Vcs.Push.Dialog.v2/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1607976441707" />
     <state x="-1531" y="29" key="Vcs.Push.Dialog.v2/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1608081138678" />
-    <state x="277" y="169" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1608144209283" />
+    <state x="277" y="169" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1608151089951" />
     <state x="502" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608030018736">
       <screen x="0" y="0" width="1368" height="872" />
     </state>

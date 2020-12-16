@@ -153,9 +153,9 @@ public abstract class SuperPacmanArea extends Area implements Logic {
             suspend();
         }
 
-        /*if(keyboard.get(Keyboard.ENTER).isPressed() && pause && gameEnd){
+        if(keyboard.get(Keyboard.ENTER).isPressed() && pause && gameEnd){
             backToMenu = true;
-        }*/
+        }
     }
 
     @Override

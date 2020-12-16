@@ -1,6 +1,5 @@
 package ch.epfl.cs107.play.game.superpacman.actor;
 
-import ch.epfl.cs107.play.game.actor.Graphics;
 import ch.epfl.cs107.play.game.actor.SoundAcoustics;
 import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.actor.*;
@@ -8,11 +7,11 @@ import ch.epfl.cs107.play.game.areagame.handler.AreaInteractionVisitor;
 import ch.epfl.cs107.play.game.rpg.actor.Door;
 import ch.epfl.cs107.play.game.rpg.actor.Player;
 import ch.epfl.cs107.play.game.rpg.actor.RPGSprite;
+import ch.epfl.cs107.play.game.superpacman.area.Level2;
 import ch.epfl.cs107.play.game.superpacman.area.MazeLevel;
 import ch.epfl.cs107.play.game.superpacman.area.SuperPacmanArea;
 import ch.epfl.cs107.play.game.superpacman.handler.GhostInteractionVisitor;
 import ch.epfl.cs107.play.game.superpacman.handler.SuperPacmanInteractionVisitor;
-import ch.epfl.cs107.play.game.superpacman.userInterface.Home.HomeDisplay;
 import ch.epfl.cs107.play.game.superpacman.userInterface.SuperPacmanGUIWindow;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
 import ch.epfl.cs107.play.window.*;
@@ -107,6 +106,10 @@ public class SuperPacmanPlayer extends Player {
                     isInvincible = false;
                     timer = 10;
                 }
+            }
+
+            if(getOwnerArea() instanceof Level2 && (getCurrentPosition().equals(new DiscreteCoordinates(14,0)) || getCurrentPosition().equals(new DiscreteCoordinates(15,0)))){
+                ((SuperPacmanArea)getOwnerArea()).finish(true, score);
             }
         }
     }

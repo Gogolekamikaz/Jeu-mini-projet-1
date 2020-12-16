@@ -26,9 +26,6 @@ public class SuperPacmanPlayer extends Player {
     // crée un tableau de 4 animation
     private Animation[] animations = Animation.createAnimations(SPEED/2, sprites );
     private Animation currentAnimation;
-    private Graphics display = new HomeDisplay();
-    boolean blockPlayer = false;
-    float blockTimer = 0.5f;
 
 
     private boolean isInvincible = false;
@@ -72,7 +69,6 @@ public class SuperPacmanPlayer extends Player {
             status.draw(canvas);
         }
         currentAnimation.draw(canvas);
-        //display.draw(canvas);
     }
 
     @Override

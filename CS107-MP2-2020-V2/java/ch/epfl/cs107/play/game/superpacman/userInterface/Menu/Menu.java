@@ -15,15 +15,9 @@ public class Menu extends SuperPacmanGUIWindow {
     public Menu(SuperPacman game){ super(game); }
 
     @Override
-    protected void createDisplay() {
-
-    }
-
-    @Override
     public boolean begin(Window window, FileSystem fileSystem) {
         if (super.begin(window, fileSystem)) {
             setBehavior(new SuperPacmanGUIBehavior(window));
-            createArea();
             return true;
         }
         return false;

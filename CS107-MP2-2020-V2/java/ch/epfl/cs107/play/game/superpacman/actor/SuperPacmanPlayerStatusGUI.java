@@ -53,7 +53,7 @@ class SuperPacmanPlayerStatusGUI implements Graphics {
         Vector anchor = canvas.getTransform().getOrigin().sub(new Vector(width/2,height/2));
 
         TextGraphics scoreText = new TextGraphics("Score : "+player.getScore(), 1.f, COLOR);
-        scoreText.setOutlineColor(Color.ORANGE);
+        scoreText.setOutlineColor(COLOR==Color.RED? Color.RED : Color.ORANGE);
         scoreText.setThickness(0.05f);
         scoreText.setBold(true);
         scoreText.setAnchor(anchor.add(new Vector(width/2, coordinates.y)));

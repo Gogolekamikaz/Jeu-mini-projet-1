@@ -79,12 +79,12 @@ public abstract class SuperPacmanArea extends Area implements Logic {
             // Set the behavior map
             this.behavior = behavior;
             setBehavior(behavior);
-            //behavior.registerActors(this);
             pause = false;
 
-            createArea();
             displayPause = new SuperPacmanAreaGUIEntity(this, new PauseScreen(this));
             registerActor(displayPause);
+
+            createArea();
             return true;
         }
         return false;

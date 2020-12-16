@@ -11,15 +11,12 @@ public abstract class SuperPacmanGUIWindow extends SuperPacmanArea {
     private int width, height;
     private SuperPacman game;
 
-    protected abstract void createDisplay();
-
     public SuperPacmanGUIWindow(SuperPacman game){ this.game = game; }
 
     public boolean begin(Window window, FileSystem fileSystem) {
         if (super.begin(window, fileSystem, new SuperPacmanGUIBehavior(window))) {
             this.width = window.getWidth();
             this.height = window.getHeight();
-            createDisplay();
             return true;
         }
         return false;

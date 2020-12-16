@@ -25,7 +25,7 @@ public abstract class AgressiveGhost extends Ghost {
     private boolean unscareStateChangeAlreadyClaimed = true;
     protected Queue<Orientation> orientationSequence;
 
-    Path path;
+    private Path path;
 
     public AgressiveGhost(Area area, Orientation orientation, DiscreteCoordinates position, Vector positionRefuge, DiscreteCoordinates positionRefugeCoord) {
         super(area, orientation, position, positionRefuge, positionRefugeCoord);

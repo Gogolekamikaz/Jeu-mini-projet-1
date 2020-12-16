@@ -1,16 +1,11 @@
 package ch.epfl.cs107.play.game.superpacman.userInterface.Home;
 
-import ch.epfl.cs107.play.game.actor.Graphics;
-import ch.epfl.cs107.play.game.areagame.actor.Background;
 import ch.epfl.cs107.play.game.superpacman.SuperPacman;
 import ch.epfl.cs107.play.game.superpacman.userInterface.GraphicButton;
-import ch.epfl.cs107.play.game.superpacman.userInterface.Pause.PauseScreen;
 import ch.epfl.cs107.play.game.superpacman.userInterface.SuperPacmanAreaGUIEntity;
-import ch.epfl.cs107.play.game.superpacman.userInterface.SuperPacmanGUIBehavior;
 import ch.epfl.cs107.play.game.superpacman.userInterface.SuperPacmanGUIWindow;
 import ch.epfl.cs107.play.io.FileSystem;
 import ch.epfl.cs107.play.math.DiscreteCoordinates;
-import ch.epfl.cs107.play.math.RegionOfInterest;
 import ch.epfl.cs107.play.math.Vector;
 import ch.epfl.cs107.play.window.Window;
 
@@ -34,15 +29,9 @@ public class Home extends SuperPacmanGUIWindow {
     @Override
     public boolean begin(Window window, FileSystem fileSystem) {
         if (super.begin(window, fileSystem)) {
-            setBehavior(new SuperPacmanGUIBehavior(window));
-            createArea();
             return true;
         }
         return false;
     }
 
-    @Override
-    protected void createDisplay() {
-
-    }
 }

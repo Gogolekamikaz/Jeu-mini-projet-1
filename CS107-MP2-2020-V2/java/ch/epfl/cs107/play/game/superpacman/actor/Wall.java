@@ -15,7 +15,7 @@ import ch.epfl.cs107.play.window.Canvas;
 
 public class Wall extends AreaEntity{
 
-	Sprite sprite;
+	private Sprite sprite;
 
 	/**
 	 * Build a Wall from its position and its neighborhood.

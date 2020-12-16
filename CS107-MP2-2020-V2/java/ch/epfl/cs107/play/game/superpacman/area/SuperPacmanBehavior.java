@@ -17,8 +17,8 @@ import java.util.Queue;
 
 public class SuperPacmanBehavior extends AreaBehavior {
 
-    AreaGraph areaGraph;
-    ArrayList<Ghost> ghostActors = new ArrayList<Ghost>();
+    private AreaGraph areaGraph;
+    private ArrayList<Ghost> ghostActors = new ArrayList<Ghost>();
 
     public enum SuperPacmanCellType {
 
@@ -196,12 +196,6 @@ public class SuperPacmanBehavior extends AreaBehavior {
     }
 
     protected Queue<Orientation> shortestPath(DiscreteCoordinates origine, DiscreteCoordinates arrivee){
-        //DiscreteCoordinates tryArrival = new DiscreteCoordinates(14,15);
-        //DiscreteCoordinates tryArrival2 = new DiscreteCoordinates(14,13);
-        //Queue<Orientation> test = areaGraph.shortestPath(origine, tryArrival);
-        //Queue<Orientation> test2 = areaGraph.shortestPath(origine, tryArrival2);
-        //System.out.println(test);
-        //System.out.println(test2);
         Queue<Orientation> sequence = areaGraph.shortestPath(origine, arrivee);
         System.out.println(sequence);
         return areaGraph.shortestPath(origine, arrivee);

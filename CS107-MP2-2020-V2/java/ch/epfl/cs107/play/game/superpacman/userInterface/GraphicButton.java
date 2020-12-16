@@ -27,7 +27,7 @@ public class GraphicButton extends AreaEntity {
     private TextGraphics buttonName;
     private Vector textCoordinates;
 
-    private SoundAcoustics click = new SoundAcoustics("sounds/minecraft_click.wav");
+    private final SoundAcoustics click = new SoundAcoustics("sounds/minecraft_click.wav");
     private boolean clicked;
 
     private final float width = 8.f;

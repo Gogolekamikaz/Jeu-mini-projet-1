@@ -32,9 +32,7 @@ public class SuperPacman extends RPG {
     private float lastUpdateDistance = 0;
     private boolean coopGameAlreadyStarted = false;
 
-    private ArrayList<Ghost> ghostActors;
-
-    private boolean infiniteGame = false;
+    private final boolean infiniteGame = false;
     private MazeLevel maze;
     private int mazeCount = 0;
 

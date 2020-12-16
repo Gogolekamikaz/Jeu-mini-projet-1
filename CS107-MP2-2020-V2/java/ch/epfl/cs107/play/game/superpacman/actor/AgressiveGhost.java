@@ -38,7 +38,6 @@ public abstract class AgressiveGhost extends Ghost {
         //Control ghost position state
 
         if(orientationSequence == null || orientationSequence.size() == 0){
-            System.out.println("SEQUENCE NULLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
             positionStateChange = true;
         }
         // Control ghost scare state
@@ -94,10 +93,9 @@ public abstract class AgressiveGhost extends Ghost {
     }
 
     protected Orientation getNextOrientation(){
-        if(viewedPlayer != null){
+        if(viewedPlayer != null){       //Si le joueur est vu par le fantôme, ce dernier va constamment adapter sa trajectoire à la position du joueur
             targetPosition = evaluateTargetPosition();
             orientationSequence = evaluateOrientationSequence();
-            System.out.println(orientationSequence);
         }
         Orientation orientation = orientationSequence.poll();
 

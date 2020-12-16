@@ -1,9 +1,11 @@
 package ch.epfl.cs107.play.game.superpacman;
 
+import ch.epfl.cs107.play.game.areagame.Area;
 import ch.epfl.cs107.play.game.areagame.AreaBehavior;
 import ch.epfl.cs107.play.game.areagame.Cell;
 import ch.epfl.cs107.play.game.areagame.actor.Orientation;
 import ch.epfl.cs107.play.game.rpg.RPG;
+import ch.epfl.cs107.play.game.rpg.actor.Door;
 import ch.epfl.cs107.play.game.rpg.actor.Player;
 import ch.epfl.cs107.play.game.superpacman.actor.Ghost;
 import ch.epfl.cs107.play.game.superpacman.actor.InvisibleMadeForViewCandidate;
@@ -68,14 +70,26 @@ public class SuperPacman extends RPG {
             currentPacmanTypeArea.scareCheck(player2);     //Check si les fantômes doivent être effrayés du joueur 2
             updateCameraTarget(); // On adapte perpetuellement la caméra en fonction de la distance entre les joueurs (voir la fonction)
 
-            // Si un des joueurs passent une porte, on souhaite que l'autre joueur le suive dans sa nouvelle aire.
 
-            //if(player.isPassingADoor()){
-            //    player2.passesDoor(player.passedDoor());
-            //}
-            //else if(player2.isPassingADoor()){
-            //    player.passesDoor(player2.passedDoor());
-            //}
+            // Si un des joueurs passent une porte, on souhaite que l'autre joueur le suive dans sa nouvelle aire.
+            if(player2.isPassingADoor()){
+                if(!player.isPassingADoor()){
+                    player.passesDoor(player2.passedDoor());
+                }
+            }
+
+            else if(player.isPassingADoor()) {    //On doit ajouter cela pour le mode multijoueur puisque la classe RPG ne possède qu'un attribut unique "Player", le player considéré par RPG est le dernier ajouté à l'aire. Or, on veut considérer dans le cas d'un passage des portes les deux, dont le premier..
+                if(!player2.isPassingADoor()){
+                    player2.passesDoor(player.passedDoor());
+                }
+
+                Door door = player.passedDoor();
+                player.leaveArea();
+                Area area = setCurrentArea(door.getDestination(), false);
+                player.enterArea(area, door.getOtherSideCoordinates());
+            }
+
+
         }
 
         Keyboard keyboard= currentPacmanTypeArea.getKeyboard();
@@ -164,18 +178,21 @@ public class SuperPacman extends RPG {
     private void updateCameraTarget(){
 
         float distanceBetweenPlayer = evaluatePlayersDistance();
-        if((distanceBetweenPlayer > lastUpdateDistance) && (distanceBetweenPlayer > 6.5)){
+        if(distanceBetweenPlayer > lastUpdateDistance){
+
+            SuperPacmanArea.cameraScaleFactor = 15.f;
+            for(float i = 0.f ; i <= distanceBetweenPlayer; ++i){
+                SuperPacmanArea.cameraScaleFactor += 1;      //On adapte d'une part  le zoom de la caméra en fonction de la distance entre les joueurs
+            }
+
             DiscreteCoordinates middlePosition = evaluateMiddlePositionBetweenPlayers();
             InvisibleMadeForViewCandidate viewObject = new InvisibleMadeForViewCandidate(getCurrentArea(), middlePosition);
-            getCurrentArea().setViewCandidate(viewObject);
+            getCurrentArea().setViewCandidate(viewObject);      //On fixe à présent la caméra sur le centre des positions des deux joueurs.
         }
+
         lastUpdateDistance = evaluatePlayersDistance();
 
 
-        //SuperPacmanArea.cameraScaleFactor = 15.f;
-        //for(float i = 0.f ; i <= distanceBetweenPlayer; ++i){
-        //    SuperPacmanArea.cameraScaleFactor += 1;
-        //}
     }
 
     public void setNextArea(String destination) {

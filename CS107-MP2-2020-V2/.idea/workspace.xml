@@ -22,12 +22,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8d6f72c-b834-412f-8842-21d938aea8a0" name="Default Changelist" comment="end">
+    <list default="true" id="b8d6f72c-b834-412f-8842-21d938aea8a0" name="Default Changelist" comment="end 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/Blinky.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/Blinky.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/Ghost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/Inky.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/Inky.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/Pinky.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/actor/Pinky.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/areagame/AreaBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/areagame/AreaBehavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/ch/epfl/cs107/play/game/superpacman/area/SuperPacmanBehavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/areagame/actor/CollectableAreaEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/areagame/actor/CollectableAreaEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Blinky.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Blinky.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Ghost.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/Ghost.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer$SuperPacmanPlayerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer$SuperPacmanPlayerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS107-MP2-2020-V2/ch/epfl/cs107/play/game/superpacman/actor/SuperPacmanPlayer.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +157,7 @@
       <workItem from="1608153590326" duration="3650000" />
       <workItem from="1608165941786" duration="258000" />
       <workItem from="1608166610285" duration="3846000" />
-      <workItem from="1608172637040" duration="345000" />
+      <workItem from="1608172637040" duration="2104000" />
     </task>
     <task id="LOCAL-00001" summary="Enoncé projet pret">
       <created>1606264291168</created>
@@ -443,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608170901691</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="end 2">
+      <created>1608173019554</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1608173019554</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +472,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Partie 2 sans score et pv (juste j'ai modifié la maquette par contre)" />
     <MESSAGE value="Partie 2 finie et tout marche" />
     <MESSAGE value="changement class GUI" />
     <MESSAGE value="Encapsulation de batard" />
@@ -487,7 +496,8 @@
     <MESSAGE value="improvements" />
     <MESSAGE value="improvements ..." />
     <MESSAGE value="end" />
-    <option name="LAST_COMMIT_MESSAGE" value="end" />
+    <MESSAGE value="end 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="end 2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="415" y="191" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1606310458628">
@@ -522,10 +532,10 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="468" y="305" width="894" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1368.872@0.0.1368.872" timestamp="1607994830443" />
-    <state x="432" y="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1606610628592">
+    <state x="432" y="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1608175170833">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="432" y="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1368.872@0.0.1368.872" timestamp="1606610628592" />
+    <state x="432" y="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1368.872@0.0.1368.872" timestamp="1608175170833" />
     <state x="93" y="93" width="1181" height="685" key="DiffContextDialog" timestamp="1607099694844">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -534,34 +544,34 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="465" y="163" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1608155852162" />
-    <state width="1326" height="218" key="GridCell.Tab.0.bottom" timestamp="1608166199898">
+    <state width="1326" height="218" key="GridCell.Tab.0.bottom" timestamp="1608174438318">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1398" height="136" key="GridCell.Tab.0.bottom/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1608076588569" />
     <state width="1878" height="136" key="GridCell.Tab.0.bottom/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1608115034479" />
     <state width="1878" height="136" key="GridCell.Tab.0.bottom/-1920.-180.1920.1080/0.23.1440.828@-1920.-180.1920.1080" timestamp="1608113639275" />
-    <state width="1326" height="218" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1608166199898" />
-    <state width="1326" height="218" key="GridCell.Tab.0.center" timestamp="1608166199898">
+    <state width="1326" height="218" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1608174438318" />
+    <state width="1326" height="218" key="GridCell.Tab.0.center" timestamp="1608174438318">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1398" height="136" key="GridCell.Tab.0.center/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1608076588566" />
     <state width="1878" height="136" key="GridCell.Tab.0.center/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1608115034477" />
     <state width="1878" height="136" key="GridCell.Tab.0.center/-1920.-180.1920.1080/0.23.1440.828@-1920.-180.1920.1080" timestamp="1608113639272" />
-    <state width="1326" height="218" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1608166199898" />
-    <state width="1326" height="218" key="GridCell.Tab.0.left" timestamp="1608166199897">
+    <state width="1326" height="218" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1608174438318" />
+    <state width="1326" height="218" key="GridCell.Tab.0.left" timestamp="1608174438318">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1398" height="136" key="GridCell.Tab.0.left/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1608076588564" />
     <state width="1878" height="136" key="GridCell.Tab.0.left/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1608115034476" />
     <state width="1878" height="136" key="GridCell.Tab.0.left/-1920.-180.1920.1080/0.23.1440.828@-1920.-180.1920.1080" timestamp="1608113639269" />
-    <state width="1326" height="218" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1608166199897" />
-    <state width="1326" height="218" key="GridCell.Tab.0.right" timestamp="1608166199898">
+    <state width="1326" height="218" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1608174438318" />
+    <state width="1326" height="218" key="GridCell.Tab.0.right" timestamp="1608174438318">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1398" height="136" key="GridCell.Tab.0.right/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1608076588567" />
     <state width="1878" height="136" key="GridCell.Tab.0.right/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1608115034478" />
     <state width="1878" height="136" key="GridCell.Tab.0.right/-1920.-180.1920.1080/0.23.1440.828@-1920.-180.1920.1080" timestamp="1608113639273" />
-    <state width="1326" height="218" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1608166199898" />
+    <state width="1326" height="218" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1608174438318" />
     <state width="1878" height="327" key="GridCell.Tab.1.bottom" timestamp="1608082778038">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
@@ -606,12 +616,12 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="93" y="93" width="1181" height="685" key="VCS.FileHistoryDialog/0.0.1368.872@0.0.1368.872" timestamp="1607532784836" />
-    <state x="277" y="169" key="Vcs.Push.Dialog.v2" timestamp="1608170936426">
+    <state x="277" y="169" key="Vcs.Push.Dialog.v2" timestamp="1608173025374">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="-1531" y="48" key="Vcs.Push.Dialog.v2/-1920.-157.1920.1057/0.23.1440.828@-1920.-157.1920.1057" timestamp="1607976441707" />
     <state x="-1531" y="29" key="Vcs.Push.Dialog.v2/-1920.-180.1920.1080/0.0.1440.851@-1920.-180.1920.1080" timestamp="1608081138678" />
-    <state x="277" y="169" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1608170936426" />
+    <state x="277" y="169" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1608173025374" />
     <state x="424" y="73" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1608168720369">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -641,10 +651,10 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="344" y="201" key="run.anything.popup/0.0.1368.872@0.0.1368.872" timestamp="1607698968017" />
-    <state x="356" y="193" width="672" height="678" key="search.everywhere.popup" timestamp="1607949951103">
+    <state x="358" y="195" width="672" height="678" key="search.everywhere.popup" timestamp="1608175147653">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="356" y="193" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1607949951103" />
+    <state x="358" y="195" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1608175147653" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

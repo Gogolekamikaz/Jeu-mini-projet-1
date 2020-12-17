@@ -41,8 +41,9 @@ public abstract class AreaBehavior
     /**
      * Default AreaBehavior Constructor
      * @param window (Window): graphic context, not null
+     * @param width
+     * @param height
      */
-    //TODO
     public AreaBehavior(Window window, int width, int height){
 
         //No Behavior Image

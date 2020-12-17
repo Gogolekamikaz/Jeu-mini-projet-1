@@ -162,7 +162,7 @@ public abstract class SuperPacmanArea extends Area implements Logic {
     public void suspend(){
         super.suspend();
         pause = !pause;
-        System.out.println("pause : "+pause);
+//        System.out.println("pause : "+pause);
 
         if(gameEnd){
             displayEnd = new SuperPacmanAreaGUIEntity(this, new EndDisplay(this, win, finalScore));

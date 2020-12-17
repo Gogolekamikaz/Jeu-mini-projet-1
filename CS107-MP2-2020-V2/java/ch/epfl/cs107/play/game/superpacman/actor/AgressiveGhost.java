@@ -52,7 +52,7 @@ public abstract class AgressiveGhost extends Ghost {
         if(isAfraid){
             if(!scareStateChangeAlreadyClaimed){
                 scareStateChange = true;
-                System.out.println("Scare state changes and ghosts become scared");
+                //System.out.println("Scare state changes and ghosts become scared");
                 scareStateChangeAlreadyClaimed = true;
                 unscareStateChangeAlreadyClaimed = false;
             }
@@ -74,10 +74,10 @@ public abstract class AgressiveGhost extends Ghost {
         }
 
         if(stateChanges()){
-            System.out.println("Targeting state: " + targetingStateChange + " Scare state: "+ scareStateChange+ " position state change : " + positionStateChange);
+            //System.out.println("Targeting state: " + targetingStateChange + " Scare state: "+ scareStateChange+ " position state change : " + positionStateChange);
             targetPosition = evaluateTargetPosition();
             orientationSequence = evaluateOrientationSequence();
-            System.out.println(orientationSequence);
+            //System.out.println(orientationSequence);
             targetingStateChange = false;
             positionStateChange = false;
             scareStateChange = false;

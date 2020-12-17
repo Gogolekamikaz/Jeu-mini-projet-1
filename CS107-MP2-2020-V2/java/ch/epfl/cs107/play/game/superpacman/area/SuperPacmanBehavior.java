@@ -197,7 +197,6 @@ public class SuperPacmanBehavior extends AreaBehavior {
 
     protected Queue<Orientation> shortestPath(DiscreteCoordinates origine, DiscreteCoordinates arrivee){
         Queue<Orientation> sequence = areaGraph.shortestPath(origine, arrivee);
-        System.out.println(sequence);
         return areaGraph.shortestPath(origine, arrivee);
     }
 

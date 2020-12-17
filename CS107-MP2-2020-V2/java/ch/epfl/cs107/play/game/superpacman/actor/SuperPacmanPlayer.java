@@ -52,6 +52,11 @@ public class SuperPacmanPlayer extends Player {
 
     private final SuperPacmanPlayerHandler handler = new SuperPacmanPlayerHandler();
 
+    /**
+     * @param area (Area): Owner area. Not null
+     * @param orientation (Orientation): Initial player orientation, not null
+     * @param coordinates (Coordinates): Initial position, not null
+     */
     public SuperPacmanPlayer(Area area, Orientation orientation, DiscreteCoordinates coordinates) {
         super(area, orientation, coordinates);
         currentAnimation = animations[Orientation.UP.ordinal()];

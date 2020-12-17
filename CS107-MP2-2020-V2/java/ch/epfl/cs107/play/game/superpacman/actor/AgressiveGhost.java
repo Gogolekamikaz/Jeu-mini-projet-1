@@ -27,6 +27,14 @@ public abstract class AgressiveGhost extends Ghost {
 
     private Path path;
 
+    /**
+     * Default Agressive Ghost constructor
+     * @param area  (Area): Owner area. Not null
+     * @param orientation   (Orientation): Initial player orientation, not null
+     * @param position (Coordinates): Initial position, not null
+     * @param positionRefuge
+     * @param positionRefugeCoord
+     */
     public AgressiveGhost(Area area, Orientation orientation, DiscreteCoordinates position, Vector positionRefuge, DiscreteCoordinates positionRefugeCoord) {
         super(area, orientation, position, positionRefuge, positionRefugeCoord);
 

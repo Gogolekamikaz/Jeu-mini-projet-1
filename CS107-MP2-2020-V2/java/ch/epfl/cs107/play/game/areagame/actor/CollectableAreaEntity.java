@@ -31,6 +31,9 @@ public abstract class CollectableAreaEntity extends AreaEntity {
     public abstract void draw(Canvas canvas);
 
 
+    /**
+     * Collect the entity and remove it from the area
+     */
     public void pickActor(){
         if(!isAlreadyCollected){
             isPicked = true;
@@ -40,11 +43,17 @@ public abstract class CollectableAreaEntity extends AreaEntity {
 
     }
 
+    /**
+     * @return Current cells of the entity
+     */
     @Override
     public List<DiscreteCoordinates> getCurrentCells() {
         return Collections.singletonList(getCurrentMainCellCoordinates());
     }
 
+    /**
+     * @return either the entity is picked or not
+     */
     public boolean isPicked(){ return isPicked; }
 
 }

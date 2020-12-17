@@ -17,7 +17,7 @@ public class Inky extends AgressiveGhost {
     private final int MAX_DISTANCE_WHEN_NOT_SCARED = 10;
     private final int MAX_DISTANCE_WHEN_SCARED = 5;
 
-    protected Sprite[][] sprites = RPGSprite.extractSprites("superpacman/ghost.inky", 4, 1, 1, this, 16, 16, new Orientation[]{Orientation.UP, Orientation.RIGHT, Orientation.DOWN, Orientation.LEFT});
+    protected Sprite[][] sprites = RPGSprite.extractSprites("superpacman/ghost.inky", 2, 1, 1, this, 16, 16, new Orientation[]{Orientation.UP, Orientation.RIGHT, Orientation.DOWN, Orientation.LEFT});
 
     public Inky(Area area, Orientation orientation, DiscreteCoordinates position, Vector positionRefuge, DiscreteCoordinates positionRefugeCoord) {
         super(area, orientation, position, positionRefuge, positionRefugeCoord);

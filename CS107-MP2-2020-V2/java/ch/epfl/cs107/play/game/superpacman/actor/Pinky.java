@@ -15,7 +15,7 @@ import java.util.Queue;
 
 public class Pinky extends AgressiveGhost{
 
-    protected Sprite[][] sprites = RPGSprite.extractSprites ("superpacman/ghost.pinky",4, 1, 1, this , 16, 16, new Orientation [] { Orientation.UP , Orientation.RIGHT , Orientation.DOWN , Orientation.LEFT });
+    protected Sprite[][] sprites = RPGSprite.extractSprites ("superpacman/ghost.pinky",2, 1, 1, this , 16, 16, new Orientation [] { Orientation.UP , Orientation.RIGHT , Orientation.DOWN , Orientation.LEFT });
     private final DiscreteCoordinates trivialPosition = new DiscreteCoordinates(0,0);
     private final int MAX_DISTANCE_WHEN_NOT_SCARED = ghostCurrentArea.getWidth();
     private final int MAX_DISTANCE_WHEN_SCARED_BUT_WITH_PLAYER_UNSEEN = MAX_DISTANCE_WHEN_NOT_SCARED;
